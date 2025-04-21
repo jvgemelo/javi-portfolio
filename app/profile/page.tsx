@@ -11,7 +11,7 @@ export default async function Profile() {
   // If user is not logged in, show a message
   if (!user) {
     return (
-        <div className="flex flex-col items-center justify-center min-h-screen">
+        <div className="flex flex-col items-center justify-center min-h-[65vh]">
           <h1 className="text-2xl font-bold">Necesitas iniciar sesión para ver tu perfil</h1>
           <p className="mt-2 text-gray-600">¡Inicia sesión como javiergarciasegovia1997@gmail.com y pass javier1234 para ver mi perfil!</p>
           <p className="mb-4 text-gray-600">Estas credenciales son de prueba para mostrar las funcionalidades de la aplicación.</p>
