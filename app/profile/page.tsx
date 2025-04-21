@@ -19,36 +19,43 @@ export default async function Profile() {
   }         
   
   // Fetch user data from user_data table
+  // Usando .maybeSingle() en lugar de .single() para evitar el error
   const { data: userData, error } = await supabase
     .from('user_data')
     .select('*')
     .eq('user_id', user.id)
-    .single();
+    .maybeSingle();
   
-  if (error) {
-    console.error('Error fetching user data:', error);
-    return (
-      <div className="flex flex-col items-center justify-center min-h-screen">
-        <h1 className="text-2xl font-bold">Error al cargar los datos del perfil</h1>
-        <p className="text-red-500">{error.message}</p>
-      </div>
-    );
-  }
-
   // Imágenes por defecto si no hay fotos en el perfil
   const defaultPhotos = [
-    "https://yaolajjmtmjgfwlzqtic.supabase.co/storage/v1/object/public/fotos/yo.jpeg",
-    "https://yaolajjmtmjgfwlzqtic.supabase.co/storage/v1/object/public/fotos/yo-comics.jpeg",
-    "https://yaolajjmtmjgfwlzqtic.supabase.co/storage/v1/object/public/fotos/yo-ghibli.jpeg"
+    "https://yaolajjmtmjgfwlzqtic.supabase.co/storage/v1/object/public/fotos/default-foto.jpg",
   ];
 
+  // Datos de ejemplo para el perfil si no existe o está vacío
+  const datosEjemplo = {
+    perfil: "Este es un ejemplo de tu perfil profesional. Aquí puedes describir brevemente quién eres, tu experiencia general y tus objetivos profesionales.",
+    experiencia: "Ejemplo: Desarrollador Full Stack en XYZ Company (2018-2023). Responsable del desarrollo y mantenimiento de aplicaciones web usando React, Node.js y PostgreSQL.",
+    formacion: "Ejemplo: Grado en Ingeniería Informática, Universidad de Madrid (2014-2018). Bootcamp de Desarrollo Web Full Stack (2019).",
+    herramientas: "Ejemplo: React, Next.js, TypeScript, Node.js, PostgreSQL, Supabase, Git, Docker.",
+    idiomas: "Ejemplo: Español (nativo), Inglés (avanzado), Francés (básico).",
+    informacion: "Ejemplo: Disponibilidad para trabajar remotamente. Intereses en desarrollo de videojuegos y diseño UX/UI."
+  };
+
   // Usar las fotos del usuario si existen, o las predeterminadas si no
-    // Usar las fotos del usuario si existen, o las predeterminadas si no
-    const userPhotos = userData?.fotos ? 
+  const userPhotos = userData?.fotos ? 
     (typeof userData.fotos === 'string' ? 
       (userData.fotos.startsWith('[') ? JSON.parse(userData.fotos) : [userData.fotos]) 
       : userData.fotos) 
     : defaultPhotos;
+
+  // Verificar si algún campo del perfil tiene contenido
+  const perfilEditado = userData && (
+    userData.perfil || userData.experiencia || userData.formacion || 
+    userData.herramientas || userData.idiomas || userData.informacion
+  );
+
+  // Verificar si hay perfil o si debemos mostrar el perfil de ejemplo
+  const mostrarEjemplo = !userData || !perfilEditado;
 
   return (
     <div className="container mx-auto py-8 px-4">
@@ -65,36 +72,65 @@ export default async function Profile() {
       {/* Carrusel de fotos */}
       <ProfilePhotoCarousel photos={userPhotos} />
       
-      {userData ? (
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-10">
-          <ProfileSection title="Perfil" content={userData.perfil} />
-          <ProfileSection title="Experiencia" content={userData.experiencia} />
-          <ProfileSection title="Formación" content={userData.formacion} />
-          <ProfileSection title="Herramientas" content={userData.herramientas} />
-          <ProfileSection title="Idiomas" content={userData.idiomas} />
-          <ProfileSection title="Información adicional" content={userData.informacion} />
-        </div>
-      ) : (
-        <div className="bg-yellow-100 p-4 rounded">
-          <p className="text-yellow-800">No se encontraron datos de perfil. Por favor completa tu perfil.</p>
-          <Link 
-            href="/profile/edit" 
-            className="mt-4 inline-block px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700 transition-colors"
-          >
-            Completar Perfil
-          </Link>
-        </div>
-      )}
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-10">
+        <ProfileSection 
+          title="Perfil" 
+          content={mostrarEjemplo ? datosEjemplo.perfil : userData.perfil} 
+          isExample={mostrarEjemplo}
+        />
+        <ProfileSection 
+          title="Experiencia" 
+          content={mostrarEjemplo ? datosEjemplo.experiencia : userData.experiencia} 
+          isExample={mostrarEjemplo}
+        />
+        <ProfileSection 
+          title="Formación" 
+          content={mostrarEjemplo ? datosEjemplo.formacion : userData.formacion} 
+          isExample={mostrarEjemplo}
+        />
+        <ProfileSection 
+          title="Herramientas" 
+          content={mostrarEjemplo ? datosEjemplo.herramientas : userData.herramientas} 
+          isExample={mostrarEjemplo}
+        />
+        <ProfileSection 
+          title="Idiomas" 
+          content={mostrarEjemplo ? datosEjemplo.idiomas : userData.idiomas} 
+          isExample={mostrarEjemplo}
+        />
+        <ProfileSection 
+          title="Información adicional" 
+          content={mostrarEjemplo ? datosEjemplo.informacion : userData.informacion} 
+          isExample={mostrarEjemplo}
+        />
+        {mostrarEjemplo && (
+          <div className="md:col-span-2 bg-blue-50 p-4 rounded-lg shadow">
+            <p className="text-blue-700 font-medium mb-2">👆 Los datos mostrados son ejemplos</p>
+            <p className="text-blue-600">Edita tu perfil para personalizar esta información.</p>
+            <Link 
+              href="/profile/edit" 
+              className="mt-3 inline-block px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700 transition-colors"
+            >
+              {userData ? 'Editar mi perfil' : 'Crear mi perfil'}
+            </Link>
+          </div>
+        )}
+      </div>
     </div>
   );
 }
 
 // Helper component for displaying profile sections
-function ProfileSection({ title, content }: { title: string; content: string | null }) {
+function ProfileSection({ title, content, isExample = false }: { title: string; content: string | null; isExample?: boolean }) {
   return (
-    <div className="bg-white p-6 rounded-lg shadow">
+    <div className={`bg-white p-6 rounded-lg shadow ${isExample ? 'border border-dashed border-gray-300' : ''}`}>
       <h2 className="text-xl font-semibold mb-3">{title}</h2>
-      <p className="text-gray-700">{content || 'Sin información proporcionada'}</p>
+      {isExample ? (
+        <p className="text-gray-500 italic">{content || 'Sin información proporcionada'}</p>
+      ) : (
+        <p className="text-gray-700">{content || 'Sin información proporcionada'}</p>
+      )}
+      {isExample && <span className="text-xs text-gray-400 mt-2 block">Datos de ejemplo</span>}
     </div>
   );
 } 
