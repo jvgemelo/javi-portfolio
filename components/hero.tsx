@@ -9,7 +9,7 @@ export default function Hero() {
           Javier García
         </h1>
         <h2 className="text-lg text-muted-foreground sm:text-xl">
-          Desarrollador Full Stack
+          Desarrollador de Software
         </h2>
         <p className="mx-auto max-w-[700px] text-lg text-muted-foreground">
           Bienvenido a mi portfolio personal. Soy un apasionado de la tecnología y el desarrollo de software, 
