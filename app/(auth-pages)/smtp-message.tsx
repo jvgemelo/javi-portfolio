@@ -7,7 +7,7 @@ export function SmtpMessage() {
       <InfoIcon size={16} className="mt-0.5" />
       <div className="flex flex-col gap-1">
         <small className="text-sm text-secondary-foreground">
-          <strong> Nota:</strong> Los correos electrónicos están limitados. Habilita SMTP personalizado para
+          <strong> </strong> Los correos electrónicos están limitados. Habilita SMTP personalizado para
           aumentar el límite de tasa.
         </small>
         <div>
