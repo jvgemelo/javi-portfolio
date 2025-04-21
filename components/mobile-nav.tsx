@@ -66,7 +66,7 @@ export default function MobileNav() {
   return (
     <>
       {/* Botón de hamburguesa - reposicionado para evitar superposiciones */}
-      <div className="fixed top-0 right-0 z-50 p-3 m-3 flex items-center">
+      <div className="fixed top-0 right-0 z-50 m-3 flex items-center">
         <button 
           onClick={toggleMenu}
           className="p-2 rounded-md bg-background/70 hover:bg-background shadow-md transition-colors"
