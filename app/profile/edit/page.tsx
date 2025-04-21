@@ -28,7 +28,7 @@ export default function EditProfile() {
         const { data: { user }, error: userError } = await supabase.auth.getUser();
         
         if (userError || !user) {
-          console.error('Error getting user:', userError?.message);
+          console.error('Error al obtener usuario:', userError?.message);
           router.push('/login');
           return;
         }
@@ -80,7 +80,7 @@ export default function EditProfile() {
       const { data: { user } } = await supabase.auth.getUser();
       
       if (!user) {
-        throw new Error('User not authenticated');
+        throw new Error('Usuario no autenticado');
       }
       
       // Upsert the user data (update if exists, insert if doesn't)
@@ -97,8 +97,8 @@ export default function EditProfile() {
       router.push('/profile');
       router.refresh();
     } catch (error: any) {
-      console.error('Error saving profile:', error.message);
-      alert('Error saving profile. Please try again.');
+      console.error('Error al guardar el perfil:', error.message);
+      alert('Error al guardar el perfil. Por favor intenta de nuevo.');
     } finally {
       setSaving(false);
     }
@@ -107,14 +107,14 @@ export default function EditProfile() {
   if (loading) {
     return (
       <div className="flex justify-center items-center min-h-screen">
-        <p className="text-xl">Loading profile...</p>
+        <p className="text-xl">Cargando perfil...</p>
       </div>
     );
   }
 
   return (
     <div className="container mx-auto py-8 px-4">
-      <h1 className="text-3xl font-bold mb-8">Edit Profile</h1>
+      <h1 className="text-3xl font-bold mb-8">Editar Perfil</h1>
       
       <form onSubmit={handleSubmit} className="max-w-4xl mx-auto">
         <div className="space-y-6">

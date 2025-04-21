@@ -11,11 +11,11 @@ export default async function Profile() {
   if (!user) {
     return (
       <div className="flex flex-col items-center justify-center min-h-screen">
-        <h1 className="text-2xl font-bold">You need to be logged in to view your profile</h1>
-        <a href="/login" className="mt-4 px-4 py-2 bg-blue-500 text-white rounded">Go to Login</a>
+        <h1 className="text-2xl font-bold">Necesitas iniciar sesión para ver tu perfil</h1>
+        <a href="/login" className="mt-4 px-4 py-2 bg-blue-500 text-white rounded">Ir a inicio de sesión</a>
       </div>
     );
-  }
+  }         
   
   // Fetch user data from user_data table
   const { data: userData, error } = await supabase
@@ -28,7 +28,7 @@ export default async function Profile() {
     console.error('Error fetching user data:', error);
     return (
       <div className="flex flex-col items-center justify-center min-h-screen">
-        <h1 className="text-2xl font-bold">Error loading profile data</h1>
+        <h1 className="text-2xl font-bold">Error al cargar los datos del perfil</h1>
         <p className="text-red-500">{error.message}</p>
       </div>
     );
@@ -37,12 +37,12 @@ export default async function Profile() {
   return (
     <div className="container mx-auto py-8 px-4">
       <div className="flex justify-between items-center mb-8">
-        <h1 className="text-3xl font-bold">User Profile</h1>
+        <h1 className="text-3xl font-bold">Perfil de Usuario</h1>
         <Link 
           href="/profile/edit" 
           className="px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700 transition-colors"
         >
-          Edit Profile
+          Editar Perfil
         </Link>
       </div>
       
@@ -57,12 +57,12 @@ export default async function Profile() {
         </div>
       ) : (
         <div className="bg-yellow-100 p-4 rounded">
-          <p className="text-yellow-800">No profile data found. Please complete your profile.</p>
+          <p className="text-yellow-800">No se encontraron datos de perfil. Por favor completa tu perfil.</p>
           <Link 
             href="/profile/edit" 
             className="mt-4 inline-block px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700 transition-colors"
           >
-            Complete Profile
+            Completar Perfil
           </Link>
         </div>
       )}
@@ -75,7 +75,7 @@ function ProfileSection({ title, content }: { title: string; content: string | n
   return (
     <div className="bg-white p-6 rounded-lg shadow">
       <h2 className="text-xl font-semibold mb-3">{title}</h2>
-      <p className="text-gray-700">{content || 'No information provided'}</p>
+      <p className="text-gray-700">{content || 'Sin información proporcionada'}</p>
     </div>
   );
 } 
