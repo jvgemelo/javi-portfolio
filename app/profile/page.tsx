@@ -15,7 +15,7 @@ export default async function Profile() {
           <h1 className="text-2xl font-bold">Necesitas iniciar sesión para ver tu perfil</h1>
           <p className="mt-2 text-gray-600">¡Inicia sesión como javiergarciasegovia1997@gmail.com y pass javier1234 para ver mi perfil!</p>
           <p className="mb-4 text-gray-600">Estas credenciales son de prueba para mostrar las funcionalidades de la aplicación.</p>
-          <a href="/login" className="mt-4 px-4 py-2 bg-blue-500 text-white rounded">Ir a inicio de sesión</a>
+          <a href="/sign-in" className="mt-4 px-4 py-2 bg-blue-500 text-white rounded">Ir a inicio de sesión</a>
         </div>
       );
   }         
