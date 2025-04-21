@@ -5,31 +5,31 @@ import Image from "next/image";
 const projects = [
   {
     id: 1,
-    title: "Aplicación Web de Gestión",
+    title: "Gráficos Renault",
     description:
-      "Sistema completo para la gestión de inventario y ventas con dashboard administrativo.",
-    technologies: ["React", "Node.js", "PostgreSQL", "Express"],
-    imageUrl: "/images/proyecto1.jpg",
+      "Gráficos para Renault, con datos de producción, procesos y filtros.",
+    technologies: ["NextJS", "TailwindCSS","TypeScript", "PostgreSQL", "React", "WebRTC"],
+    imageUrl: "/renault-graphs.jpg",
     demoUrl: "#",
     repoUrl: "#",
   },
   {
     id: 2,
-    title: "Tienda Online",
+    title: "Ajos Viewer",
     description:
-      "E-commerce desarrollado con Next.js y Supabase, incluyendo pasarela de pagos y gestión de inventario.",
-    technologies: ["Next.js", "Supabase", "Stripe", "Tailwind CSS"],
-    imageUrl: "/images/proyecto2.jpg",
+      "Aplicación para visualizar cámaras en vivo de producción de Ajos.",
+    technologies: ["NextJS", "TailwindCSS","TypeScript", "PostgreSQL", "React", "RabbitMQ"],
+    imageUrl: "/ajos-viewer.jpg",
     demoUrl: "#",
     repoUrl: "#",
   },
   {
     id: 3,
-    title: "App de Gestión Personal",
+    title: "Porce Inspection",
     description:
-      "Aplicación PWA para organizar tareas, establecer metas y seguir hábitos diarios.",
-    technologies: ["React Native", "Firebase", "Redux", "TypeScript"],
-    imageUrl: "/images/proyecto3.jpg",
+      "Aplicación para inspeccionar y marcar defectos en piezas de cerámica.",
+    technologies: ["React", "Vite", "MongoDB", "TypeScript","KonvaJS"],
+    imageUrl: "/porce-inspection.jpg",
     demoUrl: "#",
     repoUrl: "#",
   },
@@ -38,7 +38,7 @@ const projects = [
 export default function Projects() {
   return (
     <div className="py-10">
-      <h1 className="text-3xl font-bold text-center mb-12">Mis Proyectos</h1>
+      <h1 className="text-3xl font-bold text-center mb-12">Proyectos en los que he trabajado</h1>
       
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
         {projects.map((project) => (
@@ -52,10 +52,14 @@ export default function Projects() {
 function ProjectCard({ project }: { project: typeof projects[0] }) {
   return (
     <div className="rounded-lg border overflow-hidden bg-card shadow-sm hover:shadow-md transition-all backdrop-blur-sm bg-background/60">
-      <div className="aspect-video relative w-full">
-        <div className="absolute inset-0 bg-black/20 flex items-center justify-center">
-          <p className="text-white font-bold text-lg">Vista previa</p>
-        </div>
+            <div className="aspect-video relative w-full">
+        {project.imageUrl ? (
+          <Image src={project.imageUrl} alt={project.title} fill className="object-cover" />
+        ) : (
+          <div className="absolute inset-0 bg-black/20 flex items-center justify-center">
+            <p className="text-white font-bold text-lg">Vista previa</p>
+          </div>
+        )}
       </div>
       
       <div className="p-6">
