@@ -8,7 +8,7 @@ const projects = [
     title: "Gráficos Renault",
     description:
       "Gráficos para Renault, con datos de producción, procesos y filtros.",
-    technologies: ["NextJS", "TailwindCSS","TypeScript", "PostgreSQL", "React", "WebRTC"],
+    technologies: ["NextJS", "TailwindCSS","TypeScript", "Supabase", "React", "WebRTC"],
     imageUrl: "/renault-graphs.jpg",
     demoUrl: "#",
     repoUrl: "#",
