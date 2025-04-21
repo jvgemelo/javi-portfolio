@@ -1,5 +1,6 @@
 import { createClient } from '@/utils/supabase/server';
 import Link from 'next/link';
+import ProfilePhotoCarousel from '@/components/profile-photo-carousel';
 
 export default async function Profile() {
   const supabase = await createClient();
@@ -34,6 +35,21 @@ export default async function Profile() {
     );
   }
 
+  // Imágenes por defecto si no hay fotos en el perfil
+  const defaultPhotos = [
+    "https://yaolajjmtmjgfwlzqtic.supabase.co/storage/v1/object/public/fotos/yo.jpeg",
+    "https://yaolajjmtmjgfwlzqtic.supabase.co/storage/v1/object/public/fotos/yo-comics.jpeg",
+    "https://yaolajjmtmjgfwlzqtic.supabase.co/storage/v1/object/public/fotos/yo-ghibli.jpeg"
+  ];
+
+  // Usar las fotos del usuario si existen, o las predeterminadas si no
+    // Usar las fotos del usuario si existen, o las predeterminadas si no
+    const userPhotos = userData?.fotos ? 
+    (typeof userData.fotos === 'string' ? 
+      (userData.fotos.startsWith('[') ? JSON.parse(userData.fotos) : [userData.fotos]) 
+      : userData.fotos) 
+    : defaultPhotos;
+
   return (
     <div className="container mx-auto py-8 px-4">
       <div className="flex justify-between items-center mb-8">
@@ -45,9 +61,12 @@ export default async function Profile() {
           Editar Perfil
         </Link>
       </div>
+
+      {/* Carrusel de fotos */}
+      <ProfilePhotoCarousel photos={userPhotos} />
       
       {userData ? (
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-10">
           <ProfileSection title="Perfil" content={userData.perfil} />
           <ProfileSection title="Experiencia" content={userData.experiencia} />
           <ProfileSection title="Formación" content={userData.formacion} />
