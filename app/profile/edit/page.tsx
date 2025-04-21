@@ -19,8 +19,7 @@ export default function EditProfile() {
     formacion: '',
     herramientas: '',
     idiomas: '',
-    informacion: '',
-    fotos: ''
+    informacion: ''
   });
   
   // Estado para el manejo de fotos
@@ -61,19 +60,27 @@ export default function EditProfile() {
             formacion: data.formacion || '',
             herramientas: data.herramientas || '',
             idiomas: data.idiomas || '',
-            informacion: data.informacion || '',
-            fotos: data.fotos || '[]'
+            informacion: data.informacion || ''
           });
           
           // Inicializar las fotos desde los datos guardados
-          if (data.fotos) {
-            try {
-              const parsedPhotos = JSON.parse(data.fotos);
-              setPhotos(Array.isArray(parsedPhotos) ? parsedPhotos : []);
-            } catch (e) {
-              console.error('Error al parsear fotos:', e);
+          try {
+            if (data.fotos) {
+              // Si es string, hacer parse; si es array, usar directamente
+              if (typeof data.fotos === 'string') {
+                const parsedPhotos = JSON.parse(data.fotos);
+                setPhotos(Array.isArray(parsedPhotos) ? parsedPhotos : []);
+              } else if (Array.isArray(data.fotos)) {
+                setPhotos(data.fotos);
+              } else {
+                setPhotos([]);
+              }
+            } else {
               setPhotos([]);
             }
+          } catch (e) {
+            console.error('Error al parsear fotos:', e);
+            setPhotos([]);
           }
         }
       } catch (error) {
@@ -85,14 +92,6 @@ export default function EditProfile() {
     
     fetchUserData();
   }, [supabase, router]);
-  
-  // Actualizar userData.fotos cuando cambie el array de fotos
-  useEffect(() => {
-    setUserData(prevUserData => ({
-      ...prevUserData,
-      fotos: JSON.stringify(photos)
-    }));
-  }, [photos]);
   
   useEffect(() => {
     const dropZone = dropZoneRef.current;
@@ -213,13 +212,15 @@ export default function EditProfile() {
         throw new Error('Usuario no autenticado');
       }
       
+      console.log('Saving photos array:', photos);
+      
       // Upsert the user data (update if exists, insert if doesn't)
       const { error } = await supabase
         .from('user_data')
         .upsert({
           user_id: user.id,
           ...userData,
-          fotos: JSON.stringify(photos)
+          fotos: photos  // No usamos JSON.stringify aquí, dejamos que Supabase lo maneje
         }, { onConflict: 'user_id' });
         
       if (error) throw error;
