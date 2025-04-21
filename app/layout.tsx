@@ -3,6 +3,8 @@ import { EnvVarWarning } from "@/components/env-var-warning";
 import HeaderAuth from "@/components/header-auth";
 import { ThemeSwitcher } from "@/components/theme-switcher";
 import PortfolioNav from "@/components/portfolio-nav";
+import ResponsiveNav from "@/components/responsive-nav";
+import MobileNav from "@/components/mobile-nav";
 import { hasEnvVars } from "@/utils/supabase/check-env-vars";
 import { Geist } from "next/font/google";
 import { ThemeProvider } from "next-themes";
@@ -82,10 +84,12 @@ export default async function RootLayout({
                 <div className="w-full max-w-5xl flex justify-between items-center p-3 px-5 text-sm">
                   <div className="flex gap-5 items-center">
                     <Link href={"/"} className="text-xl font-bold bg-gradient-to-r from-primary to-blue-500 bg-clip-text text-transparent hover:scale-105 transition-transform">Javi Portfolio</Link>
-                    <PortfolioNav />
+                    <ResponsiveNav />
                   </div>
                   <div className="flex items-center gap-4">
-                    {!hasEnvVars ? <EnvVarWarning /> : <HeaderAuth />}
+                    <div className="hidden sm:block">
+                      {!hasEnvVars ? <EnvVarWarning /> : <HeaderAuth />}
+                    </div>
                     <div className="ml-2 hidden md:block">
                       <ThemeSwitcher />
                     </div>
@@ -93,12 +97,15 @@ export default async function RootLayout({
                 </div>
               </nav>
               
+              {/* Navegación móvil que solo se muestra en pantallas pequeñas basado en píxeles */}
+              <MobileNav />
+              
               <div className="animate-fadeIn flex flex-col gap-14 max-w-5xl w-full p-8 backdrop-blur-md bg-background/60 rounded-xl shadow-2xl border border-foreground/5">
                 {children}
               </div>
 
               <footer className="w-full border-t border-foreground/10 backdrop-blur-sm bg-background/80 mt-10">
-                <div className="max-w-5xl mx-auto py-8 px-5 flex flex-col md:flex-row justify-between items-center gap-4">
+                <div className="max-w-5xl mx-auto py-4 sm:py-8 px-5 flex flex-col md:flex-row justify-between items-center gap-4">
                   <div className="flex items-center gap-2">
                     <span className="font-medium">Javier</span>
                     <span className="text-sm text-muted-foreground">© {new Date().getFullYear()}</span>
