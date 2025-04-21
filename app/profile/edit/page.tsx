@@ -419,7 +419,7 @@ function FormField({ name, label, value, onChange, placeholder }: FormFieldProps
           value={value}
           onChange={onChange}
           placeholder={placeholder}
-          className="shadow-sm focus:ring-blue-500 focus:border-blue-500 block w-full sm:text-sm border border-gray-300 rounded-md p-2"
+          className="shadow-sm focus:ring-blue-500 focus:border-blue-500 block w-full sm:text-sm border border-gray-300 rounded-md p-2 whitespace-pre-wrap"
         />
       </div>
     </div>

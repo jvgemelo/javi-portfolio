@@ -29,7 +29,7 @@ const projects = [
     description:
       "Aplicación para inspeccionar y marcar defectos en piezas de cerámica.",
     technologies: ["React", "Vite", "MongoDB", "TypeScript","KonvaJS"],
-    imageUrl: "/porce-inspection.jpg",
+    imageUrl: "/porce-inspector.jpg",
     demoUrl: "#",
     repoUrl: "#",
   },
