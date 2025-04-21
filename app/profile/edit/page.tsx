@@ -68,26 +68,11 @@ export default function EditProfile() {
           // Inicializar las fotos desde los datos guardados
           if (data.fotos) {
             try {
-              // Verificar si el valor parece una URL en lugar de un JSON
-              if (typeof data.fotos === 'string' && data.fotos.startsWith('http')) {
-                // Si es una URL, la envolvemos en un array
-                setPhotos([data.fotos]);
-              } else {
-                const parsedPhotos = JSON.parse(data.fotos);
-                setPhotos(Array.isArray(parsedPhotos) ? parsedPhotos : []);
-              }
+              const parsedPhotos = JSON.parse(data.fotos);
+              setPhotos(Array.isArray(parsedPhotos) ? parsedPhotos : []);
             } catch (e) {
               console.error('Error al parsear fotos:', e);
-              // Si hay un error de parseo, intentamos tratarlo como una URL individual
-              if (typeof data.fotos === 'string' && data.fotos.trim() !== '') {
-                if (data.fotos.startsWith('http')) {
-                  setPhotos([data.fotos]);
-                } else {
-                  setPhotos([]);
-                }
-              } else {
-                setPhotos([]);
-              }
+              setPhotos([]);
             }
           }
         }
@@ -100,6 +85,14 @@ export default function EditProfile() {
     
     fetchUserData();
   }, [supabase, router]);
+  
+  // Actualizar userData.fotos cuando cambie el array de fotos
+  useEffect(() => {
+    setUserData(prevUserData => ({
+      ...prevUserData,
+      fotos: JSON.stringify(photos)
+    }));
+  }, [photos]);
   
   useEffect(() => {
     const dropZone = dropZoneRef.current;
@@ -159,8 +152,8 @@ export default function EditProfile() {
     setUploadingPhoto(true);
     
     try {
-      // Mantener el nombre original del archivo
-      const fileName = file.name;
+      // Usar el nombre original del archivo
+      const fileName = `${Date.now()}-${file.name}`;
       
       // Subir el archivo a Supabase Storage
       const { data: uploadData, error: uploadError } = await supabase
@@ -208,23 +201,6 @@ export default function EditProfile() {
     setPhotos(newPhotos);
   };
   
-  const preparePhotosJSON = () => {
-    // Asegurar que photos es un array válido
-    if (!Array.isArray(photos)) {
-      return '[]';
-    }
-    
-    // Filtrar solo URLs válidas
-    const validPhotos = photos.filter(photo => 
-      typeof photo === 'string' && 
-      photo.trim() !== '' && 
-      photo.startsWith('http')
-    );
-    
-    // Devolver el JSON string ya formateado correctamente
-    return JSON.stringify(validPhotos);
-  };
-  
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     try {
@@ -237,16 +213,13 @@ export default function EditProfile() {
         throw new Error('Usuario no autenticado');
       }
       
-      // Preparar el JSON de fotos correctamente
-      const fotosJSON = preparePhotosJSON();
-      
       // Upsert the user data (update if exists, insert if doesn't)
       const { error } = await supabase
         .from('user_data')
         .upsert({
           user_id: user.id,
           ...userData,
-          fotos: fotosJSON
+          fotos: JSON.stringify(photos)
         }, { onConflict: 'user_id' });
         
       if (error) throw error;
@@ -281,10 +254,10 @@ export default function EditProfile() {
             <h2 className="text-xl font-bold mb-4">Mis Fotos</h2>
             
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
-              <div>
+              <div className="space-y-4">
                 <div 
                   ref={dropZoneRef}
-                  className="border-2 border-dashed border-gray-300 rounded-lg p-6 text-center cursor-pointer transition-colors h-full flex flex-col justify-center"
+                  className="border-2 border-dashed border-gray-300 rounded-lg p-6 text-center cursor-pointer transition-colors"
                   onClick={() => fileInputRef.current?.click()}
                 >
                   <input 
@@ -300,7 +273,7 @@ export default function EditProfile() {
                     <>
                       <p className="text-gray-500 mb-1">Arrastra una imagen aquí o haz clic para seleccionar</p>
                       <p className="text-xs text-muted-foreground">
-                        La imagen se subirá a Supabase Storage manteniendo su nombre original
+                        La imagen se subirá con su nombre original
                       </p>
                     </>
                   )}
@@ -450,4 +423,4 @@ function FormField({ name, label, value, onChange, placeholder }: FormFieldProps
       </div>
     </div>
   );
-} 
+}
