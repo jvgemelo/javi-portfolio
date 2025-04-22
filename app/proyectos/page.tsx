@@ -5,31 +5,31 @@ import Image from "next/image";
 const projects = [
   {
     id: 1,
-    title: "Renault",
+    title: "Automoción",
     description:
-      "En la imagen una serie de datos graficados en un dashboard para un proyecto de Renault.",
+      "En la imagen una serie de datos graficados en un dashboard para un proyecto de en gran fabricante de automoción.",
     technologies: ["NextJS", "TailwindCSS","TypeScript", "Supabase", "React", "WebRTC"],
-    imageUrl: "/renault-graphs.jpg",
+    imageUrl: "/automocion.png",
     demoUrl: "#",
     repoUrl: "#",
   },
   {
     id: 2,
-    title: "Imperio Garlic",
+    title: "Comercio al por mayor alimenticio",
     description:
-      "Previewer de visor de cámaras en vivo de producción de Ajos.",
+      "Previewer de visor de cámaras en vivo de producción de ajos.",
     technologies: ["NextJS", "TailwindCSS","TypeScript", "PostgreSQL", "React", "RabbitMQ"],
-    imageUrl: "/ajos-viewer.jpg",
+    imageUrl: "/imperio.png",
     demoUrl: "#",
     repoUrl: "#",
   },
   {
     id: 3,
-    title: "Porcelanosa",
+    title: "Industria",
     description:
-      "Aplicación para inspeccionar y marcar defectos en piezas de cerámica.",
+      "Aplicación para inspeccionar y marcar defectos en piezas fabricadas.",
     technologies: ["React", "Vite", "MongoDB", "TypeScript","KonvaJS"],
-    imageUrl: "/porce-inspector.jpg",
+    imageUrl: "/industria.png",
     demoUrl: "#",
     repoUrl: "#",
   },
