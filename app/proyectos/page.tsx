@@ -5,9 +5,9 @@ import Image from "next/image";
 const projects = [
   {
     id: 1,
-    title: "Gráficos Renault",
+    title: "Renault",
     description:
-      "Gráficos para Renault, con datos de producción, procesos y filtros.",
+      "En la imagen una serie de datos graficados en un dashboard para un proyecto de Renault.",
     technologies: ["NextJS", "TailwindCSS","TypeScript", "Supabase", "React", "WebRTC"],
     imageUrl: "/renault-graphs.jpg",
     demoUrl: "#",
@@ -15,9 +15,9 @@ const projects = [
   },
   {
     id: 2,
-    title: "Ajos Viewer",
+    title: "Imperio Garlic",
     description:
-      "Aplicación para visualizar cámaras en vivo de producción de Ajos.",
+      "Previewer de visor de cámaras en vivo de producción de Ajos.",
     technologies: ["NextJS", "TailwindCSS","TypeScript", "PostgreSQL", "React", "RabbitMQ"],
     imageUrl: "/ajos-viewer.jpg",
     demoUrl: "#",
@@ -25,7 +25,7 @@ const projects = [
   },
   {
     id: 3,
-    title: "Porce Inspection",
+    title: "Porcelanosa",
     description:
       "Aplicación para inspeccionar y marcar defectos en piezas de cerámica.",
     technologies: ["React", "Vite", "MongoDB", "TypeScript","KonvaJS"],
