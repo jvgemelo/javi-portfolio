@@ -21,7 +21,7 @@ export default function PortfolioNav() {
             key={link.name}
             href={link.href}
             className={`relative font-medium transition-all duration-300 text-sm group ${
-              isActive ? "text-primary" : "text-muted-foreground hover:text-gray-800 dark:hover:text-gray-200"
+              isActive ? "text-primary" : "text-black hover:text-gray-800 dark:hover:text-gray-200"
             }`}
           >
             {link.name}
