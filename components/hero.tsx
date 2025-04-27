@@ -11,19 +11,19 @@ const spaceGrotesk = Space_Grotesk({
 export default function Hero() {
   return (
     <div className={`${spaceGrotesk.className} relative flex flex-col items-center gap-8 text-center overflow-hidden`}>
-           <div className="absolute inset-0 z-0 flex justify-end">
+      <div className="absolute inset-0 z-0 flex justify-end">
         <Image
           src="/yo-comics-Photoroom.png"
           alt="Background"
           width={500}
           height={800}
-          className="object-contain scale-[1.2]"
-          priority
+          className="object-contain scale-[1.3] mr-[-140px]"
+          priority  
         />
       </div>
       
       <div className="space-y-4 px-4 relative z-10">
-        <h2 className="text-lg font-bold sm:text-5xl sm:text-xl">
+        <h2 className="text-lg font-bold sm:text-xl">
           Javier García
         </h2>
         <h1 className="text-xl text-chocolate font-bold text-muted-foreground md:text-8xl md:text-chocolate md:font-bold">
