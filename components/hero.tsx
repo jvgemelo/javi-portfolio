@@ -11,23 +11,23 @@ const spaceGrotesk = Space_Grotesk({
 export default function Hero() {
   return (
     <div className={`${spaceGrotesk.className} relative flex flex-col items-center gap-8 text-center overflow-hidden`}>
-      <div className="absolute inset-0 z-0 flex justify-end">
+      <div className="absolute inset-0 z-[1] flex justify-end">
         <Image
-          src="/yo-comics-Photoroom.png"
+          src="/yo-portfolio-Photoroom.png"
           alt="Background"
           width={500}
           height={800}
-          className="object-contain scale-[1.3] mr-[-140px]"
+          className="object-contain scale-[1] mr-[100px]"
           priority  
         />
       </div>
       
-      <div className="space-y-4 px-4 relative z-10">
+      <div className="space-y-4 px-4 relative">
         <h2 className="text-lg font-bold sm:text-xl">
           Javier García
         </h2>
         <h1 className="text-xl text-chocolate font-bold text-muted-foreground md:text-8xl md:text-chocolate md:font-bold">
-          FRONTEND DEVELOPER {"</>"}  
+          <span className="relative z-[30]">FRONTEND</span> <span className="">DEVELOPER {"</>"}</span>
         </h1>
         <p className="mx-auto max-w-[700px] text-lg text-muted-foreground">
           Bienvenido a mi portfolio personal. Soy un apasionado de la tecnología y el desarrollo de software, 
@@ -35,7 +35,7 @@ export default function Hero() {
         </p>
       </div>
       
-      <div className="flex flex-wrap justify-center gap-4 relative z-10">
+      <div className="flex flex-wrap justify-center gap-4 relative z-[20]">
         <Button asChild size="lg" className="bg-caramelo text-crema hover:bg-caramelo/80">
           <Link href="/profile">Ver mi perfil</Link>
         </Button>
