@@ -1,24 +1,42 @@
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
+import { Space_Grotesk } from "next/font/google";
+import Image from "next/image";
+
+const spaceGrotesk = Space_Grotesk({
+  display: "swap",
+  subsets: ["latin"],
+});
 
 export default function Hero() {
   return (
-    <div className="flex flex-col items-center gap-8 py-12 text-center lg:py-20">
-      <div className="space-y-4 px-4">
-        <h1 className="text-4xl font-bold sm:text-5xl md:text-6xl">
+    <div className={`${spaceGrotesk.className} relative flex flex-col items-center gap-8 py-12 text-center lg:py-20 overflow-hidden`}>
+           <div className="absolute inset-0 z-0 flex justify-end">
+        <Image
+          src="/yo-comics-Photoroom.png"
+          alt="Background"
+          width={500}
+          height={800}
+          className="object-contain scale-[1.2]"
+          priority
+        />
+      </div>
+      
+      <div className="space-y-4 px-4 relative z-10">
+        <h2 className="text-lg font-bold sm:text-5xl sm:text-xl">
           Javier García
-        </h1>
-        <h2 className="text-lg text-muted-foreground sm:text-xl">
-          Desarrollador de Software
         </h2>
+        <h1 className="text-xl text-chocolate text-muted-foreground md:text-8xl md:text-chocolate">
+          FRONTEND DEVELOPER {"</>"}  
+        </h1>
         <p className="mx-auto max-w-[700px] text-lg text-muted-foreground">
           Bienvenido a mi portfolio personal. Soy un apasionado de la tecnología y el desarrollo de software, 
           especializado en crear aplicaciones web modernas y eficientes.
         </p>
       </div>
       
-      <div className="flex flex-wrap justify-center gap-4">
-        <Button asChild size="lg">
+      <div className="flex flex-wrap justify-center gap-4 relative z-10">
+        <Button asChild size="lg" className="bg-caramelo text-crema hover:bg-caramelo/80">
           <Link href="/profile">Ver mi perfil</Link>
         </Button>
         <Button asChild variant="outline" size="lg">
@@ -26,7 +44,7 @@ export default function Hero() {
         </Button>
       </div>
 
-      <div className="mt-8 grid grid-cols-1 gap-6 md:grid-cols-3">
+      <div className="mt-8 grid grid-cols-1 gap-6 md:grid-cols-3 relative z-10">
         <FeatureCard 
           title="Desarrollo Web" 
           description="Especializado en React, Next.js y otras tecnologías modernas para crear experiencias web interactivas."
@@ -52,9 +70,9 @@ function FeatureCard({
   description: string; 
 }) {
   return (
-    <div className="rounded-lg border bg-card p-6 text-card-foreground shadow-sm transition-all hover:shadow-md backdrop-blur-sm bg-background/60">
+    <div className="rounded-lg border bg-card p-6 bg-caramelo text-card-foreground shadow-sm transition-all hover:shadow-md backdrop-blur-sm bg-background/60">
       <h3 className="text-xl font-bold">{title}</h3>
-      <p className="mt-2 text-muted-foreground">{description}</p>
+      <p className="mt-2 text-crema">{description}</p>
     </div>
   );
 }
