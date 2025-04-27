@@ -10,7 +10,7 @@ const spaceGrotesk = Space_Grotesk({
 
 export default function Hero() {
   return (
-    <div className={`${spaceGrotesk.className} relative flex flex-col items-center gap-8 py-12 text-center lg:py-20 overflow-hidden`}>
+    <div className={`${spaceGrotesk.className} relative flex flex-col items-center gap-8 text-center overflow-hidden`}>
            <div className="absolute inset-0 z-0 flex justify-end">
         <Image
           src="/yo-comics-Photoroom.png"
@@ -44,7 +44,7 @@ export default function Hero() {
         </Button>
       </div>
 
-      <div className="mt-8 grid grid-cols-1 gap-6 md:grid-cols-3 relative z-10">
+      <div className="mt-4 grid grid-cols-1 gap-6 md:grid-cols-3 relative z-10">
         <FeatureCard 
           title="Desarrollo Web" 
           description="Especializado en React, Next.js y otras tecnologías modernas para crear experiencias web interactivas."
@@ -70,9 +70,9 @@ function FeatureCard({
   description: string; 
 }) {
   return (
-    <div className="rounded-lg border bg-card p-6 text-card-foreground shadow-sm transition-all hover:shadow-md backdrop-blur-sm bg-background/60">
+    <div className="rounded-lg border p-6 text-card-foreground shadow-sm transition-all hover:shadow-md backdrop-blur-sm bg-background/60">
       <h3 className="text-xl font-bold">{title}</h3>
-      <p className="mt-2 text-crema">{description}</p>
+      <p className="mt-2 text-black">{description}</p>
     </div>
   );
 }

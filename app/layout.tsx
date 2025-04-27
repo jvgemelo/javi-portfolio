@@ -85,7 +85,7 @@ export default async function RootLayout({
         >
           <CarouselWrapper images={backgroundImages} />
           <main className="min-h-screen flex flex-col items-center">
-            <div className="flex-1 w-full flex flex-col gap-7 items-center bg-crema">
+            <div className="flex-1 w-full flex flex-col gap-7 items-center bg-crema pb-32">
               <nav className="w-full flex justify-center border-b border-b-foreground/10 h-16 backdrop-blur-sm bg-background sticky top-0 z-50 bg-crema">
               <div className="w-full max-w-5xl flex justify-between items-center p-3 px-5 text-sm">
                   <div className="w-1/4">
@@ -107,11 +107,11 @@ export default async function RootLayout({
               {/* Navegación móvil que solo se muestra en pantallas pequeñas basado en píxeles */}
               <MobileNav />
               
-              <div className="animate-fadeIn flex flex-col max-w-5xl w-full p-6 backdrop-blur-md bg-crema">
+              <div className="animate-fadeIn flex flex-col max-w-5xl w-full p-3 backdrop-blur-md bg-crema">
                 {children}
               </div>
 
-              <footer className="w-full border-t border-foreground/10 backdrop-blur-sm bg-background/80 mt-10">
+              <footer className="w-full border-t border-foreground/10 backdrop-blur-sm bg-black fixed bottom-0 left-0">
                 <div className="max-w-5xl mx-auto py-4 sm:py-8 px-5 flex flex-col md:flex-row justify-between items-center gap-4">
                   <div className="flex items-center gap-2">
                     <span className="font-medium">Javier</span>
