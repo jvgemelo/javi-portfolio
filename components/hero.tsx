@@ -3,13 +3,13 @@ import { Button } from "@/components/ui/button";
 
 export default function Hero() {
   return (
-    <div className="flex flex-col items-center gap-8 py-12 text-center lg:py-20">
+    <div className="flex flex-col items-center gap-8 py-6 text-center lg:py-10">
       <div className="space-y-4 px-4">
-        <h1 className="text-4xl font-bold sm:text-5xl md:text-6xl">
+        <h1 className="text-xl font-bold sm:text-5xl md:text-xl">
           Javier García
         </h1>
-        <h2 className="text-lg text-muted-foreground sm:text-xl">
-          Desarrollador de Software
+        <h2 className="text-6lg text-muted-foreground sm:text-7xl">
+          FRONTEND DEVELOPER {"</>"}
         </h2>
         <p className="mx-auto max-w-[700px] text-lg text-muted-foreground">
           Bienvenido a mi portfolio personal. Soy un apasionado de la tecnología y el desarrollo de software, 

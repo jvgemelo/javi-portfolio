@@ -6,7 +6,7 @@ import PortfolioNav from "@/components/portfolio-nav";
 import ResponsiveNav from "@/components/responsive-nav";
 import MobileNav from "@/components/mobile-nav";
 import { hasEnvVars } from "@/utils/supabase/check-env-vars";
-import { Geist } from "next/font/google";
+import { Space_Grotesk } from "next/font/google";
 import { ThemeProvider } from "next-themes";
 import Link from "next/link";
 import "./globals.css";
@@ -25,9 +25,10 @@ export const metadata = {
   description: "Portfolio profesional con mis proyectos y experiencia",
 };
 
-const geistSans = Geist({
+const spaceGrotesk = Space_Grotesk({
   display: "swap",
   subsets: ["latin"],
+  weight: ["300", "400", "500", "600", "700"],
 });
 
 // Imágenes por defecto para el fondo
@@ -69,7 +70,7 @@ export default async function RootLayout({
   }
 
   return (
-    <html lang="es" className={geistSans.className} suppressHydrationWarning>
+    <html lang="es" className={spaceGrotesk.className} suppressHydrationWarning>
       <body className="bg-background text-foreground">
         <ThemeProvider
           attribute="class"
@@ -79,11 +80,11 @@ export default async function RootLayout({
         >
           <CarouselWrapper images={backgroundImages} />
           <main className="min-h-screen flex flex-col items-center">
-            <div className="flex-1 w-full flex flex-col gap-7 items-center">
+            <div className="flex-1 w-full flex flex-col gap-7 items-center bg-background">
               <nav className="w-full flex justify-center border-b border-b-foreground/10 h-16 backdrop-blur-sm bg-background/80 sticky top-0 z-50 shadow-md">
                 <div className="w-full max-w-5xl flex justify-between items-center p-3 px-5 text-sm">
                   <div className="flex gap-5 items-center">
-                    <Link href={"/"} className="text-xl font-bold bg-gradient-to-r from-primary to-blue-500 bg-clip-text text-transparent hover:scale-105 transition-transform">Javi Portfolio</Link>
+                    <Link href={"/"} className="text-xl font-bold bg-gradient-to-r from-primary to-black bg-clip-text text-transparent hover:scale-105 transition-transform">JAVIER</Link>
                     <ResponsiveNav />
                   </div>
                   <div className="flex items-center gap-4">
@@ -100,7 +101,7 @@ export default async function RootLayout({
               {/* Navegación móvil que solo se muestra en pantallas pequeñas basado en píxeles */}
               <MobileNav />
               
-              <div className="animate-fadeIn flex flex-col gap-14 max-w-5xl w-full p-8 backdrop-blur-md bg-background/60 rounded-xl shadow-2xl border border-foreground/5">
+              <div className="animate-fadeIn flex flex-col max-w-5xl w-full p-6 backdrop-blur-md bg-background/60 rounded-xl shadow-2xl border border-foreground/5">
                 {children}
               </div>
 
