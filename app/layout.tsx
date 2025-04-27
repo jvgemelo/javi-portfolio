@@ -86,13 +86,15 @@ export default async function RootLayout({
           <CarouselWrapper images={backgroundImages} />
           <main className="min-h-screen flex flex-col items-center">
             <div className="flex-1 w-full flex flex-col gap-7 items-center bg-crema">
-              <nav className="w-full flex justify-center border-b border-b-foreground/10 h-16 backdrop-blur-sm bg-background sticky top-0 z-50">
-                <div className="w-full max-w-5xl flex justify-between items-center p-3 px-5 text-sm">
-                  <div className="flex gap-5 items-center">
-                    <Link href={"/"} className="text-xl font-bold bg-gradient-to-r from-primary to-caramelo bg-clip-text text-transparent hover:scale-105 transition-transform">JAVIER</Link>
+              <nav className="w-full flex justify-center border-b border-b-foreground/10 h-16 backdrop-blur-sm bg-background sticky top-0 z-50 bg-crema">
+              <div className="w-full max-w-5xl flex justify-between items-center p-3 px-5 text-sm">
+                  <div className="w-1/4">
+                    <Link href={"/"} className="text-xl font-bold bg-black bg-clip-text text-transparent hover:scale-105 transition-transform">JAVIER</Link>
+                  </div>
+                  <div className="w-2/4 flex justify-center">
                     <ResponsiveNav />
                   </div>
-                  <div className="flex items-center gap-4">
+                  <div className="w-1/4 flex justify-end items-center gap-4">
                     <div className="hidden sm:block">
                       {!hasEnvVars ? <EnvVarWarning /> : <HeaderAuth />}
                     </div>
