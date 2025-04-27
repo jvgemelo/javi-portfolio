@@ -26,7 +26,7 @@ export default function Hero() {
         <h2 className="text-lg font-bold sm:text-5xl sm:text-xl">
           Javier García
         </h2>
-        <h1 className="text-xl text-chocolate text-muted-foreground md:text-8xl md:text-chocolate">
+        <h1 className="text-xl text-chocolate font-bold text-muted-foreground md:text-8xl md:text-chocolate md:font-bold">
           FRONTEND DEVELOPER {"</>"}  
         </h1>
         <p className="mx-auto max-w-[700px] text-lg text-muted-foreground">
@@ -70,7 +70,7 @@ function FeatureCard({
   description: string; 
 }) {
   return (
-    <div className="rounded-lg border bg-card p-6 bg-caramelo text-card-foreground shadow-sm transition-all hover:shadow-md backdrop-blur-sm bg-background/60">
+    <div className="rounded-lg border bg-card p-6 text-card-foreground shadow-sm transition-all hover:shadow-md backdrop-blur-sm bg-background/60">
       <h3 className="text-xl font-bold">{title}</h3>
       <p className="mt-2 text-crema">{description}</p>
     </div>

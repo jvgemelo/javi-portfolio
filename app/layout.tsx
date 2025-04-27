@@ -85,7 +85,7 @@ export default async function RootLayout({
         >
           <CarouselWrapper images={backgroundImages} />
           <main className="min-h-screen flex flex-col items-center">
-            <div className="flex-1 w-full flex flex-col gap-7 items-center bg-white">
+            <div className="flex-1 w-full flex flex-col gap-7 items-center bg-crema">
               <nav className="w-full flex justify-center border-b border-b-foreground/10 h-16 backdrop-blur-sm bg-background sticky top-0 z-50">
                 <div className="w-full max-w-5xl flex justify-between items-center p-3 px-5 text-sm">
                   <div className="flex gap-5 items-center">
@@ -96,16 +96,16 @@ export default async function RootLayout({
                     <div className="hidden sm:block">
                       {!hasEnvVars ? <EnvVarWarning /> : <HeaderAuth />}
                     </div>
-                    <div className="ml-2 hidden md:block">
+                    {/* <div className="ml-2 hidden md:block">
                       <ThemeSwitcher />
-                    </div>
+                    </div> */}
                   </div>
                 </div>
               </nav>
               {/* Navegación móvil que solo se muestra en pantallas pequeñas basado en píxeles */}
               <MobileNav />
               
-              <div className="flex flex-col px-8 bg-crema">
+              <div className="animate-fadeIn flex flex-col max-w-5xl w-full p-6 backdrop-blur-md bg-crema">
                 {children}
               </div>
 
