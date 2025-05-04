@@ -111,13 +111,13 @@ export default async function RootLayout({
                 {children}
               </div>
 
-              <footer className="w-full border-t border-foreground/10 backdrop-blur-sm bg-black fixed bottom-0 left-0">
+             {/*} <footer className="w-full border-t border-foreground/10 backdrop-blur-sm bg-black fixed bottom-0 left-0">
                 <div className="max-w-5xl mx-auto py-4 sm:py-8 px-5 flex flex-col md:flex-row justify-between items-center gap-4">
                   <div className="flex items-center gap-2">
                     <span className="font-medium">Javier</span>
                     <span className="text-sm text-muted-foreground">© {new Date().getFullYear()}</span>
                   </div>
-                  {/* Muestra de los tres colores */}
+                  {/* Muestra de los tres colores 
                   <div className="flex justify-center gap-4 md:w-auto mb-2">
                       <div className="w-10 h-10 bg-crema rounded-md shadow-md relative group hover:scale-110 transition-transform cursor-pointer">
                         <span className="absolute opacity-0 group-hover:opacity-100 bottom-full left-1/2 -translate-x-1/2 mb-2 px-2 py-1 bg-background/90 text-xs font-medium rounded transition-opacity">crema</span>
@@ -157,7 +157,7 @@ export default async function RootLayout({
                     </div>
                   </div>
                 </div>
-              </footer>
+              </footer> */}
             </div>
           </main>
         </ThemeProvider>
