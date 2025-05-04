@@ -76,18 +76,18 @@ export default async function RootLayout({
 
   return (
     <html lang="es" className={spaceGrotesk.className} suppressHydrationWarning>
-      <body className="bg-crema text-foreground">
+      <body className="bg-white p-6 text-foreground">
         <ThemeProvider
           attribute="class"
           defaultTheme="system"
           enableSystem
           disableTransitionOnChange
         >
-          <CarouselWrapper images={backgroundImages} />
+          {/* <CarouselWrapper images={backgroundImages} /> */}
           <main className="min-h-screen flex flex-col items-center">
             <div className="flex-1 w-full flex flex-col gap-7 items-center bg-crema pb-32">
               <nav className="w-full flex justify-center border-b border-b-foreground/10 h-16 backdrop-blur-sm bg-background sticky top-0 z-50 bg-crema">
-              <div className="w-full max-w-5xl flex justify-between items-center p-3 px-5 text-sm">
+              <div className="w-full max-w-screen flex justify-between items-center p-3 px-5 text-sm">
                   <div className="w-1/4">
                     <Link href={"/"} className="text-xl font-bold bg-black bg-clip-text text-transparent hover:scale-105 transition-transform">JAVIER</Link>
                   </div>
@@ -107,7 +107,7 @@ export default async function RootLayout({
               {/* Navegación móvil que solo se muestra en pantallas pequeñas basado en píxeles */}
               <MobileNav />
               
-              <div className="animate-fadeIn flex flex-col max-w-5xl w-full p-3 backdrop-blur-md bg-crema">
+              <div className="animate-fadeIn flex flex-col max-w-screen w-full p-3 backdrop-blur-md bg-crema">
                 {children}
               </div>
 

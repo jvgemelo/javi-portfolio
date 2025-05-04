@@ -5,29 +5,29 @@ import Image from "next/image";
 const projects = [
   {
     id: 1,
-    title: "Renault",
+    title: "Dashboard",
     description:
-      "En la imagen una serie de datos graficados en un dashboard para un proyecto de Renault.",
+      "Dashboard creado con la libreria recharts para React y componentes de Shadcn.",
     technologies: ["NextJS", "TailwindCSS","TypeScript", "Supabase", "React", "WebRTC"],
-    imageUrl: "/renault-graphs.jpg",
+    imageUrl: "/dashboard.png",
     demoUrl: "#",
     repoUrl: "#",
   },
   {
     id: 2,
-    title: "Imperio Garlic",
+    title: "Previewer",
     description:
-      "Previewer de visor de cámaras en vivo de producción de Ajos.",
+      "Visoniado de cámaras en directo a tavés de RabbitMQ..",
     technologies: ["NextJS", "TailwindCSS","TypeScript", "PostgreSQL", "React", "RabbitMQ"],
-    imageUrl: "/ajos-viewer.jpg",
+    imageUrl: "/productividad.jpg",
     demoUrl: "#",
     repoUrl: "#",
   },
   {
     id: 3,
-    title: "Porcelanosa",
+    title: "Annotations",
     description:
-      "Aplicación para inspeccionar y marcar defectos en piezas de cerámica.",
+      "Aplicación para inspeccionar y marcar defectos en piezas de cerámica. Se usó la librería de KonvaJS para pintar encima de las imágenes..",
     technologies: ["React", "Vite", "MongoDB", "TypeScript","KonvaJS"],
     imageUrl: "/porce-inspector.jpg",
     demoUrl: "#",
@@ -39,13 +39,12 @@ export default function Projects() {
   return (
     <div className="min-h-screen bg-crema">
       {/* Título principal */}
-      <header className="pt-8 pb-4 text-center">
-        <h1 className="text-5xl md:text-6xl font-extrabold text-chocolate tracking-tight mb-2">WORKS</h1>
-        <p className="text-lg text-chocolate/80 font-medium">Proyectos en los que he trabajado</p>
+      <header className="text-start">
+        <h1 className="text-6xl md:text-7xl font-extrabold text-chocolate tracking-tight px-8">WORKS</h1>
       </header>
 
       {/* Grid de proyectos */}
-      <section className="container mx-auto py-8">
+      <section className="px-8 pb-8">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {projects.map((project) => (
             <ProjectCard key={project.id} project={project} />
@@ -61,7 +60,7 @@ export default function Projects() {
             <p className="text-chocolate text-lg mb-4 max-w-md">
               Aunque aún aprendiendo, y sin tener conocimientos certificados en diseño, he realizado diversos diseños en Figma a base de aprendizaje autodidacta y algún curso!
             </p>
-            <a href="#" className="inline-flex items-center gap-2 px-5 py-2 rounded-full bg-chocolate text-crema font-semibold shadow hover:bg-chocolate/90 transition">
+            <a href="https://www.figma.com/design/C7y0nuC4q5khzwpgL00snR/Untitled?node-id=0-1&t=kP4HIBTzqH3TtqxI-1" className="inline-flex items-center gap-2 px-5 py-2 rounded-full bg-chocolate text-crema font-semibold shadow hover:bg-chocolate/90 transition">
               Link al portfolio <span className="text-xl">↗</span>
             </a>
           </div>
@@ -100,30 +99,30 @@ export default function Projects() {
 
 function ProjectCard({ project }: { project: typeof projects[0] }) {
   return (
-    <div className="rounded-xl border border-caramelo/40 overflow-hidden bg-white/80 shadow-md hover:shadow-lg transition-all backdrop-blur-sm">
+    <div className="rounded-xl overflow-hidden bg-white/50 shadow-md transition-all ">
       <div className="aspect-video relative w-full">
         {project.imageUrl ? (
-          <Image src={project.imageUrl} alt={project.title} fill className="object-cover" />
+          <Image src={project.imageUrl} alt={project.title} fill className="object-contain" />
         ) : (
           <div className="absolute inset-0 bg-caramelo/20 flex items-center justify-center">
-            <p className="text-chocolate font-bold text-lg">Vista previa</p>
+            <p className="text-black font-bold text-lg">Vista previa</p>
           </div>
         )}
       </div>
       <div className="p-6">
         <h3 className="text-xl font-bold mb-2 text-chocolate">{project.title}</h3>
-        <p className="text-caramelo mb-4">{project.description}</p>
+        <p className="text-black mb-4">{project.description}</p>
         <div className="flex flex-wrap gap-2 mb-4">
           {project.technologies.map((tech) => (
             <span
               key={tech}
-              className="text-xs px-2 py-1 bg-caramelo/10 text-caramelo rounded-full border border-caramelo/30"
+              className="text-xs px-2 py-1 bg-caramelo text-black rounded-full border border-caramelo/30"
             >
               {tech}
             </span>
           ))}
         </div>
-        <div className="flex gap-4 mt-4">
+        {/*<div className="flex gap-4 mt-4">
           <Link
             href={project.demoUrl}
             className="text-sm font-medium px-4 py-2 rounded-full bg-caramelo text-white hover:bg-caramelo/90 transition shadow"
@@ -136,7 +135,7 @@ function ProjectCard({ project }: { project: typeof projects[0] }) {
           >
             Ver Repositorio
           </Link>
-        </div>
+        </div>*/}
       </div>
     </div>
   );
