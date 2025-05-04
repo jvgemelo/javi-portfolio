@@ -58,13 +58,12 @@ const testimonials = [
     role: "AI R&D Engineer",
   },
   {
-    image: "/dev.webp",
+    image: "/dev3.webp",
     text: [
-      "He tenido la oportunidad de trabajar con Javier y puedo destacar su gran responsabilidad y compromiso en cada proyecto. Es un profesional proactivo que siempre busca maneras de mejorar y aportar nuevas ideas. No he tenido queja con agilidad de varios proyectos innovadores, demostrando versatilidad tanto en desarrollo web como en tareas de back-end.",
-      "Siempre está disponible para ayudar a sus compañeros, fomentando un excelente ambiente de trabajo en equipo. Es un programador web muy competente, con capacidad para adaptarse a distintos retos tecnológicos y aprender rápidamente nuevas herramientas.",
+      "Javier se incorporó al equipo con formación en desarrollo multiplataforma, sin experiencia previa en desarrollo web. Aun así, mostró una gran disposición para aprender y adaptarse. Su progreso fue gradual, pero constante y bien fundamentado, lo que le permitió asimilar con profundidad los conceptos clave del frontend. Con el tiempo, fue ganando soltura y confianza, y hoy se desempeña con seguridad en entornos web, destacando por su compromiso y su capacidad de adaptación.",
     ],
-    name: "Jesús Gutiérrez Siliceo",
-    role: "Front-End Dev & Design Product Team Lead",
+    name: "Francisco Colls",
+    role: "Front-End Dev",
   }
 ];
 
