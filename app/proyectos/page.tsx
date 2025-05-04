@@ -64,9 +64,35 @@ export default function Projects() {
               Link al portfolio <span className="text-xl">↗</span>
             </a>
           </div>
-          <div className="flex-1 flex justify-center">
-            <div className="relative w-72 h-48 md:w-96 md:h-64">
-              <Image src="/figma-designs-mock.png" alt="Diseños Figma" fill className="object-contain rounded-lg shadow-lg border-4 border-chocolate/30" />
+          <div className="flex-1 flex justify-center  rounded-lg">
+            <div className="relative w-[340px] h-[260px] md:w-[420px] md:h-[320px] group">
+              {/* Imagen de fondo (designs) */}
+              <Image
+                src="/designs.png"
+                alt="Diseño Figma"
+                width={350}
+                height={270}
+                className="object-contain rounded-lg shadow-lg border-4 border-chocolate/30 absolute left-60 top-16 rotate-[8deg] z-20 transition-transform duration-300 ease-in-out group-hover:scale-105 group-hover:rotate-[12deg] group-hover:shadow-2xl"
+                style={{ zIndex: 20 }}
+              />
+              {/* Imagen del medio (inicio) */}
+              <Image
+                src="/inicio.png"
+                alt="Inicio"
+                width={350}
+                height={270}
+                className="object-contain rounded-lg shadow-lg border-4 border-chocolate/30 absolute left-10 top-0 rotate-[-6deg] z-10 transition-transform duration-300 ease-in-out group-hover:scale-105 group-hover:rotate-[-12deg] group-hover:shadow-2xl"
+                style={{ zIndex: 10 }}
+              />
+              {/* Imagen superior (works) */}
+              <Image
+                src="/works.png"
+                alt="Works"
+                width={350}
+                height={270}
+                className="object-contain rounded-lg shadow-lg border-4 border-chocolate/30 absolute left-20 top-32 rotate-[-2deg] z-30 transition-transform duration-300 ease-in-out group-hover:scale-105 group-hover:rotate-[2deg] group-hover:shadow-2xl"
+                style={{ zIndex: 30 }}
+              />
             </div>
           </div>
         </div>
