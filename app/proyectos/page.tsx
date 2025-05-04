@@ -10,7 +10,7 @@ const projects = [
     title: "Dashboard",
     description:
       "Dashboard creado con la libreria recharts para React y componentes de Shadcn.",
-    technologies: ["NextJS", "TailwindCSS","TypeScript", "Supabase", "React", "WebRTC"],
+    technologies: ["NextJS", "TailwindCSS", "TypeScript", "Supabase", "React", "WebRTC"],
     imageUrl: "/dashboard.png",
     demoUrl: "#",
     repoUrl: "#",
@@ -20,7 +20,7 @@ const projects = [
     title: "Previewer",
     description:
       "Visoniado de cámaras en directo a tavés de RabbitMQ..",
-    technologies: ["NextJS", "TailwindCSS","TypeScript", "PostgreSQL", "React", "RabbitMQ"],
+    technologies: ["NextJS", "TailwindCSS", "TypeScript", "PostgreSQL", "React", "RabbitMQ"],
     imageUrl: "/productividad.jpg",
     demoUrl: "#",
     repoUrl: "#",
@@ -30,7 +30,7 @@ const projects = [
     title: "Annotations",
     description:
       "Aplicación para inspeccionar y marcar defectos en piezas de cerámica. Se usó la librería de KonvaJS para pintar encima de las imágenes..",
-    technologies: ["React", "Vite", "MongoDB", "TypeScript","KonvaJS"],
+    technologies: ["React", "Vite", "MongoDB", "TypeScript", "KonvaJS"],
     imageUrl: "/porce-inspector.jpg",
     demoUrl: "#",
     repoUrl: "#",
@@ -175,14 +175,52 @@ export default function Projects() {
           ))}
         </div>
       </section>
-
+      {/* Sección Paquete NPM */}
+      <section className="w-full bg-crema py-12 border-t border-caramelo/30">
+        <div className="container mx-auto flex flex-col md:flex-row items-center gap-8">
+          <div className="flex-1 flex justify-center rounded-lg order-2 md:order-1">
+            <div className="relative w-[340px] h-[260px] md:w-[420px] md:h-[320px] group">
+              <Image
+                src="/sorolla.png"
+                alt="Paquete NPM"
+                width={400}
+                height={300}
+                className="object-contain rounded-lg shadow-lg border-4 border-chocolate/30 transition-transform duration-300 ease-in-out group-hover:scale-105 group-hover:shadow-2xl"
+              />
+              <div className="absolute -bottom-4 -right-4 bg-red-600 text-white p-3 rounded-full shadow-lg transform rotate-12 group-hover:rotate-6 transition-transform duration-300">
+                <Image src="/npm-logo-black.png" alt="NPM Logo" width={40} height={40} />
+              </div>
+            </div>
+          </div>
+          <div className="flex-1 flex flex-col items-center md:items-start order-1 md:order-2 px-6 md:px-0">
+            <div className="flex flex-row items-center gap-2">
+              <h2 className="text-3xl md:text-4xl font-bold text-chocolate mb-4">PAQUETE NPM</h2>
+              <div className="bg-caramelo/20 px-3 py-1 rounded-full text-sm font-semibold text-chocolate">
+                Publicado
+              </div>
+            </div>
+            <p className="text-chocolate text-lg mb-4 max-w-md">
+              He colaborado en el desarrollo de un paquete npm para mi empresa que optimiza el flujo de trabajo, automatizando procesos repetitivos y proporcionando utilidades específicas para nuestros proyectos.
+            </p>
+            {/* <p className="text-chocolate text-lg mb-6 max-w-md">
+              Este paquete incluye herramientas para la manipulación de datos, componentes reutilizables y funciones de ayuda que han mejorado significativamente nuestra eficiencia de desarrollo.
+            </p> */}
+            <p className="text-chocolate text-lg mb-6 max-w-md">
+              Sorolla es una biblioteca de componentes React optimizada tanto para proyectos de React vanilla como Next.js, que proporciona eficientes herramientas de anotación basadas en canvas impulsadas por Konva.
+            </p>
+            <a href="https://www.npmjs.com/package/@siali/sorolla" className="inline-flex items-center gap-2 px-5 py-2 rounded-full bg-chocolate text-crema font-semibold shadow hover:bg-chocolate/90 transition">
+              Más información <span className="text-xl">↗</span>
+            </a>
+          </div>
+        </div>
+      </section>
       {/* Sección Diseños con Figma */}
       <section className="w-full bg-caramelo py-12">
         <div className="container mx-auto flex flex-col md:flex-row items-center gap-8">
           <div className="flex-1 flex flex-col items-center md:items-start">
             <div className="flex flex-row">
-            <h2 className="text-3xl md:text-4xl font-bold text-chocolate mb-4">DISEÑOS CON FIGMA!</h2>
-            <Image src="/figma.png" alt="Figma" width={70} height={30} />
+              <h2 className="text-3xl md:text-4xl font-bold text-chocolate mb-4">DISEÑOS CON FIGMA!</h2>
+              <Image src="/figma.png" alt="Figma" width={70} height={30} />
             </div>
             <p className="text-chocolate text-lg mb-4 max-w-md">
               Aunque aún aprendiendo, y sin tener conocimientos certificados en diseño, he realizado diversos diseños en Figma a base de aprendizaje autodidacta y algún curso!
@@ -225,6 +263,8 @@ export default function Projects() {
         </div>
       </section>
 
+
+
       {/* Sección Testimonios */}
       <section className="w-full bg-white pb-12 px-4 md:px-0 border-t border-caramelo/30">
         <div>
@@ -241,7 +281,7 @@ export default function Projects() {
             <div className="relative z-10">
               <TestimonialCard testimonial={testimonials[currentIndex]} size="lg" />
             </div>
-            
+
             {/* Flechas de navegación */}
             <button
               onClick={goToPrevious}
@@ -260,15 +300,14 @@ export default function Projects() {
               &#8594;
             </button>
           </div>
-          
+
           {/* Indicadores de puntos */}
           <div className="flex justify-center gap-2 mt-6">
             {testimonials.map((_, index) => (
               <button
                 key={index}
-                className={`w-2 h-2 rounded-full transition-all ${
-                  index === currentIndex ? 'bg-chocolate w-4' : 'bg-caramelo'
-                }`}
+                className={`w-2 h-2 rounded-full transition-all ${index === currentIndex ? 'bg-chocolate w-4' : 'bg-caramelo'
+                  }`}
                 onClick={() => {
                   if (isTransitioning || index === currentIndex) return;
                   setCurrentIndex(index);
