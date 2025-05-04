@@ -1,5 +1,7 @@
+'use client'
 import Link from "next/link";
 import Image from "next/image";
+import { useState, useEffect } from "react";
 
 // Datos de ejemplo para los proyectos
 const projects = [
@@ -35,7 +37,125 @@ const projects = [
   },
 ];
 
+// Array de testimonios
+const testimonials = [
+  {
+    image: "/dev.webp",
+    text: [
+      "He tenido la oportunidad de trabajar con Javier y puedo destacar su gran responsabilidad y compromiso en cada proyecto. Es un profesional proactivo que siempre busca maneras de mejorar y aportar nuevas ideas. No he tenido queja con agilidad de varios proyectos innovadores, demostrando versatilidad tanto en desarrollo web como en tareas de back-end.",
+      "Siempre está disponible para ayudar a sus compañeros, fomentando un excelente ambiente de trabajo en equipo. Es un programador web muy competente, con capacidad para adaptarse a distintos retos tecnológicos y aprender rápidamente nuevas herramientas.",
+    ],
+    name: "Jesús Gutiérrez Siliceo",
+    role: "Front-End Dev & Design Product Team Lead",
+  },
+  {
+    image: "/dev2.webp", // <--- Nueva imagen
+    text: [
+      "Trabajar con Javier es realmente fácil y agradable. Siempre mantiene una actitud positiva y se involucra al máximo para lograr el mejor resultado posible. Tiene una mentalidad muy orientada a la mejora continua, buscando constantemente nuevas formas de optimizar tanto con las herramientas que usamos como explorando nuevas tecnologías.",
+      "Su enfoque en el detalle y su disposición a colaborar hacen que cualquier proyecto con él fluya de forma natural.",
+    ],
+    name: "Lucía Cilla Cuevas",
+    role: "AI R&D Engineer",
+  },
+  {
+    image: "/dev.webp",
+    text: [
+      "He tenido la oportunidad de trabajar con Javier y puedo destacar su gran responsabilidad y compromiso en cada proyecto. Es un profesional proactivo que siempre busca maneras de mejorar y aportar nuevas ideas. No he tenido queja con agilidad de varios proyectos innovadores, demostrando versatilidad tanto en desarrollo web como en tareas de back-end.",
+      "Siempre está disponible para ayudar a sus compañeros, fomentando un excelente ambiente de trabajo en equipo. Es un programador web muy competente, con capacidad para adaptarse a distintos retos tecnológicos y aprender rápidamente nuevas herramientas.",
+    ],
+    name: "Jesús Gutiérrez Siliceo",
+    role: "Front-End Dev & Design Product Team Lead",
+  }
+];
+
 export default function Projects() {
+  // Carrusel de testimonios estilo profile-photo-carousel
+  const [currentIndex, setCurrentIndex] = useState(0);
+  const [isTransitioning, setIsTransitioning] = useState(false);
+  const [touchStartX, setTouchStartX] = useState<number | null>(null);
+  const [touchEndX, setTouchEndX] = useState<number | null>(null);
+
+  const testimonialsCount = testimonials.length;
+
+  // Índices adyacentes
+  const prevIndex = (currentIndex - 1 + testimonialsCount) % testimonialsCount;
+  const nextIndex = (currentIndex + 1) % testimonialsCount;
+
+  // Navegación
+  const goToNext = () => {
+    if (isTransitioning || testimonialsCount <= 1) return;
+    setIsTransitioning(true);
+    setCurrentIndex((prev) => (prev + 1) % testimonialsCount);
+    setTimeout(() => setIsTransitioning(false), 500);
+  };
+
+  const goToPrevious = () => {
+    if (isTransitioning || testimonialsCount <= 1) return;
+    setIsTransitioning(true);
+    setCurrentIndex((prev) => (prev - 1 + testimonialsCount) % testimonialsCount);
+    setTimeout(() => setIsTransitioning(false), 500);
+  };
+
+  // Swipe handlers
+  const minSwipeDistance = 50;
+  const onTouchStart = (e: React.TouchEvent) => {
+    setTouchEndX(null);
+    setTouchStartX(e.targetTouches[0].clientX);
+  };
+  const onTouchMove = (e: React.TouchEvent) => {
+    setTouchEndX(e.targetTouches[0].clientX);
+  };
+  const onTouchEnd = () => {
+    if (!touchStartX || !touchEndX) return;
+    const distance = touchStartX - touchEndX;
+    if (distance > minSwipeDistance) {
+      goToNext();
+    } else if (distance < -minSwipeDistance) {
+      goToPrevious();
+    }
+  };
+
+  // Renderizado de cada testimonio
+  function TestimonialCard({ testimonial, size, blur, opacity, zIndex }: {
+    testimonial: typeof testimonials[0],
+    size: "lg" | "sm",
+    blur?: boolean,
+    opacity?: number,
+    zIndex?: number,
+  }) {
+    return (
+      <div
+        className={`
+          relative flex flex-col md:flex-row items-center gap-8
+          transition-all duration-500 ease-in-out
+          ${size === "lg" ? "w-full md:w-[1200px] scale-100" : "w-2/3 md:w-[400px] scale-90"}
+        `}
+        style={{
+          filter: blur ? "blur(2px)" : undefined,
+          opacity: opacity ?? 1,
+          zIndex: zIndex ?? 1,
+        }}
+      >
+        <div className="flex-shrink-0">
+          <Image
+            src={testimonial.image}
+            alt="Testimonio"
+            width={size === "lg" ? 200 : 120}
+            height={size === "lg" ? 200 : 120}
+            className="bg-crema rounded-full"
+          />
+        </div>
+        <div className={`bg-white/80 rounded-lg shadow p-6 text-chocolate text-base flex-1 ${size === "lg" ? "" : "text-sm"}`}>
+          {testimonial.text.map((paragraph, idx) => (
+            <p className="mb-4" key={idx}>{paragraph}</p>
+          ))}
+          <div className="font-bold mt-2">{testimonial.name}</div>
+          <div className="text-sm text-caramelo">{testimonial.role}</div>
+        </div>
+      </div>
+    );
+  }
+
   return (
     <div className="min-h-screen bg-crema">
       {/* Título principal */}
@@ -103,22 +223,88 @@ export default function Projects() {
 
       {/* Sección Testimonios */}
       <section className="w-full bg-white pb-12 px-4 md:px-0 border-t border-caramelo/30">
-        <div className="">
-          <h2 className="text-3xl md:text-5xl font-bold text-chocolate mb-8 text-center -mt-6">¿QUÉ OPINAN MIS COMPAÑEROS SOBRE MÍ?</h2>
-          <div className="flex flex-col md:flex-row items-center gap-8 max-w-screen-2xl mx-auto">
-            <div className="flex-shrink-0">
-              <Image src="/dev.webp" alt="Testimonio" width={200} height={200} className="bg-crema" />
+        <div>
+          <h2 className="text-3xl md:text-5xl font-bold text-chocolate mb-8 text-center -mt-6">
+            ¿QUÉ OPINAN MIS COMPAÑEROS SOBRE MÍ?
+          </h2>
+          <div
+            className="relative flex justify-center items-center h-[340px] overflow-hidden"
+            onTouchStart={onTouchStart}
+            onTouchMove={onTouchMove}
+            onTouchEnd={onTouchEnd}
+          >
+            {/* Testimonio anterior */}
+            <div
+              className={`
+                absolute left-0 top-1/2 -translate-y-1/2
+                transition-all duration-500 ease-in-out
+                ${isTransitioning ? "translate-x-[-120%]" : "translate-x-[-60%]"}
+                hidden md:block
+              `}
+              style={{ zIndex: 1, opacity: 0.5 }}
+            >
+              <TestimonialCard testimonial={testimonials[prevIndex]} size="sm" blur opacity={0.5} />
             </div>
-            <div className="bg-white/80 rounded-lg shadow p-6 text-chocolate text-base">
-              <p className="mb-4">
-                He tenido la oportunidad de trabajar con Javier y puedo destacar su gran responsabilidad y compromiso en cada proyecto. Es un profesional proactivo que siempre busca maneras de mejorar y aportar nuevas ideas. No he tenido queja con agilidad de varios proyectos innovadores, demostrando versatilidad tanto en desarrollo web como en tareas de back-end.
-              </p>
-              <p className="mb-2">
-                Siempre está disponible para ayudar a sus compañeros, fomentando un excelente ambiente de trabajo en equipo. Es un programador web muy competente, con capacidad para adaptarse a distintos retos tecnológicos y aprender rápidamente nuevas herramientas.
-              </p>
-              <div className="font-bold mt-2">Jesús Gutiérrez Siliceo</div>
-              <div className="text-sm text-caramelo">Front-End Dev & Design Product Team Lead</div>
+            {/* Testimonio actual */}
+            <div
+              className={`
+                relative z-10 transition-all duration-500 ease-in-out
+                ${isTransitioning ? "scale-95" : "scale-100"}
+              `}
+              style={{
+                transform: isTransitioning
+                  ? "translateX(-60%) scale(0.95)"
+                  : "translateX(0) scale(1)",
+              }}
+            >
+              <TestimonialCard testimonial={testimonials[currentIndex]} size="lg" />
             </div>
+            {/* Testimonio siguiente */}
+            <div
+              className={`
+                absolute right-0 top-1/2 -translate-y-1/2
+                transition-all duration-500 ease-in-out
+                ${isTransitioning ? "translate-x-[120%]" : "translate-x-[60%]"}
+                hidden md:block
+              `}
+              style={{ zIndex: 1, opacity: 0.5 }}
+            >
+              <TestimonialCard testimonial={testimonials[nextIndex]} size="sm" blur opacity={0.5} />
+            </div>
+            {/* Flechas */}
+            <button
+              onClick={goToPrevious}
+              className="absolute left-2 top-1/2 -translate-y-1/2 text-chocolate text-3xl font-bold px-2 hover:text-caramelo transition z-20 bg-white/70 rounded-full"
+              aria-label="Anterior"
+              disabled={isTransitioning}
+            >
+              &#8592;
+            </button>
+            <button
+              onClick={goToNext}
+              className="absolute right-2 top-1/2 -translate-y-1/2 text-chocolate text-3xl font-bold px-2 hover:text-caramelo transition z-20 bg-white/70 rounded-full"
+              aria-label="Siguiente"
+              disabled={isTransitioning}
+            >
+              &#8594;
+            </button>
+          </div>
+          {/* Indicadores de puntos */}
+          <div className="flex justify-center gap-2 mt-6">
+            {testimonials.map((_, index) => (
+              <button
+                key={index}
+                className={`w-2 h-2 rounded-full transition-all ${
+                  index === currentIndex ? 'bg-chocolate w-4' : 'bg-caramelo'
+                }`}
+                onClick={() => {
+                  if (isTransitioning || index === currentIndex) return;
+                  setIsTransitioning(true);
+                  setCurrentIndex(index);
+                  setTimeout(() => setIsTransitioning(false), 500);
+                }}
+              />
+            ))}
           </div>
         </div>
       </section>
