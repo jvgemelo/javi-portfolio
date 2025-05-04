@@ -72,6 +72,7 @@ export default function Projects() {
   // Carrusel de testimonios estilo profile-photo-carousel
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isTransitioning, setIsTransitioning] = useState(false);
+  const [direction, setDirection] = useState<'next' | 'prev'>('next');
   const [touchStartX, setTouchStartX] = useState<number | null>(null);
   const [touchEndX, setTouchEndX] = useState<number | null>(null);
 
@@ -84,6 +85,7 @@ export default function Projects() {
   // Navegación
   const goToNext = () => {
     if (isTransitioning || testimonialsCount <= 1) return;
+    setDirection('next');
     setIsTransitioning(true);
     setCurrentIndex((prev) => (prev + 1) % testimonialsCount);
     setTimeout(() => setIsTransitioning(false), 500);
@@ -91,6 +93,7 @@ export default function Projects() {
 
   const goToPrevious = () => {
     if (isTransitioning || testimonialsCount <= 1) return;
+    setDirection('prev');
     setIsTransitioning(true);
     setCurrentIndex((prev) => (prev - 1 + testimonialsCount) % testimonialsCount);
     setTimeout(() => setIsTransitioning(false), 500);
@@ -109,8 +112,10 @@ export default function Projects() {
     if (!touchStartX || !touchEndX) return;
     const distance = touchStartX - touchEndX;
     if (distance > minSwipeDistance) {
+      setDirection('next');
       goToNext();
     } else if (distance < -minSwipeDistance) {
+      setDirection('prev');
       goToPrevious();
     }
   };
@@ -233,45 +238,12 @@ export default function Projects() {
             onTouchMove={onTouchMove}
             onTouchEnd={onTouchEnd}
           >
-            {/* Testimonio anterior */}
-            <div
-              className={`
-                absolute left-0 top-1/2 -translate-y-1/2
-                transition-all duration-500 ease-in-out
-                ${isTransitioning ? "translate-x-[-120%]" : "translate-x-[-60%]"}
-                hidden md:block
-              `}
-              style={{ zIndex: 1, opacity: 0.5 }}
-            >
-              <TestimonialCard testimonial={testimonials[prevIndex]} size="sm" blur opacity={0.5} />
-            </div>
-            {/* Testimonio actual */}
-            <div
-              className={`
-                relative z-10 transition-all duration-500 ease-in-out
-                ${isTransitioning ? "scale-95" : "scale-100"}
-              `}
-              style={{
-                transform: isTransitioning
-                  ? "translateX(-60%) scale(0.95)"
-                  : "translateX(0) scale(1)",
-              }}
-            >
+            {/* Mostramos solo la tarjeta actual, sin animaciones */}
+            <div className="relative z-10">
               <TestimonialCard testimonial={testimonials[currentIndex]} size="lg" />
             </div>
-            {/* Testimonio siguiente */}
-            <div
-              className={`
-                absolute right-0 top-1/2 -translate-y-1/2
-                transition-all duration-500 ease-in-out
-                ${isTransitioning ? "translate-x-[120%]" : "translate-x-[60%]"}
-                hidden md:block
-              `}
-              style={{ zIndex: 1, opacity: 0.5 }}
-            >
-              <TestimonialCard testimonial={testimonials[nextIndex]} size="sm" blur opacity={0.5} />
-            </div>
-            {/* Flechas */}
+            
+            {/* Flechas de navegación */}
             <button
               onClick={goToPrevious}
               className="absolute left-2 top-1/2 -translate-y-1/2 text-chocolate text-3xl font-bold px-2 hover:text-caramelo transition z-20 bg-white/70 rounded-full"
@@ -289,6 +261,7 @@ export default function Projects() {
               &#8594;
             </button>
           </div>
+          
           {/* Indicadores de puntos */}
           <div className="flex justify-center gap-2 mt-6">
             {testimonials.map((_, index) => (
@@ -299,9 +272,7 @@ export default function Projects() {
                 }`}
                 onClick={() => {
                   if (isTransitioning || index === currentIndex) return;
-                  setIsTransitioning(true);
                   setCurrentIndex(index);
-                  setTimeout(() => setIsTransitioning(false), 500);
                 }}
               />
             ))}
