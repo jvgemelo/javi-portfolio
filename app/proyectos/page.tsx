@@ -40,7 +40,7 @@ export default function Projects() {
     <div className="min-h-screen bg-crema">
       {/* Título principal */}
       <header className="text-start">
-        <h1 className="text-6xl md:text-7xl font-extrabold text-chocolate tracking-tight px-8">WORKS</h1>
+        <h1 className="text-6xl md:text-7xl font-extrabold text-chocolate tracking-tight px-8">PROYECTOS</h1>
       </header>
 
       {/* Grid de proyectos */}
@@ -53,10 +53,13 @@ export default function Projects() {
       </section>
 
       {/* Sección Diseños con Figma */}
-      <section className="w-full bg-caramelo py-12 px-4 md:px-0">
+      <section className="w-full bg-caramelo py-12">
         <div className="container mx-auto flex flex-col md:flex-row items-center gap-8">
           <div className="flex-1 flex flex-col items-center md:items-start">
-            <h2 className="text-3xl md:text-4xl font-bold text-chocolate mb-4">DESIGNS WITH FIGMA!</h2>
+            <div className="flex flex-row">
+            <h2 className="text-3xl md:text-4xl font-bold text-chocolate mb-4">DISEÑOS CON FIGMA!</h2>
+            <Image src="/figma.png" alt="Figma" width={70} height={30} />
+            </div>
             <p className="text-chocolate text-lg mb-4 max-w-md">
               Aunque aún aprendiendo, y sin tener conocimientos certificados en diseño, he realizado diversos diseños en Figma a base de aprendizaje autodidacta y algún curso!
             </p>
@@ -99,12 +102,12 @@ export default function Projects() {
       </section>
 
       {/* Sección Testimonios */}
-      <section className="w-full bg-crema py-12 px-4 md:px-0 border-t border-caramelo/30">
-        <div className="container mx-auto">
-          <h2 className="text-3xl md:text-4xl font-bold text-chocolate mb-8 text-center">WHAT PEOPLE SAYS ABOUT ME</h2>
-          <div className="flex flex-col md:flex-row items-center gap-8 max-w-3xl mx-auto">
+      <section className="w-full bg-white pb-12 px-4 md:px-0 border-t border-caramelo/30">
+        <div className="">
+          <h2 className="text-3xl md:text-5xl font-bold text-chocolate mb-8 text-center -mt-6">¿QUÉ OPINAN MIS COMPAÑEROS SOBRE MÍ?</h2>
+          <div className="flex flex-col md:flex-row items-center gap-8 max-w-screen-2xl mx-auto">
             <div className="flex-shrink-0">
-              <Image src="/testimonio-avatar.jpg" alt="Testimonio" width={120} height={120} className="rounded-full border-4 border-caramelo" />
+              <Image src="/dev.webp" alt="Testimonio" width={200} height={200} className="bg-crema" />
             </div>
             <div className="bg-white/80 rounded-lg shadow p-6 text-chocolate text-base">
               <p className="mb-4">
