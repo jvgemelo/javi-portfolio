@@ -40,11 +40,11 @@ export default function Projects() {
     <div className="min-h-screen bg-crema">
       {/* Título principal */}
       <header className="text-start">
-        <h1 className="text-6xl md:text-7xl font-extrabold text-chocolate tracking-tight px-8">PROYECTOS</h1>
+        <h1 className="text-6xl md:text-7xl font-extrabold text-chocolate tracking-tight px-12">PROYECTOS</h1>
       </header>
 
       {/* Grid de proyectos */}
-      <section className="px-8 pb-8">
+      <section className="px-12 pb-8">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {projects.map((project) => (
             <ProjectCard key={project.id} project={project} />
@@ -131,7 +131,7 @@ function ProjectCard({ project }: { project: typeof projects[0] }) {
     <div className="rounded-xl overflow-hidden bg-white/50 shadow-md transition-all ">
       <div className="aspect-video relative w-full">
         {project.imageUrl ? (
-          <Image src={project.imageUrl} alt={project.title} fill className="object-contain" />
+          <Image src={project.imageUrl} alt={project.title} fill className="object-contain object-top" />
         ) : (
           <div className="absolute inset-0 bg-caramelo/20 flex items-center justify-center">
             <p className="text-black font-bold text-lg">Vista previa</p>
