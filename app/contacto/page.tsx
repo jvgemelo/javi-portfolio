@@ -39,61 +39,64 @@ export default function ContactPage() {
   };
   
   return (
-    <div className="py-10">
-      <h1 className="text-3xl font-bold text-center mb-8">Contacto</h1>
+    <div className="min-h-screen bg-crema">
+      {/* Título principal */}
+      <header className="text-start">
+        <h1 className="text-6xl md:text-7xl font-extrabold text-chocolate tracking-tight px-12">CONTACTO</h1>
+      </header>
       
-      <div className="max-w-2xl mx-auto">
+      <div className="max-w-4xl mx-auto py-10 px-4">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
-          <div>
-            <h2 className="text-xl font-semibold mb-4">Información de contacto</h2>
-            <ul className="space-y-4">
+          <div className="bg-white/50 p-6 rounded-xl shadow-md">
+            <h2 className="text-2xl font-semibold mb-6 text-chocolate">Información de contacto</h2>
+            <ul className="space-y-6">
               <li className="flex items-start gap-3">
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-primary mt-1">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-caramelo mt-1">
                   <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" />
                 </svg>
                 <div>
-                  <p className="font-medium">Teléfono</p>
-                  <p className="text-muted-foreground">+34 683 61 74 81</p>
+                  <p className="font-medium text-chocolate">Teléfono</p>
+                  <p className="text-chocolate/70">+34 683 61 74 81</p>
                 </div>
               </li>
               <li className="flex items-start gap-3">
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-primary mt-1">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-caramelo mt-1">
                   <rect width="20" height="16" x="2" y="4" rx="2" />
                   <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7" />
                 </svg>
                 <div>
-                  <p className="font-medium">Email</p>
-                  <p className="text-muted-foreground">javiergarciasegovia1997@gmail.com</p>
+                  <p className="font-medium text-chocolate">Email</p>
+                  <p className="text-chocolate/70">javiergarciasegovia1997@gmail.com</p>
                 </div>
               </li>
               <li className="flex items-start gap-3">
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-primary mt-1">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-caramelo mt-1">
                   <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
                   <circle cx="12" cy="10" r="3" />
                 </svg>
                 <div>
-                  <p className="font-medium">Ubicación</p>
-                  <p className="text-muted-foreground">Santander, España</p>
+                  <p className="font-medium text-chocolate">Ubicación</p>
+                  <p className="text-chocolate/70">Santander, España</p>
                 </div>
               </li>
             </ul>
             
-            <h3 className="text-lg font-semibold mt-8 mb-4">Redes Sociales</h3>
+            <h3 className="text-xl font-semibold mt-8 mb-4 text-chocolate">Redes Sociales</h3>
             <div className="flex gap-4">
-              <a href="https://github.com/jvgemelo" target="_blank" rel="noopener noreferrer" className="text-foreground hover:text-primary transition-colors">
+              <a href="https://github.com/jvgemelo" target="_blank" rel="noopener noreferrer" className="text-chocolate hover:text-caramelo transition-colors">
                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                   <path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4" />
                   <path d="M9 18c-4.51 2-5-2-7-2" />
                 </svg>
               </a>
-              <a href="https://www.linkedin.com/in/javier-garcia-segovia-678842243//" target="_blank" rel="noopener noreferrer" className="text-foreground hover:text-primary transition-colors">
+              <a href="https://www.linkedin.com/in/javier-garcia-segovia-678842243//" target="_blank" rel="noopener noreferrer" className="text-chocolate hover:text-caramelo transition-colors">
                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                   <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z" />
                   <rect width="4" height="12" x="2" y="9" />
                   <circle cx="4" cy="4" r="2" />
                 </svg>
               </a>
-              <a href="https://www.instagram.com/javier_garcia_segovia/" target="_blank" rel="noopener noreferrer" className="text-foreground hover:text-primary transition-colors">
+              <a href="https://www.instagram.com/javier_garcia_segovia/" target="_blank" rel="noopener noreferrer" className="text-chocolate hover:text-caramelo transition-colors">
                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                   <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
                   <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
@@ -103,33 +106,34 @@ export default function ContactPage() {
             </div>
           </div>
           
-          <div>
-            <h2 className="text-xl font-semibold mb-4">Envíame un mensaje</h2>
+          <div className="bg-white/50 p-6 rounded-xl shadow-md">
+            <h2 className="text-2xl font-semibold mb-6 text-chocolate">Envíame un mensaje</h2>
             {formSubmitted ? (
-              <div className="bg-primary/10 text-primary p-4 rounded-lg">
-                <h3 className="font-semibold text-lg">¡Mensaje enviado!</h3>
-                <p>Gracias por contactarme. Te responderé lo antes posible.</p>
+              <div className="bg-caramelo/20 text-chocolate p-6 rounded-lg">
+                <h3 className="font-semibold text-xl">¡Mensaje enviado!</h3>
+                <p className="my-3">Gracias por contactarme. Te responderé lo antes posible.</p>
                 <Button 
-                  className="mt-4" 
+                  className="mt-4 bg-chocolate text-crema hover:bg-chocolate/90 rounded-full px-5" 
                   onClick={() => setFormSubmitted(false)}
                 >
                   Enviar otro mensaje
                 </Button>
               </div>
             ) : (
-              <form onSubmit={handleSubmit} className="space-y-4">
+              <form onSubmit={handleSubmit} className="space-y-5">
                 <div>
-                  <Label htmlFor="name">Nombre</Label>
+                  <Label htmlFor="name" className="text-chocolate font-medium">Nombre</Label>
                   <Input
                     id="name"
                     name="name"
                     value={formState.name}
                     onChange={handleChange}
                     required
+                    className="mt-1 border-caramelo/30 focus:border-caramelo bg-white/80 rounded-md"
                   />
                 </div>
                 <div>
-                  <Label htmlFor="email">Email</Label>
+                  <Label htmlFor="email" className="text-chocolate font-medium">Email</Label>
                   <Input
                     id="email"
                     name="email"
@@ -137,21 +141,26 @@ export default function ContactPage() {
                     value={formState.email}
                     onChange={handleChange}
                     required
+                    className="mt-1 border-caramelo/30 focus:border-caramelo bg-white/80 rounded-md"
                   />
                 </div>
                 <div>
-                  <Label htmlFor="message">Mensaje</Label>
+                  <Label htmlFor="message" className="text-chocolate font-medium">Mensaje</Label>
                   <textarea
                     id="message"
                     name="message"
                     value={formState.message}
                     onChange={handleChange}
                     rows={5}
-                    className="w-full border rounded-md p-2 bg-transparent"
+                    className="w-full mt-1 border border-caramelo/30 focus:border-caramelo focus:ring-caramelo rounded-md p-3 bg-white/80"
                     required
                   />
                 </div>
-                <Button type="submit" disabled={isSubmitting}>
+                <Button 
+                  type="submit" 
+                  disabled={isSubmitting}
+                  className="bg-chocolate text-crema hover:bg-chocolate/90 rounded-full px-5"
+                >
                   {isSubmitting ? 'Enviando...' : 'Enviar mensaje'}
                 </Button>
               </form>

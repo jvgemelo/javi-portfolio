@@ -245,154 +245,159 @@ export default function EditProfile() {
   }
 
   return (
-    <div className="container mx-auto py-8 px-4">
-      <h1 className="text-3xl font-bold mb-8">Editar Perfil</h1>
+    <div className="min-h-screen bg-crema">
+      {/* Título principal */}
+      <header className="text-start">
+        <h1 className="text-6xl md:text-7xl font-extrabold text-chocolate tracking-tight px-12">EDITAR PERFIL</h1>
+      </header>
       
-      <form onSubmit={handleSubmit} className="max-w-4xl mx-auto">
-        <div className="space-y-6">
-          {/* Sección de fotos */}
-          <div className="border rounded-lg p-6 bg-card">
-            <h2 className="text-xl font-bold mb-4">Mis Fotos</h2>
-            
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
-              <div className="space-y-4">
-                <div 
-                  ref={dropZoneRef}
-                  className="border-2 border-dashed border-gray-300 rounded-lg p-6 text-center cursor-pointer transition-colors"
-                  onClick={() => fileInputRef.current?.click()}
-                >
-                  <input 
-                    ref={fileInputRef}
-                    type="file" 
-                    accept="image/jpeg,image/png,image/gif,image/jpg"
-                    className="hidden"
-                    onChange={handleFileInputChange}
-                  />
-                  {uploadingPhoto ? (
-                    <p className="text-gray-500">Subiendo foto...</p>
-                  ) : (
-                    <>
-                      <p className="text-gray-500 mb-1">Arrastra una imagen aquí o haz clic para seleccionar</p>
-                      <p className="text-xs text-muted-foreground">
-                        La imagen se subirá con su nombre original
-                      </p>
-                    </>
-                  )}
+      <div className="container mx-auto py-8 px-4">
+        <form onSubmit={handleSubmit} className="max-w-4xl mx-auto">
+          <div className="space-y-6">
+            {/* Sección de fotos */}
+            <div className="border rounded-xl p-6 bg-white/50 shadow-md">
+              <h2 className="text-2xl font-bold mb-4 text-chocolate">Mis Fotos</h2>
+              
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
+                <div className="space-y-4">
+                  <div 
+                    ref={dropZoneRef}
+                    className="border-2 border-dashed border-caramelo rounded-lg p-6 text-center cursor-pointer transition-colors"
+                    onClick={() => fileInputRef.current?.click()}
+                  >
+                    <input 
+                      ref={fileInputRef}
+                      type="file" 
+                      accept="image/jpeg,image/png,image/gif,image/jpg"
+                      className="hidden"
+                      onChange={handleFileInputChange}
+                    />
+                    {uploadingPhoto ? (
+                      <p className="text-chocolate">Subiendo foto...</p>
+                    ) : (
+                      <>
+                        <p className="text-chocolate mb-1">Arrastra una imagen aquí o haz clic para seleccionar</p>
+                        <p className="text-xs text-caramelo">
+                          La imagen se subirá con su nombre original
+                        </p>
+                      </>
+                    )}
+                  </div>
+                  
+                  {photoError && <p className="text-red-500 text-xs mt-1">{photoError}</p>}
                 </div>
                 
-                {photoError && <p className="text-red-500 text-xs mt-1">{photoError}</p>}
+                <div>
+                  <p className="block text-sm font-medium text-chocolate mb-1">
+                    Fotos actuales ({photos.length})
+                  </p>
+                  <p className="text-xs text-caramelo mb-2">
+                    Las fotos aparecerán en un carrusel en tu perfil público
+                  </p>
+                </div>
               </div>
               
-              <div>
-                <p className="block text-sm font-medium text-gray-700 mb-1">
-                  Fotos actuales ({photos.length})
-                </p>
-                <p className="text-xs text-muted-foreground mb-2">
-                  Las fotos aparecerán en un carrusel en tu perfil público
-                </p>
-              </div>
+              {/* Previsualización de fotos */}
+              {photos.length > 0 ? (
+                <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
+                  {photos.map((photo, index) => (
+                    <div 
+                      key={index} 
+                      className="relative group rounded-lg overflow-hidden h-[150px] border"
+                    >
+                      <Image
+                        src={photo}
+                        alt={`Foto ${index + 1}`}
+                        fill
+                        className="object-cover"
+                      />
+                      <div className="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-40 transition-all flex items-center justify-center opacity-0 group-hover:opacity-100">
+                        <Button
+                          variant="destructive"
+                          size="sm"
+                          className="bg-red-500 hover:bg-red-600"
+                          onClick={() => removePhoto(index)}
+                        >
+                          Eliminar
+                        </Button>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              ) : (
+                <div className="text-center py-8 border rounded-lg bg-caramelo/10">
+                  <p className="text-chocolate/70">No has añadido ninguna foto todavía</p>
+                </div>
+              )}
             </div>
             
-            {/* Previsualización de fotos */}
-            {photos.length > 0 ? (
-              <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
-                {photos.map((photo, index) => (
-                  <div 
-                    key={index} 
-                    className="relative group rounded-lg overflow-hidden h-[150px] border"
-                  >
-                    <Image
-                      src={photo}
-                      alt={`Foto ${index + 1}`}
-                      fill
-                      className="object-cover"
-                    />
-                    <div className="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-40 transition-all flex items-center justify-center opacity-0 group-hover:opacity-100">
-                      <Button
-                        variant="destructive"
-                        size="sm"
-                        className="bg-red-500 hover:bg-red-600"
-                        onClick={() => removePhoto(index)}
-                      >
-                        Eliminar
-                      </Button>
-                    </div>
-                  </div>
-                ))}
-              </div>
-            ) : (
-              <div className="text-center py-8 border rounded-lg bg-muted/20">
-                <p className="text-muted-foreground">No has añadido ninguna foto todavía</p>
-              </div>
-            )}
+            <FormField 
+              name="perfil" 
+              label="Perfil" 
+              value={userData.perfil}
+              onChange={handleChange}
+              placeholder="Describe tu perfil profesional"
+            />
+            
+            <FormField 
+              name="experiencia" 
+              label="Experiencia" 
+              value={userData.experiencia}
+              onChange={handleChange}
+              placeholder="Describe tu experiencia profesional"
+            />
+            
+            <FormField 
+              name="formacion" 
+              label="Formación" 
+              value={userData.formacion}
+              onChange={handleChange}
+              placeholder="Describe tu formación académica"
+            />
+            
+            <FormField 
+              name="herramientas" 
+              label="Herramientas" 
+              value={userData.herramientas}
+              onChange={handleChange}
+              placeholder="Lista las herramientas y tecnologías que manejas"
+            />
+            
+            <FormField 
+              name="idiomas" 
+              label="Idiomas" 
+              value={userData.idiomas}
+              onChange={handleChange}
+              placeholder="Lista los idiomas que hablas y tu nivel"
+            />
+            
+            <FormField 
+              name="informacion" 
+              label="Información adicional" 
+              value={userData.informacion}
+              onChange={handleChange}
+              placeholder="Cualquier otra información relevante"
+            />
+            
+            <div className="flex justify-end space-x-4 mt-8">
+              <button
+                type="button"
+                onClick={() => router.push('/profile')}
+                className="px-5 py-2 border border-chocolate rounded-full shadow-sm text-sm font-medium text-chocolate bg-white hover:bg-chocolate/10 transition-colors"
+              >
+                Cancelar
+              </button>
+              <button
+                type="submit"
+                disabled={saving}
+                className="px-5 py-2 border-0 rounded-full shadow-sm text-sm font-medium text-crema bg-chocolate hover:bg-chocolate/90 transition-colors"
+              >
+                {saving ? 'Guardando...' : 'Guardar cambios'}
+              </button>
+            </div>
           </div>
-          
-          <FormField 
-            name="perfil" 
-            label="Perfil" 
-            value={userData.perfil}
-            onChange={handleChange}
-            placeholder="Describe tu perfil profesional"
-          />
-          
-          <FormField 
-            name="experiencia" 
-            label="Experiencia" 
-            value={userData.experiencia}
-            onChange={handleChange}
-            placeholder="Describe tu experiencia profesional"
-          />
-          
-          <FormField 
-            name="formacion" 
-            label="Formación" 
-            value={userData.formacion}
-            onChange={handleChange}
-            placeholder="Describe tu formación académica"
-          />
-          
-          <FormField 
-            name="herramientas" 
-            label="Herramientas" 
-            value={userData.herramientas}
-            onChange={handleChange}
-            placeholder="Lista las herramientas y tecnologías que manejas"
-          />
-          
-          <FormField 
-            name="idiomas" 
-            label="Idiomas" 
-            value={userData.idiomas}
-            onChange={handleChange}
-            placeholder="Lista los idiomas que hablas y tu nivel"
-          />
-          
-          <FormField 
-            name="informacion" 
-            label="Información adicional" 
-            value={userData.informacion}
-            onChange={handleChange}
-            placeholder="Cualquier otra información relevante"
-          />
-          
-          <div className="flex justify-end space-x-4 mt-8">
-            <button
-              type="button"
-              onClick={() => router.push('/profile')}
-              className="px-4 py-2 border border-gray-300 rounded-md shadow-sm text-sm font-medium text-gray-700 bg-white hover:bg-gray-50"
-            >
-              Cancelar
-            </button>
-            <button
-              type="submit"
-              disabled={saving}
-              className="px-4 py-2 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-blue-600 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500"
-            >
-              {saving ? 'Guardando...' : 'Guardar cambios'}
-            </button>
-          </div>
-        </div>
-      </form>
+        </form>
+      </div>
     </div>
   );
 }
@@ -407,8 +412,8 @@ interface FormFieldProps {
 
 function FormField({ name, label, value, onChange, placeholder }: FormFieldProps) {
   return (
-    <div>
-      <label htmlFor={name} className="block text-sm font-medium text-gray-700">
+    <div className="bg-white/50 p-6 rounded-xl shadow-md">
+      <label htmlFor={name} className="block text-lg font-medium text-chocolate mb-2">
         {label}
       </label>
       <div className="mt-1">
@@ -419,7 +424,7 @@ function FormField({ name, label, value, onChange, placeholder }: FormFieldProps
           value={value}
           onChange={onChange}
           placeholder={placeholder}
-          className="shadow-sm focus:ring-blue-500 focus:border-blue-500 block w-full sm:text-sm border border-gray-300 rounded-md p-2 whitespace-pre-wrap"
+          className="shadow-sm focus:ring-caramelo focus:border-caramelo block w-full sm:text-sm border border-caramelo/30 rounded-lg p-3 whitespace-pre-wrap bg-white/80"
         />
       </div>
     </div>

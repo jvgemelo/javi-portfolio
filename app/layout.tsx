@@ -86,7 +86,7 @@ export default async function RootLayout({
           {/* <CarouselWrapper images={backgroundImages} /> */}
           <main className="min-h-screen flex flex-col items-center">
             <div className="flex-1 w-full flex flex-col gap-7 items-center bg-crema pb-8">
-              <nav className="w-full flex justify-center border-b border-b-foreground/10 h-16 backdrop-blur-sm bg-background sticky top-0 z-50 bg-crema">
+              <nav className="w-full flex justify-center  h-16 backdrop-blur-sm bg-background sticky top-0 z-50 bg-crema">
               <div className="w-full max-w-screen flex justify-between items-center p-3 px-5 text-sm">
                   <div className="w-1/4">
                     <Link href={"/"} className="text-xl font-bold bg-black bg-clip-text text-transparent hover:scale-105 transition-transform">JAVIER</Link>
