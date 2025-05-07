@@ -84,8 +84,8 @@ export default async function RootLayout({
           disableTransitionOnChange
         >
           {/* <CarouselWrapper images={backgroundImages} /> */}
-          <main className="min-h-screen flex flex-col items-center">
-            <div className="flex-1 w-full flex flex-col gap-7 items-center bg-crema pb-8">
+          <main className=" flex flex-col items-center">
+            <div className="flex-1 w-full flex flex-col gap-7 items-center bg-crema">
               <nav className="w-full flex justify-center  h-16 backdrop-blur-sm bg-background sticky top-0 z-50 bg-crema">
               <div className="w-full max-w-screen flex justify-between items-center p-3 px-5 text-sm">
                   <div className="w-1/4">

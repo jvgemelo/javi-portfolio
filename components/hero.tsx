@@ -10,26 +10,49 @@ const spaceGrotesk = Space_Grotesk({
 
 export default function Hero() {
   return (
-    <div className={`${spaceGrotesk.className} relative flex flex-col items-center gap-8 text-center overflow-hidden`}>
-      <div className="absolute inset-0 z-[1] flex justify-end">
+    <div className={`${spaceGrotesk.className} relative flex flex-col items-center gap-8 text-center overflow-hidden h-[80vh]`}>
+      <div className="absolute inset-0 z-[1] flex justify-center items-center">
         <Image
           src="/yo-portfolio-Photoroom.png"
           alt="Background"
-          width={500}
-          height={800}
-          className="object-contain scale-[1] mr-[100px]"
+          width={700}
+          height={1200}
+          className="object-contain"
           priority  
         />
       </div>
       
-      <div className="space-y-4 px-4 relative">
+      <div className="space-y-4 px-4 relative w-full">
         <h2 className="text-lg font-bold sm:text-xl">
           Javier García
         </h2>
-        <h1 className="text-xl text-chocolate font-bold text-muted-foreground md:text-8xl md:text-chocolate md:font-bold">
-          <span className="relative z-[30]">FRONTEND</span> <span className="">DEVELOPER {"</>"}</span>
-        </h1>
-        <p className="mx-auto max-w-[700px] text-lg text-muted-foreground">
+        <div className="flex flex-col pt-[14vh] pb-[10vh]">
+          <div className="absolute left-8 z-[25] flex flex-col gap-2 mt-4 bg-white p-2 py-8 rounded-full">
+            <div className="color-box group relative">
+              <div className="h-12 w-12 bg-chocolate rounded-md transition-all duration-300 group-hover:scale-110"></div>
+              <span className="opacity-0 group-hover:opacity-100 transition-opacity duration-300 text-xs absolute left-16 top-3">#5e3023</span>
+            </div>
+            <div className="color-box group relative">
+              <div className="h-12 w-12 bg-caramelo rounded-md transition-all duration-300 group-hover:scale-110"></div>
+              <span className="opacity-0 group-hover:opacity-100 transition-opacity duration-300 text-xs absolute left-16 top-3">#c08552</span>
+            </div>
+            <div className="color-box group relative">
+              <div className="h-12 w-12 bg-crema rounded-md transition-all duration-300 group-hover:scale-110"></div>
+              <span className="opacity-0 group-hover:opacity-100 transition-opacity duration-300 text-xs absolute left-16 top-3">#f3e9dc</span>
+            </div>
+          </div>
+          
+          <h1 className="text-xl text-chocolate font-bold ml-[20vw] text-muted-foreground md:text-8xl md:text-chocolate md:font-bold text-left">
+            <span className="relative z-[30]">FRONTEND</span>
+          </h1>
+          <h1 className="text-xl text-chocolate font-bold ml-44 text-muted-foreground md:text-8xl md:text-chocolate md:font-bold text-center">
+            <span>DEVEL<span className="inline-block w-[6rem]"></span>OPER {"</>"}</span>
+          </h1>
+        </div>
+      </div>
+      
+      <div className="absolute top-0 right-0 max-w-[250px] h-full flex items-center z-[20] px-4">
+        <p className="text-lg text-muted-foreground text-right">
           Bienvenido a mi portfolio personal. Soy un apasionado de la tecnología y el desarrollo de software, 
           especializado en crear aplicaciones web modernas y eficientes.
         </p>
@@ -40,11 +63,11 @@ export default function Hero() {
           <Link href="/profile">Ver mi perfil</Link>
         </Button>
         <Button asChild variant="outline" size="lg">
-          <Link href="mailto:contacto@ejemplo.com">Contactar</Link>
+          <Link href="/contacto">Contactar</Link>
         </Button>
       </div>
 
-      <div className="mt-4 grid grid-cols-1 gap-6 md:grid-cols-3 relative z-10">
+      <div className="mt-4 grid grid-cols-1 gap-20 md:grid-cols-3 relative z-10">
         <FeatureCard 
           title="Desarrollo Web" 
           description="Especializado en React, Next.js y otras tecnologías modernas para crear experiencias web interactivas."
@@ -70,7 +93,7 @@ function FeatureCard({
   description: string; 
 }) {
   return (
-    <div className="rounded-lg border p-6 text-card-foreground shadow-sm transition-all hover:shadow-md backdrop-blur-sm bg-background/60">
+    <div className="rounded-lg border p-6 text-card-foreground shadow-sm w-[25vw] transition-all hover:shadow-md backdrop-blur-sm bg-background/60">
       <h3 className="text-xl font-bold">{title}</h3>
       <p className="mt-2 text-black">{description}</p>
     </div>
