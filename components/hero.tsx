@@ -51,8 +51,8 @@ export default function Hero() {
         </div>
       </div>
       
-      <div className="absolute top-auto bottom-32 sm:bottom-auto sm:top-0 right-0 mr-4 sm:mr-16 max-w-[250px] h-auto sm:h-full flex items-center z-[20] px-4">
-        <p className="text-sm sm:text-lg font-bold text-center sm:text-right bg-white/80 sm:bg-transparent p-2 rounded-lg sm:p-0">
+      <div className="absolute top-8 sm:top-0 right-0 mr-4 sm:mr-16 max-w-[250px] h-auto sm:h-full flex items-center z-[20] px-4">
+        <p className="text-sm sm:text-lg font-bold text-center sm:text-right bg-white/80 sm:bg-transparent p-2 rounded-lg sm:p-0 z-[50]">
           Bienvenido a mi portfolio personal. Soy un apasionado de la tecnología y el desarrollo de software, 
           especializado en crear aplicaciones web modernas y eficientes.
         </p>

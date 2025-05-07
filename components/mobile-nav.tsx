@@ -98,7 +98,7 @@ export default function MobileNav() {
         <div className="flex flex-col items-center justify-center min-h-full py-20 px-8">
           {/* Logo en el menú móvil */}
           <div className="mb-12">
-            <Link href="/" onClick={toggleMenu} className="text-3xl font-bold bg-gradient-to-r from-primary to-blue-500 bg-clip-text text-transparent">
+            <Link href="/" onClick={toggleMenu} className="text-3xl font-bold bg-black bg-clip-text text-transparent">
               Javi Portfolio
             </Link>
           </div>
