@@ -140,13 +140,13 @@ export default function Projects() {
           zIndex: zIndex ?? 1,
         }}
       >
-        <div className="flex-shrink-0">
+        <div className="flex-shrink-0 mt-4 mb-4 md:my-0">
           <Image
             src={testimonial.image}
             alt="Testimonio"
-            width={size === "lg" ? 200 : 120}
-            height={size === "lg" ? 200 : 120}
-            className="bg-crema rounded-full"
+            width={size === "lg" ? 120 : 100}
+            height={size === "lg" ? 120 : 100}
+            className="bg-crema rounded-full md:w-[200px] md:h-[200px]"
           />
         </div>
         <div className={`bg-white/80 rounded-lg shadow p-6 text-chocolate text-base flex-1 ${size === "lg" ? "" : "text-sm"}`}>
@@ -268,11 +268,11 @@ export default function Projects() {
       {/* Sección Testimonios */}
       <section className="w-full bg-white pb-12 px-4 md:px-0 border-t border-caramelo/30">
         <div>
-          <h2 className="text-3xl md:text-5xl font-bold text-chocolate mb-8 text-center -mt-6">
+          <h2 className="text-3xl md:text-5xl font-bold text-chocolate mb-8 text-center mt-8">
             ¿QUÉ OPINAN MIS COMPAÑEROS SOBRE MÍ?
           </h2>
           <div
-            className="relative flex justify-center items-center h-[340px] overflow-hidden"
+            className="relative flex justify-center items-center h-[500px] md:h-[340px] overflow-hidden mt-8 md:mt-0"
             onTouchStart={onTouchStart}
             onTouchMove={onTouchMove}
             onTouchEnd={onTouchEnd}

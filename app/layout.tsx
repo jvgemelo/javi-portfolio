@@ -8,6 +8,7 @@ import MobileNav from "@/components/mobile-nav";
 import { hasEnvVars } from "@/utils/supabase/check-env-vars";
 import { Geist } from "next/font/google";
 import { Space_Grotesk } from "next/font/google";
+import { Dancing_Script } from "next/font/google";
 import { ThemeProvider } from "next-themes";
 import Link from "next/link";
 import "./globals.css";
@@ -34,6 +35,13 @@ const geistSans = Geist({
 const spaceGrotesk = Space_Grotesk({
   display: "swap",
   subsets: ["latin"],
+});
+
+// Agregamos la fuente caligráfica para la firma
+const dancingScript = Dancing_Script({
+  display: "swap",
+  subsets: ["latin"],
+  weight: ["700"], // Usamos negrita para mayor impacto
 });
 
 // Imágenes por defecto para el fondo
@@ -89,7 +97,7 @@ export default async function RootLayout({
               <nav className="w-full flex justify-center  h-16 backdrop-blur-sm bg-background sticky top-0 z-50 bg-crema">
               <div className="w-full max-w-screen flex justify-between items-center p-3 px-5 text-sm">
                   <div className="w-1/4">
-                    <Link href={"/"} className="text-xl font-bold bg-black bg-clip-text text-transparent hover:scale-105 transition-transform">JAVIER</Link>
+                    <Link href={"/"} className={`text-4xl font-bold bg-black bg-clip-text text-transparent hover:scale-105 transition-transform ${dancingScript.className}`}>Javier</Link>
                   </div>
                   <div className="w-2/4 flex justify-center">
                     <ResponsiveNav />
