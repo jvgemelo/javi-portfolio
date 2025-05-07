@@ -10,13 +10,21 @@ const spaceGrotesk = Space_Grotesk({
 
 export default function Hero() {
   return (
-    <div className="flex flex-col items-center gap-8 py-6 text-center lg:py-10">
-      <div className="space-y-4 px-4">
-        <h1 className="text-xl font-bold sm:text-5xl md:text-xl">
+    <div className={`${spaceGrotesk.className} relative flex flex-col items-center gap-8 text-center overflow-hidden min-h-[85vh]`}>
+      <div className="absolute inset-0 z-[1] flex justify-center items-center">
+        <Image
+          src="/yo-portfolio-Photoroom.png"
+          alt="Background"
+          width={700}
+          height={1200}
+          className="object-contain max-w-full h-auto"
+          priority  
+        />
+      </div>
+      
+      <div className="space-y-4 px-4 relative w-full">
+        <h2 className="text-lg font-bold sm:text-xl">
           Javier García
-        </h1>
-        <h2 className="text-6lg text-muted-foreground sm:text-7xl">
-          FRONTEND DEVELOPER {"</>"}
         </h2>
         <div className="flex flex-col pt-[10vh] sm:pt-[14vh] pb-[6vh] sm:pb-[10vh]">
           <div className="hidden sm:flex absolute left-4 sm:left-8 z-[25] flex-col gap-2 mt-4 bg-white p-2 py-4 sm:py-8 rounded-full">
