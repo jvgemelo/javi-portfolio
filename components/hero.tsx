@@ -10,7 +10,7 @@ const spaceGrotesk = Space_Grotesk({
 
 export default function Hero() {
   return (
-    <div className={`${spaceGrotesk.className} relative flex flex-col items-center gap-8 text-center overflow-hidden h-[80vh]`}>
+    <div className={`${spaceGrotesk.className} relative flex flex-col items-center gap-8 text-center overflow-hidden h-[85vh]`}>
       <div className="absolute inset-0 z-[1] flex justify-center items-center">
         <Image
           src="/yo-portfolio-Photoroom.png"
@@ -30,15 +30,16 @@ export default function Hero() {
           <div className="absolute left-8 z-[25] flex flex-col gap-2 mt-4 bg-white p-2 py-8 rounded-full">
             <div className="color-box group relative">
               <div className="h-12 w-12 bg-chocolate rounded-md transition-all duration-300 group-hover:scale-110"></div>
-              <span className="opacity-0 group-hover:opacity-100 transition-opacity duration-300 text-xs absolute left-16 top-3">#5e3023</span>
+              <span className="opacity-0 group-hover:opacity-100 transition-opacity duration-300 text-lg font-bold absolute left-16 top-3">#5e3023</span>
             </div>
             <div className="color-box group relative">
               <div className="h-12 w-12 bg-caramelo rounded-md transition-all duration-300 group-hover:scale-110"></div>
-              <span className="opacity-0 group-hover:opacity-100 transition-opacity duration-300 text-xs absolute left-16 top-3">#c08552</span>
+              <span className="opacity-0 group-hover:opacity-100 transition-opacity duration-300 text-lg font-bold absolute left-16 top-3">#c08552</span>
             </div>
             <div className="color-box group relative">
               <div className="h-12 w-12 bg-crema rounded-md transition-all duration-300 group-hover:scale-110"></div>
-              <span className="opacity-0 group-hover:opacity-100 transition-opacity duration-300 text-xs absolute left-16 top-3">#f3e9dc</span>
+              <span className="opacity-0 group-hover:opacity-100 transition-opacity duration-300 text-lg font-bold absolute left-16 top-3">#f3e9dc</span>
+              {/* <span className="opacity-0 group-hover:opacity-100 transition-opacity duration-300 text-xs absolute left-16 top-3">#f3e9dc</span> */}
             </div>
           </div>
           
@@ -51,8 +52,8 @@ export default function Hero() {
         </div>
       </div>
       
-      <div className="absolute top-0 right-0 max-w-[250px] h-full flex items-center z-[20] px-4">
-        <p className="text-lg text-muted-foreground text-right">
+      <div className="absolute top-0 right-0 mr-16 max-w-[250px] h-full flex items-center z-[20] px-4">
+        <p className="text-lg font-bold text-right">
           Bienvenido a mi portfolio personal. Soy un apasionado de la tecnología y el desarrollo de software, 
           especializado en crear aplicaciones web modernas y eficientes.
         </p>
