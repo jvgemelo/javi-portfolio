@@ -87,7 +87,7 @@ export default async function RootLayout({
       <body className="bg-white p-6 text-foreground">
         <ThemeProvider
           attribute="class"
-          defaultTheme="system"
+          defaultTheme="light"
           enableSystem
           disableTransitionOnChange
         >
