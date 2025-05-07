@@ -8,37 +8,44 @@ import Link from "next/link";
 export default async function Login(props: { searchParams: Promise<Message> }) {
   const searchParams = await props.searchParams;
   return (
-    <form className="flex-1 flex flex-col min-w-64 max-w-64 mx-auto">
-      <h1 className="text-2xl font-medium">Iniciar sesión</h1>
-      <p className="text-sm text-foreground">
-        ¿No tienes una cuenta?{" "}
-        <Link className="text-foreground font-medium underline" href="/sign-up">
-          Registrarse
-        </Link>
-      </p>
-      <div className="flex flex-col gap-2 [&>input]:mb-3 mt-8">
-        <Label htmlFor="email">Correo electrónico</Label>
-        <Input name="email" placeholder="tu@ejemplo.com" required />
-        <div className="flex justify-between items-center">
-          <Label htmlFor="password">Contraseña</Label>
-          <Link
-            className="text-xs text-foreground underline"
-            href="/forgot-password"
-          >
-            ¿Olvidaste tu contraseña?
+    <div className="min-h-[85vh] bg-crema flex items-center justify-center align-middle">
+      <form className="w-full max-w-md bg-white/80 rounded-lg shadow p-8 text-chocolate">
+        <h1 className="text-3xl md:text-4xl font-bold text-chocolate mb-4">Iniciar sesión</h1>
+        <p className="text-sm text-foreground mb-6">
+          ¿No tienes una cuenta?{" "}
+          <Link className="text-caramelo font-medium underline hover:text-chocolate transition" href="/sign-up">
+            Registrarse
           </Link>
+        </p>
+        <div className="flex flex-col gap-4 [&>input]:mb-3">
+          <Label htmlFor="email" className="text-chocolate">Correo electrónico</Label>
+          <Input name="email" placeholder="tu@ejemplo.com" required className="border-caramelo/30 focus:border-chocolate" />
+          <div className="flex justify-between items-center">
+            <Label htmlFor="password" className="text-chocolate">Contraseña</Label>
+            <Link
+              className="text-xs text-caramelo underline hover:text-chocolate transition"
+              href="/forgot-password"
+            >
+              ¿Olvidaste tu contraseña?
+            </Link>
+          </div>
+          <Input
+            type="password"
+            name="password"
+            placeholder="Tu contraseña"
+            required
+            className="border-caramelo/30 focus:border-chocolate"
+          />
+          <SubmitButton 
+            pendingText="Iniciando sesión..." 
+            formAction={signInAction}
+            className="mt-4 px-5 py-2 rounded-full bg-chocolate text-crema font-semibold shadow hover:bg-chocolate/90 transition"
+          >
+            Iniciar sesión
+          </SubmitButton>
+          <FormMessage message={searchParams} />
         </div>
-        <Input
-          type="password"
-          name="password"
-          placeholder="Tu contraseña"
-          required
-        />
-        <SubmitButton pendingText="Iniciando sesión..." formAction={signInAction}>
-          Iniciar sesión
-        </SubmitButton>
-        <FormMessage message={searchParams} />
-      </div>
-    </form>
+      </form>
+    </div>
   );
 }

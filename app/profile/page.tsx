@@ -11,11 +11,11 @@ export default async function Profile() {
   // If user is not logged in, show a message
   if (!user) {
     return (
-        <div className="flex flex-col items-center justify-center min-h-[65vh]">
+        <div className="flex flex-col items-center justify-center min-h-[85vh]">
           <h1 className="text-2xl font-bold">Necesitas iniciar sesión para ver tu perfil</h1>
           <p className="mt-2 text-gray-600">¡Inicia sesión como javiergarciasegovia1997@gmail.com y pass javier1234 para ver mi perfil!</p>
           <p className="mb-4 text-gray-600">Estas credenciales son de prueba para mostrar las funcionalidades de la aplicación.</p>
-          <a href="/sign-in" className="mt-4 px-4 py-2 bg-blue-500 text-white rounded">Ir a inicio de sesión</a>
+          <a href="/sign-in" className="mt-4 px-4 py-2 bg-caramelo text-white rounded">Ir a inicio de sesión</a>
         </div>
       );
   }         
@@ -60,63 +60,70 @@ export default async function Profile() {
   const mostrarEjemplo = !userData || !perfilEditado;
 
   return (
-    <div className="container mx-auto py-8 px-4">
-      <div className="flex justify-between items-center">
-        <h1 className="text-3xl font-bold">Perfil de Usuario</h1>
-        <Link 
-          href="/profile/edit" 
-          className="px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700 transition-colors"
-        >
-          Editar Perfil
-        </Link>
-      </div>
+    <div className="min-h-screen bg-crema">
+      {/* Título principal */}
+      <header className="text-start">
+        <h1 className="text-6xl md:text-7xl font-extrabold text-chocolate tracking-tight px-12">PERFIL</h1>
+      </header>
 
-      {/* Carrusel de fotos */}
-      <ProfilePhotoCarousel photos={userPhotos} />
-      
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-10">
-        <ProfileSection 
-          title="Perfil" 
-          content={mostrarEjemplo ? datosEjemplo.perfil : userData.perfil} 
-          isExample={mostrarEjemplo}
-        />
-        <ProfileSection 
-          title="Experiencia" 
-          content={mostrarEjemplo ? datosEjemplo.experiencia : userData.experiencia} 
-          isExample={mostrarEjemplo}
-        />
-        <ProfileSection 
-          title="Formación" 
-          content={mostrarEjemplo ? datosEjemplo.formacion : userData.formacion} 
-          isExample={mostrarEjemplo}
-        />
-        <ProfileSection 
-          title="Herramientas" 
-          content={mostrarEjemplo ? datosEjemplo.herramientas : userData.herramientas} 
-          isExample={mostrarEjemplo}
-        />
-        <ProfileSection 
-          title="Idiomas" 
-          content={mostrarEjemplo ? datosEjemplo.idiomas : userData.idiomas} 
-          isExample={mostrarEjemplo}
-        />
-        <ProfileSection 
-          title="Información adicional" 
-          content={mostrarEjemplo ? datosEjemplo.informacion : userData.informacion} 
-          isExample={mostrarEjemplo}
-        />
-        {mostrarEjemplo && (
-          <div className="md:col-span-2 bg-blue-50 p-4 rounded-lg shadow">
-            <p className="text-blue-700 font-medium mb-2">👆 Los datos mostrados son ejemplos</p>
-            <p className="text-blue-600">Edita tu perfil para personalizar esta información.</p>
-            <Link 
-              href="/profile/edit" 
-              className="mt-3 inline-block px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700 transition-colors"
-            >
-              {userData ? 'Editar mi perfil' : 'Crear mi perfil'}
-            </Link>
-          </div>
-        )}
+      <div className="container mx-auto py-8 px-4">
+        <div className="flex justify-between items-center">
+          <h2 className="text-3xl font-bold text-chocolate">Información Personal</h2>
+          <Link 
+            href="/profile/edit" 
+            className="px-4 py-2 bg-chocolate text-crema rounded-full hover:bg-chocolate/90 transition-colors shadow"
+          >
+            Editar Perfil
+          </Link>
+        </div>
+
+        {/* Carrusel de fotos */}
+        <ProfilePhotoCarousel photos={userPhotos} />
+        
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-10">
+          <ProfileSection 
+            title="Perfil" 
+            content={mostrarEjemplo ? datosEjemplo.perfil : userData.perfil} 
+            isExample={mostrarEjemplo}
+          />
+          <ProfileSection 
+            title="Experiencia" 
+            content={mostrarEjemplo ? datosEjemplo.experiencia : userData.experiencia} 
+            isExample={mostrarEjemplo}
+          />
+          <ProfileSection 
+            title="Formación" 
+            content={mostrarEjemplo ? datosEjemplo.formacion : userData.formacion} 
+            isExample={mostrarEjemplo}
+          />
+          <ProfileSection 
+            title="Herramientas" 
+            content={mostrarEjemplo ? datosEjemplo.herramientas : userData.herramientas} 
+            isExample={mostrarEjemplo}
+          />
+          <ProfileSection 
+            title="Idiomas" 
+            content={mostrarEjemplo ? datosEjemplo.idiomas : userData.idiomas} 
+            isExample={mostrarEjemplo}
+          />
+          <ProfileSection 
+            title="Información adicional" 
+            content={mostrarEjemplo ? datosEjemplo.informacion : userData.informacion} 
+            isExample={mostrarEjemplo}
+          />
+          {mostrarEjemplo && (
+            <div className="md:col-span-2 bg-caramelo/20 p-6 rounded-lg shadow">
+              <p className="text-chocolate font-medium mb-2">👆 Los datos mostrados son ejemplos</p>
+              <p className="text-chocolate">Edita tu perfil para personalizar esta información.</p>
+              <Link 
+                href="/profile/edit" 
+                className="mt-3 inline-block px-5 py-2 bg-chocolate text-crema rounded-full hover:bg-chocolate/90 transition-colors shadow"
+              >
+                {userData ? 'Editar mi perfil' : 'Crear mi perfil'}
+              </Link>
+            </div>
+          )}
+        </div>
       </div>
     </div>
   );
@@ -125,14 +132,14 @@ export default async function Profile() {
 // Helper component for displaying profile sections
 function ProfileSection({ title, content, isExample = false }: { title: string; content: string | null; isExample?: boolean }) {
   return (
-    <div className={`bg-white p-6 rounded-lg shadow ${isExample ? 'border border-dashed border-gray-300' : ''}`}>
-      <h2 className="text-xl font-semibold mb-3">{title}</h2>
+    <div className={`bg-white/50 p-6 rounded-xl shadow-md ${isExample ? 'border border-dashed border-caramelo/50' : ''}`}>
+      <h2 className="text-xl font-bold mb-3 text-chocolate">{title}</h2>
       {isExample ? (
-        <p className="text-gray-500 italic">{content || 'Sin información proporcionada'}</p>
+        <p className="text-chocolate/70 italic">{content || 'Sin información proporcionada'}</p>
       ) : (
-        <p className="text-gray-700">{content || 'Sin información proporcionada'}</p>
+        <p className="text-chocolate">{content || 'Sin información proporcionada'}</p>
       )}
-      {isExample && <span className="text-xs text-gray-400 mt-2 block">Datos de ejemplo</span>}
+      {isExample && <span className="text-xs text-caramelo mt-2 block">Datos de ejemplo</span>}
     </div>
   );
 } 
