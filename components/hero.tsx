@@ -1,7 +1,6 @@
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { Space_Grotesk } from "next/font/google";
-import Image from "next/image";
 
 const spaceGrotesk = Space_Grotesk({
   display: "swap",
@@ -11,24 +10,13 @@ const spaceGrotesk = Space_Grotesk({
 export default function Hero() {
   return (
     <div className={`${spaceGrotesk.className} relative flex flex-col items-center gap-8 text-center overflow-hidden min-h-[85vh]`}>
-      <div className="absolute inset-0 z-[1] flex justify-center items-center">
-        <Image
-          src="/yo-portfolio-Photoroom.png"
-          alt="Background"
-          width={700}
-          height={1200}
-          className="object-contain max-w-full h-auto"
-          priority  
-        />
-      </div>
-      
       <div className="space-y-4 px-4 relative w-full">
         <h2 className="text-lg font-bold sm:text-xl">
           Javier García
         </h2>
         <div className="flex flex-col pt-[10vh] sm:pt-[14vh] pb-[6vh] sm:pb-[10vh]">
           <div className="hidden sm:flex absolute left-4 sm:left-8 z-[25] flex-col gap-2 mt-4 bg-white p-2 py-4 sm:py-8 rounded-full">
-            <div className="color-box group relative">
+            <div className="color-box group relative"> 
               <div className="h-8 w-8 sm:h-12 sm:w-12 bg-chocolate rounded-md transition-all duration-300 group-hover:scale-110"></div>
               <span className="opacity-0 group-hover:opacity-100 transition-opacity duration-300 text-sm sm:text-lg font-bold absolute left-12 sm:left-16 top-2 sm:top-3">#5e3023</span>
             </div>
@@ -42,17 +30,24 @@ export default function Hero() {
             </div>
           </div>
           
-          <h1 className="text-3xl sm:text-5xl md:text-8xl text-chocolate font-bold ml-0 sm:ml-[20vw] text-center sm:text-left relative z-[30]">
+          <h1 className="text-3xl sm:text-5xl md:text-8xl text-chocolate font-bold text-center relative z-[30]">
             FRONTEND
           </h1>
-          <h1 className="text-3xl sm:text-5xl md:text-8xl text-chocolate font-bold ml-0 sm:ml-44 text-center">
-            <span>DEVEL<span className="inline-block w-[3rem] sm:w-[6rem]"></span>OPER {"</>"}</span>
+          <h1 className="text-3xl sm:text-5xl md:text-8xl text-chocolate font-bold text-center">
+            <span>DEVELOPER {"</>"}</span>
           </h1>
+          
+          <div className="block sm:hidden mt-6 px-4">
+            <p className="text-sm font-bold text-center bg-white/80 p-3 rounded-lg">
+              Bienvenido a mi portfolio personal. Soy un apasionado de la tecnología y el desarrollo de software, 
+              especializado en crear aplicaciones web modernas y eficientes.
+            </p>
+          </div>
         </div>
       </div>
       
-      <div className="absolute top-8 sm:top-0 right-0 mr-4 sm:mr-16 max-w-[250px] h-auto sm:h-full flex items-center z-[20] px-4">
-        <p className="text-sm sm:text-lg font-bold text-center sm:text-right bg-white/80 sm:bg-transparent p-2 rounded-lg sm:p-0 z-[50]">
+      <div className="hidden sm:flex absolute top-0 right-0 mr-4 sm:mr-16 max-w-[250px] h-full items-center z-[20] px-4">
+        <p className="text-lg font-bold text-right">
           Bienvenido a mi portfolio personal. Soy un apasionado de la tecnología y el desarrollo de software, 
           especializado en crear aplicaciones web modernas y eficientes.
         </p>
