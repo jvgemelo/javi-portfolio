@@ -155,7 +155,7 @@ export default function Projects() {
               <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">DISEÑOS CON FIGMA!</h2>
               <Image src="/figma.png" alt="Figma" width={70} height={30} />
             </div>
-            <p className="text-black text-lg mb-4 max-w-md">
+            <p className="text-white text-lg mb-4 max-w-md">
               Aunque aún aprendiendo, y sin tener conocimientos certificados en diseño, he realizado diversos diseños en Figma a base de aprendizaje autodidacta y algún curso!
             </p>
             <a href="https://www.figma.com/design/C7y0nuC4q5khzwpgL00snR/Untitled?node-id=0-1&t=kP4HIBTzqH3TtqxI-1" className="inline-flex items-center gap-2 px-5 py-2 rounded-full bg-black text-white font-semibold shadow hover:bg-black/90 transition">
