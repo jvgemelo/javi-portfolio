@@ -1,11 +1,5 @@
-import ProfilePhotoCarousel from '@/components/profile-photo-carousel';
-
 // Datos estáticos del perfil - Edita estos datos directamente en el código
 const profileData = {
-  photos: [
-    "/yo-portfolio-Photoroom.png",
-    "/yo-comics-Photoroom.png",
-  ],
   aboutMe: `Soy un desarrollador full stack apasionado por crear soluciones tecnológicas innovadoras. 
     Con experiencia en desarrollo web moderno, me especializo en construir aplicaciones escalables 
     y eficientes que mejoran la experiencia del usuario.`,
@@ -66,16 +60,25 @@ export default function Profile() {
       </header>
 
       <div className="container mx-auto py-8 px-4">
-        {/* Carrusel de fotos */}
-        <ProfilePhotoCarousel photos={profileData.photos} />
-        
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-10">
+        {/* Foto y About Me */}
+        <div className="grid grid-cols-1 md:grid-cols-[auto_1fr] gap-6 mb-10">
+          {/* Foto */}
+          <div className="flex justify-center md:justify-start">
+            <img 
+              src="/6005869666301494380.jpg" 
+              alt="Profile" 
+              className="rounded-xl shadow-md object-cover w-full max-w-md"
+            />po
+          </div>
+          
           {/* About Me */}
           <ProfileSection 
             title="About Me" 
             content={profileData.aboutMe}
-            fullWidth
           />
+        </div>
+        
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
 
           {/* Experience */}
           <ProfileSection 
