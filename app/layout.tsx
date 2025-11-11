@@ -2,7 +2,7 @@ import { ThemeSwitcher } from "@/components/theme-switcher";
 import PortfolioNav from "@/components/portfolio-nav";
 import ResponsiveNav from "@/components/responsive-nav";
 import MobileNav from "@/components/mobile-nav";
-import { Geist } from "next/font/google";
+import { Geist, Geist_Mono } from "next/font/google";
 import { Space_Grotesk } from "next/font/google";
 import { Dancing_Script } from "next/font/google";
 import { ThemeProvider } from "next-themes";
@@ -21,9 +21,13 @@ export const metadata = {
   title: "Javier - Portfolio Personal",
   description: "Portfolio profesional con mis proyectos y experiencia",
 };
-
 const geistSans = Geist({
-  display: "swap",
+  variable: "--font-geist-sans",
+  subsets: ["latin"],
+});
+
+const geistMono = Geist_Mono({
+  variable: "--font-geist-mono",
   subsets: ["latin"],
 });
 
@@ -55,8 +59,8 @@ export default function RootLayout({
   const backgroundImages = defaultBackgroundImages;
 
   return (
-    <html lang="es" className={spaceGrotesk.className} suppressHydrationWarning>
-      <body className="bg-white p-6 text-foreground">
+    <html lang="es" className={`${spaceGrotesk.className} ${geistSans.variable} ${geistMono.variable}`} suppressHydrationWarning>
+      <body className="text-foreground">
         <ThemeProvider
           attribute="class"
           defaultTheme="light"
@@ -66,7 +70,7 @@ export default function RootLayout({
           {/* <CarouselWrapper images={backgroundImages} /> */}
           <main className=" flex flex-col items-center">
             <div className="flex-1 w-full flex flex-col gap-7 items-center bg-white">
-              <nav className="w-full flex justify-center  h-16 backdrop-blur-sm bg-background sticky top-0 z-50 bg-white border-b border-black/10">
+              <nav className="w-full flex justify-center  h-16 backdrop-blur-sm bg-background sticky top-0 z-50 bg-white">
               <div className="w-full max-w-screen flex justify-between items-center p-3 px-5 text-sm">
                   <div className="w-1/4">
                     <Link href={"/"} className={`text-4xl font-bold bg-black bg-clip-text text-transparent hover:scale-105 transition-transform ${dancingScript.className}`}>Javier</Link>

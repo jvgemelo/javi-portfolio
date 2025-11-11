@@ -56,6 +56,10 @@ const config = {
         caramelo: "#4a4a4a",
         chocolate: "#000000",
       },
+      fontFamily: {
+        "geist-sans": ["var(--font-geist-sans)"],
+        "geist-mono": ["var(--font-geist-mono)"],
+      },
       borderRadius: {
         lg: "var(--radius)",
         md: "calc(var(--radius) - 2px)",
