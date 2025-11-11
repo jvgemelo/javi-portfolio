@@ -15,25 +15,25 @@ export default function Hero() {
           Javier García
         </h2>
         <div className="flex flex-col pt-[10vh] sm:pt-[14vh] pb-[6vh] sm:pb-[10vh]">
-          <div className="hidden sm:flex absolute left-4 sm:left-8 z-[25] flex-col gap-2 mt-4 bg-white p-2 py-4 sm:py-8 rounded-full">
+          <div className="hidden sm:flex absolute left-4 sm:left-8 z-[25] flex-col gap-2 mt-4 bg-white p-2 py-4 sm:py-8 rounded-full border border-black/10 shadow-lg">
             <div className="color-box group relative"> 
-              <div className="h-8 w-8 sm:h-12 sm:w-12 bg-chocolate rounded-md transition-all duration-300 group-hover:scale-110"></div>
-              <span className="opacity-0 group-hover:opacity-100 transition-opacity duration-300 text-sm sm:text-lg font-bold absolute left-12 sm:left-16 top-2 sm:top-3">#5e3023</span>
+              <div className="h-8 w-8 sm:h-12 sm:w-12 bg-black rounded-md transition-all duration-300 group-hover:scale-110"></div>
+              <span className="opacity-0 group-hover:opacity-100 transition-opacity duration-300 text-sm sm:text-lg font-bold absolute left-12 sm:left-16 top-2 sm:top-3">#000000</span>
             </div>
             <div className="color-box group relative">
-              <div className="h-8 w-8 sm:h-12 sm:w-12 bg-caramelo rounded-md transition-all duration-300 group-hover:scale-110"></div>
-              <span className="opacity-0 group-hover:opacity-100 transition-opacity duration-300 text-sm sm:text-lg font-bold absolute left-12 sm:left-16 top-2 sm:top-3">#c08552</span>
+              <div className="h-8 w-8 sm:h-12 sm:w-12 bg-[#4a4a4a] rounded-md transition-all duration-300 group-hover:scale-110"></div>
+              <span className="opacity-0 group-hover:opacity-100 transition-opacity duration-300 text-sm sm:text-lg font-bold absolute left-12 sm:left-16 top-2 sm:top-3">#4a4a4a</span>
             </div>
             <div className="color-box group relative">
-              <div className="h-8 w-8 sm:h-12 sm:w-12 bg-crema rounded-md transition-all duration-300 group-hover:scale-110"></div>
-              <span className="opacity-0 group-hover:opacity-100 transition-opacity duration-300 text-sm sm:text-lg font-bold absolute left-12 sm:left-16 top-2 sm:top-3">#f3e9dc</span>
+              <div className="h-8 w-8 sm:h-12 sm:w-12 bg-white border border-black/20 rounded-md transition-all duration-300 group-hover:scale-110"></div>
+              <span className="opacity-0 group-hover:opacity-100 transition-opacity duration-300 text-sm sm:text-lg font-bold absolute left-12 sm:left-16 top-2 sm:top-3">#ffffff</span>
             </div>
           </div>
           
-          <h1 className="text-3xl sm:text-5xl md:text-8xl text-chocolate font-bold text-center relative z-[30]">
+          <h1 className="text-3xl sm:text-5xl md:text-8xl text-black font-bold text-center relative z-[30]">
             FRONTEND
           </h1>
-          <h1 className="text-3xl sm:text-5xl md:text-8xl text-chocolate font-bold text-center">
+          <h1 className="text-3xl sm:text-5xl md:text-8xl text-black font-bold text-center">
             <span>DEVELOPER {"</>"}</span>
           </h1>
           
@@ -54,7 +54,7 @@ export default function Hero() {
       </div>
       
       <div className="flex flex-wrap justify-center gap-4 relative z-[20] mt-auto sm:mt-0">
-        <Button asChild size="lg" className="bg-caramelo text-crema hover:bg-caramelo/80">
+        <Button asChild size="lg" className="bg-black text-white hover:bg-black/90 transition-all shadow-lg">
           <Link href="/profile">Ver mi perfil</Link>
         </Button>
         <Button asChild variant="outline" size="lg">

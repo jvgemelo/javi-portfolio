@@ -80,25 +80,25 @@ export default function Projects() {
             alt="Testimonio"
             width={200}
             height={200}
-            className="bg-crema rounded-full w-[120px] h-[120px] md:w-[200px] md:h-[200px]"
+            className="bg-white rounded-full w-[120px] h-[120px] md:w-[200px] md:h-[200px] border border-black/10"
           />
         </div>
-        <div className="bg-white/80 rounded-lg shadow p-6 text-chocolate text-base flex-1">
+        <div className="bg-white/80 rounded-lg shadow p-6 text-black text-base flex-1">
           {testimonial.text.map((paragraph, idx) => (
             <p className="mb-4" key={idx}>{paragraph}</p>
           ))}
           <div className="font-bold mt-2">{testimonial.name}</div>
-          <div className="text-sm text-caramelo">{testimonial.role}</div>
+          <div className="text-sm text-[#4a4a4a]">{testimonial.role}</div>
         </div>
       </div>
     );
   }
 
   return (
-    <div className="min-h-screen bg-crema">
+    <div className="min-h-screen bg-white">
       {/* Título principal */}
       <header className="text-start">
-        <h1 className="text-6xl md:text-7xl font-extrabold text-chocolate tracking-tight px-12">PROYECTOS</h1>
+        <h1 className="text-6xl md:text-7xl font-extrabold text-black tracking-tight px-12">PROYECTOS</h1>
       </header>
 
       {/* Grid de proyectos */}
@@ -110,7 +110,7 @@ export default function Projects() {
         </div>
       </section>
       {/* Sección Paquete NPM */}
-      <section className="w-full bg-crema py-12 border-t border-caramelo/30">
+      <section className="w-full bg-white py-12 border-t border-black/10">
         <div className="container mx-auto flex flex-col md:flex-row items-center gap-8">
           <div className="flex-1 flex justify-center rounded-lg order-2 md:order-1">
             <div className="relative w-[340px] h-[260px] md:w-[420px] md:h-[320px] group">
@@ -119,7 +119,7 @@ export default function Projects() {
                 alt="Paquete NPM"
                 width={400}
                 height={300}
-                className="object-contain rounded-lg shadow-lg border-4 border-chocolate/30 transition-transform duration-300 ease-in-out group-hover:scale-105 group-hover:shadow-2xl"
+                className="object-contain rounded-lg shadow-lg border-4 border-black/20 transition-transform duration-300 ease-in-out group-hover:scale-105 group-hover:shadow-2xl"
               />
               <div className="absolute -bottom-4 -right-4 bg-red-600 text-white p-3 rounded-full shadow-lg transform rotate-12 group-hover:rotate-6 transition-transform duration-300">
                 <Image src="/npm-logo-black.png" alt="NPM Logo" width={40} height={40} />
@@ -128,38 +128,38 @@ export default function Projects() {
           </div>
           <div className="flex-1 flex flex-col items-center md:items-start order-1 md:order-2 px-6 md:px-0">
             <div className="flex flex-row items-center gap-2">
-              <h2 className="text-3xl md:text-4xl font-bold text-chocolate mb-4">PAQUETE NPM</h2>
-              <div className="bg-caramelo/20 px-3 py-1 rounded-full text-sm font-semibold text-chocolate">
+              <h2 className="text-3xl md:text-4xl font-bold text-black mb-4">PAQUETE NPM</h2>
+              <div className="bg-black/10 px-3 py-1 rounded-full text-sm font-semibold text-black">
                 Publicado
               </div>
             </div>
-            <p className="text-chocolate text-lg mb-4 max-w-md">
+            <p className="text-black text-lg mb-4 max-w-md">
               He colaborado en el desarrollo de un paquete npm para mi empresa que optimiza el flujo de trabajo, automatizando procesos repetitivos y proporcionando utilidades específicas para nuestros proyectos.
             </p>
             {/* <p className="text-chocolate text-lg mb-6 max-w-md">
               Este paquete incluye herramientas para la manipulación de datos, componentes reutilizables y funciones de ayuda que han mejorado significativamente nuestra eficiencia de desarrollo.
             </p> */}
-            <p className="text-chocolate text-lg mb-6 max-w-md">
+            <p className="text-black text-lg mb-6 max-w-md">
               Sorolla es una biblioteca de componentes React optimizada tanto para proyectos de React vanilla como Next.js, que proporciona eficientes herramientas de anotación basadas en canvas impulsadas por Konva.
             </p>
-            <a href="https://www.npmjs.com/package/@siali/sorolla" className="inline-flex items-center gap-2 px-5 py-2 rounded-full bg-chocolate text-crema font-semibold shadow hover:bg-chocolate/90 transition">
+            <a href="https://www.npmjs.com/package/@siali/sorolla" className="inline-flex items-center gap-2 px-5 py-2 rounded-full bg-black text-white font-semibold shadow hover:bg-black/90 transition">
               Más información <span className="text-xl">↗</span>
             </a>
           </div>
         </div>
       </section>
       {/* Sección Diseños con Figma */}
-      <section className="w-full bg-caramelo py-12">
+      <section className="w-full bg-[#4a4a4a] py-12">
         <div className="container mx-auto flex flex-col md:flex-row items-center gap-8">
           <div className="flex-1 flex flex-col items-center md:items-start">
             <div className="flex flex-row">
-              <h2 className="text-3xl md:text-4xl font-bold text-chocolate mb-4">DISEÑOS CON FIGMA!</h2>
+              <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">DISEÑOS CON FIGMA!</h2>
               <Image src="/figma.png" alt="Figma" width={70} height={30} />
             </div>
-            <p className="text-chocolate text-lg mb-4 max-w-md">
+            <p className="text-black text-lg mb-4 max-w-md">
               Aunque aún aprendiendo, y sin tener conocimientos certificados en diseño, he realizado diversos diseños en Figma a base de aprendizaje autodidacta y algún curso!
             </p>
-            <a href="https://www.figma.com/design/C7y0nuC4q5khzwpgL00snR/Untitled?node-id=0-1&t=kP4HIBTzqH3TtqxI-1" className="inline-flex items-center gap-2 px-5 py-2 rounded-full bg-chocolate text-crema font-semibold shadow hover:bg-chocolate/90 transition">
+            <a href="https://www.figma.com/design/C7y0nuC4q5khzwpgL00snR/Untitled?node-id=0-1&t=kP4HIBTzqH3TtqxI-1" className="inline-flex items-center gap-2 px-5 py-2 rounded-full bg-black text-white font-semibold shadow hover:bg-black/90 transition">
               Link al portfolio <span className="text-xl">↗</span>
             </a>
           </div>
@@ -171,7 +171,7 @@ export default function Projects() {
                 alt="Diseño Figma"
                 width={350}
                 height={270}
-                className="object-contain rounded-lg shadow-lg border-4 border-chocolate/30 absolute left-60 top-16 rotate-[8deg] z-20 transition-transform duration-300 ease-in-out group-hover:scale-105 group-hover:rotate-[12deg] group-hover:shadow-2xl"
+                className="object-contain rounded-lg shadow-lg border-4 border-black/20 absolute left-60 top-16 rotate-[8deg] z-20 transition-transform duration-300 ease-in-out group-hover:scale-105 group-hover:rotate-[12deg] group-hover:shadow-2xl"
                 style={{ zIndex: 20 }}
               />
               {/* Imagen del medio (inicio) */}
@@ -180,7 +180,7 @@ export default function Projects() {
                 alt="Inicio"
                 width={350}
                 height={270}
-                className="object-contain rounded-lg shadow-lg border-4 border-chocolate/30 absolute left-10 top-0 rotate-[-6deg] z-10 transition-transform duration-300 ease-in-out group-hover:scale-105 group-hover:rotate-[-12deg] group-hover:shadow-2xl"
+                className="object-contain rounded-lg shadow-lg border-4 border-black/20 absolute left-10 top-0 rotate-[-6deg] z-10 transition-transform duration-300 ease-in-out group-hover:scale-105 group-hover:rotate-[-12deg] group-hover:shadow-2xl"
                 style={{ zIndex: 10 }}
               />
               {/* Imagen superior (works) */}
@@ -189,7 +189,7 @@ export default function Projects() {
                 alt="Works"
                 width={350}
                 height={270}
-                className="object-contain rounded-lg shadow-lg border-4 border-chocolate/30 absolute left-20 top-32 rotate-[-2deg] z-30 transition-transform duration-300 ease-in-out group-hover:scale-105 group-hover:rotate-[2deg] group-hover:shadow-2xl"
+                className="object-contain rounded-lg shadow-lg border-4 border-black/20 absolute left-20 top-32 rotate-[-2deg] z-30 transition-transform duration-300 ease-in-out group-hover:scale-105 group-hover:rotate-[2deg] group-hover:shadow-2xl"
                 style={{ zIndex: 30 }}
               />
             </div>
@@ -200,9 +200,9 @@ export default function Projects() {
 
 
       {/* Sección Testimonios */}
-      <section className="w-full bg-white pb-12 px-4 md:px-0 border-t border-caramelo/30">
+      <section className="w-full bg-white pb-12 px-4 md:px-0 border-t border-black/10">
         <div>
-          <h2 className="text-3xl md:text-5xl font-bold text-chocolate mb-8 text-center mt-8">
+          <h2 className="text-3xl md:text-5xl font-bold text-black mb-8 text-center mt-8">
             ¿QUÉ OPINAN MIS COMPAÑEROS SOBRE MÍ?
           </h2>
           <div className="mt-8">
@@ -210,9 +210,9 @@ export default function Projects() {
               items={testimonials}
               renderItem={(testimonial) => <TestimonialCard testimonial={testimonial} />}
               minHeight="400px"
-              arrowColor="text-chocolate"
-              activeIndicatorColor="bg-chocolate"
-              inactiveIndicatorColor="bg-caramelo hover:bg-chocolate/70"
+              arrowColor="text-black"
+              activeIndicatorColor="bg-black"
+              inactiveIndicatorColor="bg-[#4a4a4a] hover:bg-black/70"
             />
           </div>
         </div>
@@ -228,19 +228,19 @@ function ProjectCard({ project }: { project: typeof projects[0] }) {
         {project.imageUrl ? (
           <Image src={project.imageUrl} alt={project.title} fill className="object-contain object-top" />
         ) : (
-          <div className="absolute inset-0 bg-caramelo/20 flex items-center justify-center">
+          <div className="absolute inset-0 bg-black/10 flex items-center justify-center">
             <p className="text-black font-bold text-lg">Vista previa</p>
           </div>
         )}
       </div>
       <div className="p-6">
-        <h3 className="text-xl font-bold mb-2 text-chocolate">{project.title}</h3>
+        <h3 className="text-xl font-bold mb-2 text-black">{project.title}</h3>
         <p className="text-black mb-4">{project.description}</p>
         <div className="flex flex-wrap gap-2 mb-4">
           {project.technologies.map((tech) => (
             <span
               key={tech}
-              className="text-xs px-2 py-1 bg-caramelo text-black rounded-full border border-caramelo/30"
+              className="text-xs px-2 py-1 bg-black/10 text-black rounded-full border border-black/20"
             >
               {tech}
             </span>

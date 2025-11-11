@@ -52,9 +52,9 @@ const config = {
           DEFAULT: "hsl(var(--card))",
           foreground: "hsl(var(--card-foreground))",
         },
-        crema: "#f3e9dc",
-        caramelo: "#c08552",
-        chocolate: "#5e3023",
+        crema: "#ffffff",
+        caramelo: "#4a4a4a",
+        chocolate: "#000000",
       },
       borderRadius: {
         lg: "var(--radius)",

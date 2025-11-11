@@ -53,10 +53,10 @@ const profileData = {
 
 export default function Profile() {
   return (
-    <div className="min-h-screen bg-crema">
+    <div className="min-h-screen bg-white">
       {/* Título principal */}
       <header className="text-start">
-        <h1 className="text-6xl md:text-7xl font-extrabold text-chocolate tracking-tight px-12">PERFIL</h1>
+        <h1 className="text-6xl md:text-7xl font-extrabold text-black tracking-tight px-12">PERFIL</h1>
       </header>
 
       <div className="container mx-auto py-8 px-4">
@@ -86,10 +86,10 @@ export default function Profile() {
             content={
               <div className="space-y-6">
                 {profileData.experience.map((exp, index) => (
-                  <div key={index} className="border-l-4 border-caramelo pl-4">
-                    <h3 className="text-lg font-bold text-chocolate">{exp.position}</h3>
-                    <p className="text-caramelo font-medium">{exp.company} • {exp.period}</p>
-                    <p className="text-chocolate/80 mt-2">{exp.description}</p>
+                  <div key={index} className="border-l-4 border-[#4a4a4a] pl-4">
+                    <h3 className="text-lg font-bold text-black">{exp.position}</h3>
+                    <p className="text-[#4a4a4a] font-medium">{exp.company} • {exp.period}</p>
+                    <p className="text-black/80 mt-2">{exp.description}</p>
                   </div>
                 ))}
               </div>
@@ -103,10 +103,10 @@ export default function Profile() {
             content={
               <div className="space-y-6">
                 {profileData.education.map((edu, index) => (
-                  <div key={index} className="border-l-4 border-chocolate pl-4">
-                    <h3 className="text-lg font-bold text-chocolate">{edu.degree}</h3>
-                    <p className="text-caramelo font-medium">{edu.institution} • {edu.period}</p>
-                    <p className="text-chocolate/80 mt-2">{edu.description}</p>
+                  <div key={index} className="border-l-4 border-black pl-4">
+                    <h3 className="text-lg font-bold text-black">{edu.degree}</h3>
+                    <p className="text-[#4a4a4a] font-medium">{edu.institution} • {edu.period}</p>
+                    <p className="text-black/80 mt-2">{edu.description}</p>
                   </div>
                 ))}
               </div>
@@ -121,8 +121,8 @@ export default function Profile() {
               <div className="space-y-3">
                 {profileData.languages.map((lang, index) => (
                   <div key={index} className="flex justify-between items-center">
-                    <span className="font-semibold text-chocolate">{lang.name}</span>
-                    <span className="text-caramelo">{lang.level}</span>
+                    <span className="font-semibold text-black">{lang.name}</span>
+                    <span className="text-[#4a4a4a]">{lang.level}</span>
                   </div>
                 ))}
               </div>
@@ -137,7 +137,7 @@ export default function Profile() {
                 {profileData.skills.map((skill, index) => (
                   <span 
                     key={index}
-                    className="px-3 py-1 bg-caramelo/20 text-chocolate rounded-full text-sm font-medium"
+                    className="px-3 py-1 bg-black/10 text-black rounded-full text-sm font-medium"
                   >
                     {skill}
                   </span>
@@ -170,11 +170,11 @@ function ProfileSection({
 }) {
   return (
     <div className={`bg-white/50 p-6 rounded-xl shadow-md ${fullWidth ? 'md:col-span-2' : ''}`}>
-      <h2 className="text-xl font-bold mb-3 text-chocolate">{title}</h2>
+      <h2 className="text-xl font-bold mb-3 text-black">{title}</h2>
       {typeof content === 'string' ? (
-        <p className="text-chocolate leading-relaxed">{content}</p>
+        <p className="text-black leading-relaxed">{content}</p>
       ) : (
-        <div className="text-chocolate">{content}</div>
+        <div className="text-black">{content}</div>
       )}
     </div>
   );

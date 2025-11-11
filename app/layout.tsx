@@ -65,8 +65,8 @@ export default function RootLayout({
         >
           {/* <CarouselWrapper images={backgroundImages} /> */}
           <main className=" flex flex-col items-center">
-            <div className="flex-1 w-full flex flex-col gap-7 items-center bg-crema">
-              <nav className="w-full flex justify-center  h-16 backdrop-blur-sm bg-background sticky top-0 z-50 bg-crema">
+            <div className="flex-1 w-full flex flex-col gap-7 items-center bg-white">
+              <nav className="w-full flex justify-center  h-16 backdrop-blur-sm bg-background sticky top-0 z-50 bg-white border-b border-black/10">
               <div className="w-full max-w-screen flex justify-between items-center p-3 px-5 text-sm">
                   <div className="w-1/4">
                     <Link href={"/"} className={`text-4xl font-bold bg-black bg-clip-text text-transparent hover:scale-105 transition-transform ${dancingScript.className}`}>Javier</Link>
@@ -84,7 +84,7 @@ export default function RootLayout({
               {/* Navegación móvil que solo se muestra en pantallas pequeñas basado en píxeles */}
               <MobileNav />
               
-              <div className="animate-fadeIn flex flex-col max-w-screen w-full backdrop-blur-md bg-crema">
+              <div className="animate-fadeIn flex flex-col max-w-screen w-full backdrop-blur-md bg-white">
                 {children}
               </div>
 

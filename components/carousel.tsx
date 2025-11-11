@@ -21,9 +21,9 @@ export default function Carousel<T>({
   showArrows = true,
   showIndicators = true,
   minHeight = "400px",
-  arrowColor = "text-chocolate",
-  activeIndicatorColor = "bg-chocolate",
-  inactiveIndicatorColor = "bg-caramelo hover:bg-chocolate/70",
+  arrowColor = "text-black",
+  activeIndicatorColor = "bg-black",
+  inactiveIndicatorColor = "bg-[#4a4a4a] hover:bg-black/70",
   transitionDuration = "duration-[1500ms]",
 }: CarouselProps<T>) {
   const [current, setCurrent] = useState(0);
