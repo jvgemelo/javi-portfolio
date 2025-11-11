@@ -259,10 +259,10 @@ export default function Projects() {
 
           {/* Right Panel - THE SOLUTION */}
           <div className="flex-1 bg-black p-12 md:p-16 flex flex-col items-start">
-            <div className="text-6xl md:text-8xl text-white mb-6 self-end">💡</div>
+            <div className="text-6xl md:text-8xl text-white mb-6 self-end">✓</div>
             <h3 className="text-3xl md:text-4xl font-bold text-white mb-6 uppercase">LA SOLUCIÓN</h3>
             <ul className="text-white/90 text-lg leading-relaxed space-y-3 max-w-md">
-              <li>• Aplicación desarrollada enteramente fullstack con Nextjs y React</li>
+              <li>• Dos aplicaciones independientes desarrolladas enteramente fullstack con Nextjs y React</li>
               <li>• Arquitectura segura con SSR y SSC</li>
               <li>• Validación y gestión de sesiones de usuario</li>
               <li>• Base de datos relacional optimizada</li>
