@@ -2,21 +2,21 @@ import Link from "next/link";
 
 export default function Footer() {
   return (
-    <footer className="w-full border-t border-foreground/10 backdrop-blur-sm bg-white mt-auto">
+    <footer className="w-full border-t border-white/10 backdrop-blur-sm bg-black mt-auto">
       <div className="max-w-screen-xl mx-auto py-8 px-5">
         <div className="flex flex-col md:flex-row justify-between items-start gap-8">
           {/* Información personal */}
           <div className="flex flex-col gap-4">
             <div>
-              <h3 className="text-xl font-bold text-black mb-2">Javier García Segovia</h3>
-              <p className="text-sm text-black/70">Frontend Developer</p>
+              <h3 className="text-xl font-bold text-white mb-2">Javier García Segovia</h3>
+              <p className="text-sm text-white/70">Frontend Developer</p>
             </div>
             
             {/* Contacto */}
             <div className="flex flex-col gap-3">
               <a 
                 href="tel:+34683617481" 
-                className="flex items-center gap-3 text-black/70 hover:text-black transition-colors text-sm"
+                className="flex items-center gap-3 text-white/70 hover:text-white transition-colors text-sm"
               >
                 <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                   <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" />
@@ -26,7 +26,7 @@ export default function Footer() {
               
               <a 
                 href="mailto:javiergarciasegovia1997@gmail.com" 
-                className="flex items-center gap-3 text-black/70 hover:text-black transition-colors text-sm"
+                className="flex items-center gap-3 text-white/70 hover:text-white transition-colors text-sm"
               >
                 <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                   <rect width="20" height="16" x="2" y="4" rx="2" />
@@ -39,13 +39,13 @@ export default function Footer() {
 
           {/* Redes sociales */}
           <div className="flex flex-col gap-4">
-            <h3 className="text-lg font-semibold text-black">Redes Sociales</h3>
+            <h3 className="text-lg font-semibold text-white">Redes Sociales</h3>
             <div className="flex items-center gap-6">
               <a 
                 href="https://github.com/jvgemelo" 
                 target="_blank" 
                 rel="noopener noreferrer" 
-                className="text-black hover:text-[#4a4a4a] transition-colors"
+                className="text-white hover:text-white/80 transition-colors"
                 aria-label="GitHub"
               >
                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
@@ -57,7 +57,7 @@ export default function Footer() {
                 href="https://www.linkedin.com/in/javier-garcia-segovia-678842243/" 
                 target="_blank" 
                 rel="noopener noreferrer" 
-                className="text-black hover:text-[#4a4a4a] transition-colors"
+                className="text-white hover:text-white/80 transition-colors"
                 aria-label="LinkedIn"
               >
                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
@@ -70,7 +70,7 @@ export default function Footer() {
                 href="https://www.instagram.com/javier_garcia_segovia/" 
                 target="_blank" 
                 rel="noopener noreferrer" 
-                className="text-black hover:text-[#4a4a4a] transition-colors"
+                className="text-white hover:text-white/80 transition-colors"
                 aria-label="Instagram"
               >
                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
@@ -84,8 +84,8 @@ export default function Footer() {
         </div>
 
         {/* Copyright */}
-        <div className="mt-8 pt-6 border-t border-foreground/10 text-center">
-          <p className="text-sm text-black/60">
+        <div className="mt-8 pt-6 border-t border-white/10 text-center">
+          <p className="text-sm text-white/60">
             © {new Date().getFullYear()} Javier García Segovia. Todos los derechos reservados.
           </p>
         </div>

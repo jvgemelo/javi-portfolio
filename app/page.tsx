@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { Space_Grotesk } from "next/font/google";
+import { FeatureCard } from "@/components/feature-card";
 
 const spaceGrotesk = Space_Grotesk({
   display: "swap",
@@ -15,18 +16,18 @@ export default async function Home() {
           Javier García
         </h2>
         <div className="flex flex-col pt-[10vh] sm:pt-[14vh] pb-[6vh] sm:pb-[10vh]">
-          <div className="hidden sm:flex absolute left-4 sm:left-8 z-[25] flex-col gap-2 mt-4 bg-white p-2 py-4 sm:py-8 rounded-full border border-black/10 shadow-lg">
-            <div className="color-box group relative"> 
-              <div className="h-8 w-8 sm:h-12 sm:w-12 bg-black rounded-md transition-all duration-300 group-hover:scale-110"></div>
-              <span className="opacity-0 group-hover:opacity-100 transition-opacity duration-300 text-sm sm:text-lg font-bold absolute left-12 sm:left-16 top-2 sm:top-3">#000000</span>
+          <div className="hidden sm:flex absolute left-4 sm:left-8 z-[35] flex-col gap-2 mt-4 bg-white p-2 py-4 sm:py-8 rounded-full border border-black/10 shadow-lg">
+            <div className="color-box group relative z-10"> 
+              <div className="h-8 w-8 sm:h-12 sm:w-12 bg-black rounded-md transition-all duration-300 group-hover:scale-110 transform-gpu will-change-transform pointer-events-auto"></div>
+              <span className="opacity-0 group-hover:opacity-100 transition-opacity duration-300 text-sm sm:text-lg font-bold text-black absolute left-12 sm:left-16 top-2 sm:top-3 z-20 whitespace-nowrap pointer-events-none">#000000</span>
             </div>
-            <div className="color-box group relative">
-              <div className="h-8 w-8 sm:h-12 sm:w-12 bg-[#4a4a4a] rounded-md transition-all duration-300 group-hover:scale-110"></div>
-              <span className="opacity-0 group-hover:opacity-100 transition-opacity duration-300 text-sm sm:text-lg font-bold absolute left-12 sm:left-16 top-2 sm:top-3">#4a4a4a</span>
+            <div className="color-box group relative z-10">
+              <div className="h-8 w-8 sm:h-12 sm:w-12 bg-[#4a4a4a] rounded-md transition-all duration-300 group-hover:scale-110 transform-gpu will-change-transform pointer-events-auto"></div>
+              <span className="opacity-0 group-hover:opacity-100 transition-opacity duration-300 text-sm sm:text-lg font-bold text-black absolute left-12 sm:left-16 top-2 sm:top-3 z-20 whitespace-nowrap pointer-events-none">#4a4a4a</span>
             </div>
-            <div className="color-box group relative">
-              <div className="h-8 w-8 sm:h-12 sm:w-12 bg-white border border-black/20 rounded-md transition-all duration-300 group-hover:scale-110"></div>
-              <span className="opacity-0 group-hover:opacity-100 transition-opacity duration-300 text-sm sm:text-lg font-bold absolute left-12 sm:left-16 top-2 sm:top-3">#ffffff</span>
+            <div className="color-box group relative z-10">
+              <div className="h-8 w-8 sm:h-12 sm:w-12 bg-white border border-black/20 rounded-md transition-all duration-300 group-hover:scale-110 transform-gpu will-change-transform pointer-events-auto"></div>
+              <span className="opacity-0 group-hover:opacity-100 transition-opacity duration-300 text-sm sm:text-lg font-bold text-black absolute left-12 sm:left-16 top-2 sm:top-3 z-20 whitespace-nowrap pointer-events-none">#ffffff</span>
             </div>
           </div>
           
@@ -84,21 +85,6 @@ export default async function Home() {
           description="Enfoque en crear interfaces de usuario atractivas y experiencias de usuario intuitivas."
         />
       </div>
-    </div>
-  );
-}
-
-function FeatureCard({ 
-  title, 
-  description 
-}: { 
-  title: string; 
-  description: string; 
-}) {
-  return (
-    <div className="rounded-lg border p-4 sm:p-6 text-card-foreground shadow-sm w-[80vw] sm:w-[25vw] transition-all hover:shadow-md backdrop-blur-sm bg-background/60">
-      <h3 className="text-lg sm:text-xl font-bold">{title}</h3>
-      <p className="mt-2 text-black text-sm sm:text-base">{description}</p>
     </div>
   );
 }
