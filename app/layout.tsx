@@ -1,18 +1,13 @@
-import DeployButton from "@/components/deploy-button";
-import { EnvVarWarning } from "@/components/env-var-warning";
-import HeaderAuth from "@/components/header-auth";
 import { ThemeSwitcher } from "@/components/theme-switcher";
 import PortfolioNav from "@/components/portfolio-nav";
 import ResponsiveNav from "@/components/responsive-nav";
 import MobileNav from "@/components/mobile-nav";
-import { hasEnvVars } from "@/utils/supabase/check-env-vars";
 import { Geist } from "next/font/google";
 import { Space_Grotesk } from "next/font/google";
 import { Dancing_Script } from "next/font/google";
 import { ThemeProvider } from "next-themes";
 import Link from "next/link";
 import "./globals.css";
-import { createClient } from "@/utils/supabase/server";
 
 // Cliente-side wrapper for BackgroundCarousel
 import CarouselWrapper from "../components/carousel-wrapper";
@@ -51,36 +46,13 @@ const defaultBackgroundImages = [
   "/images/profile3.jpg",
 ];
 
-export default async function RootLayout({
+export default function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  // Intentar obtener fotos del usuario para el fondo
-  let backgroundImages = defaultBackgroundImages;
-  
-  try {
-    const supabase = await createClient();
-    const { data: { user } } = await supabase.auth.getUser();
-    
-    if (user) {
-      const { data: userData } = await supabase
-        .from('user_data')
-        .select('fotos')
-        .eq('user_id', user.id)
-        .single();
-      
-        if (userData?.fotos && typeof userData.fotos === 'string') {
-          const parsedPhotos = JSON.parse(userData.fotos);
-          if (Array.isArray(parsedPhotos) && parsedPhotos.length > 0) {
-            backgroundImages = parsedPhotos;
-          }
-        }
-    }
-  } catch (error) {
-    console.error('Error al cargar fotos de fondo:', error);
-    // Si hay un error, seguimos usando las imágenes por defecto
-  }
+  // Imágenes estáticas para el fondo
+  const backgroundImages = defaultBackgroundImages;
 
   return (
     <html lang="es" className={spaceGrotesk.className} suppressHydrationWarning>
@@ -103,9 +75,6 @@ export default async function RootLayout({
                     <ResponsiveNav />
                   </div>
                   <div className="w-1/4 flex justify-end items-center gap-4">
-                    <div className="hidden sm:block">
-                      {!hasEnvVars ? <EnvVarWarning /> : <HeaderAuth />}
-                    </div>
                     {/* <div className="ml-2 hidden md:block">
                       <ThemeSwitcher />
                     </div> */}

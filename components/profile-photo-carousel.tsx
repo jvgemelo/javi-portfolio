@@ -12,7 +12,7 @@ export default function ProfilePhotoCarousel({ photos }: ProfilePhotoCarouselPro
   // Filtrar fotos vacías y proporcionar imagen por defecto si no hay fotos
   const validPhotos = photos.filter(photo => photo && photo.trim() !== "");
   const hasPhotos = validPhotos.length > 0;
-  const defaultPhoto = "https://yaolajjmtmjgfwlzqtic.supabase.co/storage/v1/object/public/fotos//default-foto.jpg"; // URL a la imagen por defecto de Supabase
+  const defaultPhoto = "/yo-portfolio-Photoroom.png"; // Imagen por defecto local
   
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isTransitioning, setIsTransitioning] = useState(false);
