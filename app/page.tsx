@@ -2,6 +2,7 @@ import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { Space_Grotesk } from "next/font/google";
 import { FeatureCard } from "@/components/feature-card";
+import { TechCarousel } from "@/components/tech-carousel";
 
 const spaceGrotesk = Space_Grotesk({
   display: "swap",
@@ -42,6 +43,10 @@ export default async function Home() {
               Convierto ideas en proyectos de software tangibles.<br/>
               Automatización, acceso a datos, estadísticas, digitalización.
             </p>
+          </div>
+
+          <div className="w-full mt-6 relative z-[20]">
+            <TechCarousel />
           </div>
 
           <div className="block sm:hidden mt-6 px-4">

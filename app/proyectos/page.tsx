@@ -1,5 +1,4 @@
 'use client'
-import Link from "next/link";
 import Image from "next/image";
 import Carousel from "@/components/carousel";
 
@@ -30,7 +29,7 @@ const projects = [
     title: "Annotations",
     description:
       "Aplicación para inspeccionar y marcar defectos en piezas de cerámica. Se usó la librería de KonvaJS para pintar encima de las imágenes..",
-    technologies: ["React", "Vite", "MongoDB", "TypeScript", "KonvaJS"],
+    technologies: ["React", "Vite", "MongoDB", "TypeScript", "KonvaJS", "Redux", "Axios"],
     imageUrl: "/porce-inspector.jpg",
     demoUrl: "#",
     repoUrl: "#",
