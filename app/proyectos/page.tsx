@@ -1,7 +1,7 @@
 'use client'
 import Link from "next/link";
 import Image from "next/image";
-import { useState, useEffect } from "react";
+import Carousel from "@/components/carousel";
 
 // Datos de ejemplo para los proyectos
 const projects = [
@@ -68,88 +68,22 @@ const testimonials = [
 ];
 
 export default function Projects() {
-  // Carrusel de testimonios estilo profile-photo-carousel
-  const [currentIndex, setCurrentIndex] = useState(0);
-  const [isTransitioning, setIsTransitioning] = useState(false);
-  const [direction, setDirection] = useState<'next' | 'prev'>('next');
-  const [touchStartX, setTouchStartX] = useState<number | null>(null);
-  const [touchEndX, setTouchEndX] = useState<number | null>(null);
-
-  const testimonialsCount = testimonials.length;
-
-  // Índices adyacentes
-  const prevIndex = (currentIndex - 1 + testimonialsCount) % testimonialsCount;
-  const nextIndex = (currentIndex + 1) % testimonialsCount;
-
-  // Navegación
-  const goToNext = () => {
-    if (isTransitioning || testimonialsCount <= 1) return;
-    setDirection('next');
-    setIsTransitioning(true);
-    setCurrentIndex((prev) => (prev + 1) % testimonialsCount);
-    setTimeout(() => setIsTransitioning(false), 500);
-  };
-
-  const goToPrevious = () => {
-    if (isTransitioning || testimonialsCount <= 1) return;
-    setDirection('prev');
-    setIsTransitioning(true);
-    setCurrentIndex((prev) => (prev - 1 + testimonialsCount) % testimonialsCount);
-    setTimeout(() => setIsTransitioning(false), 500);
-  };
-
-  // Swipe handlers
-  const minSwipeDistance = 50;
-  const onTouchStart = (e: React.TouchEvent) => {
-    setTouchEndX(null);
-    setTouchStartX(e.targetTouches[0].clientX);
-  };
-  const onTouchMove = (e: React.TouchEvent) => {
-    setTouchEndX(e.targetTouches[0].clientX);
-  };
-  const onTouchEnd = () => {
-    if (!touchStartX || !touchEndX) return;
-    const distance = touchStartX - touchEndX;
-    if (distance > minSwipeDistance) {
-      setDirection('next');
-      goToNext();
-    } else if (distance < -minSwipeDistance) {
-      setDirection('prev');
-      goToPrevious();
-    }
-  };
-
   // Renderizado de cada testimonio
-  function TestimonialCard({ testimonial, size, blur, opacity, zIndex }: {
+  function TestimonialCard({ testimonial }: {
     testimonial: typeof testimonials[0],
-    size: "lg" | "sm",
-    blur?: boolean,
-    opacity?: number,
-    zIndex?: number,
   }) {
     return (
-      <div
-        className={`
-          relative flex flex-col md:flex-row items-center gap-8
-          transition-all duration-500 ease-in-out
-          ${size === "lg" ? "w-full md:w-[1200px] scale-100" : "w-2/3 md:w-[400px] scale-90"}
-        `}
-        style={{
-          filter: blur ? "blur(2px)" : undefined,
-          opacity: opacity ?? 1,
-          zIndex: zIndex ?? 1,
-        }}
-      >
+      <div className="flex-shrink-0 w-full flex flex-col md:flex-row items-center gap-8 px-4">
         <div className="flex-shrink-0 mt-4 mb-4 md:my-0">
           <Image
             src={testimonial.image}
             alt="Testimonio"
-            width={size === "lg" ? 120 : 100}
-            height={size === "lg" ? 120 : 100}
-            className="bg-crema rounded-full md:w-[200px] md:h-[200px]"
+            width={200}
+            height={200}
+            className="bg-crema rounded-full w-[120px] h-[120px] md:w-[200px] md:h-[200px]"
           />
         </div>
-        <div className={`bg-white/80 rounded-lg shadow p-6 text-chocolate text-base flex-1 ${size === "lg" ? "" : "text-sm"}`}>
+        <div className="bg-white/80 rounded-lg shadow p-6 text-chocolate text-base flex-1">
           {testimonial.text.map((paragraph, idx) => (
             <p className="mb-4" key={idx}>{paragraph}</p>
           ))}
@@ -271,49 +205,15 @@ export default function Projects() {
           <h2 className="text-3xl md:text-5xl font-bold text-chocolate mb-8 text-center mt-8">
             ¿QUÉ OPINAN MIS COMPAÑEROS SOBRE MÍ?
           </h2>
-          <div
-            className="relative flex justify-center items-center h-[500px] md:h-[340px] overflow-hidden mt-8 md:mt-0"
-            onTouchStart={onTouchStart}
-            onTouchMove={onTouchMove}
-            onTouchEnd={onTouchEnd}
-          >
-            {/* Mostramos solo la tarjeta actual, sin animaciones */}
-            <div className="relative z-10">
-              <TestimonialCard testimonial={testimonials[currentIndex]} size="lg" />
-            </div>
-
-            {/* Flechas de navegación */}
-            <button
-              onClick={goToPrevious}
-              className="absolute left-2 top-1/2 -translate-y-1/2 text-chocolate text-3xl font-bold px-2 hover:text-caramelo transition z-20 bg-white/70 rounded-full"
-              aria-label="Anterior"
-              disabled={isTransitioning}
-            >
-              &#8592;
-            </button>
-            <button
-              onClick={goToNext}
-              className="absolute right-2 top-1/2 -translate-y-1/2 text-chocolate text-3xl font-bold px-2 hover:text-caramelo transition z-20 bg-white/70 rounded-full"
-              aria-label="Siguiente"
-              disabled={isTransitioning}
-            >
-              &#8594;
-            </button>
-          </div>
-
-          {/* Indicadores de puntos */}
-          <div className="flex justify-center gap-2 mt-6">
-            {testimonials.map((_, index) => (
-              <button
-                key={index}
-                className={`w-2 h-2 rounded-full transition-all ${index === currentIndex ? 'bg-chocolate w-4' : 'bg-caramelo'
-                  }`}
-                onClick={() => {
-                  if (isTransitioning || index === currentIndex) return;
-                  setCurrentIndex(index);
-                }}
-              />
-            ))}
+          <div className="mt-8">
+            <Carousel
+              items={testimonials}
+              renderItem={(testimonial) => <TestimonialCard testimonial={testimonial} />}
+              minHeight="400px"
+              arrowColor="text-chocolate"
+              activeIndicatorColor="bg-chocolate"
+              inactiveIndicatorColor="bg-caramelo hover:bg-chocolate/70"
+            />
           </div>
         </div>
       </section>
