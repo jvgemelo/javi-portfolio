@@ -52,9 +52,13 @@ const config = {
           DEFAULT: "hsl(var(--card))",
           foreground: "hsl(var(--card-foreground))",
         },
-        crema: "#f3e9dc",
-        caramelo: "#c08552",
-        chocolate: "#5e3023",
+        crema: "#ffffff",
+        caramelo: "#4a4a4a",
+        chocolate: "#000000",
+      },
+      fontFamily: {
+        "geist-sans": ["var(--font-geist-sans)"],
+        "geist-mono": ["var(--font-geist-mono)"],
       },
       borderRadius: {
         lg: "var(--radius)",
@@ -70,10 +74,15 @@ const config = {
           from: { height: "var(--radix-accordion-content-height)" },
           to: { height: "0" },
         },
+        "scroll": {
+          "0%": { transform: "translateX(0)" },
+          "100%": { transform: "translateX(-50%)" },
+        },
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
+        "scroll": "scroll 40s linear infinite",
       },
     },
   },

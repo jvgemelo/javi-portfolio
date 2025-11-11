@@ -245,10 +245,10 @@ export default function EditProfile() {
   }
 
   return (
-    <div className="min-h-screen bg-crema">
+    <div className="min-h-screen bg-white">
       {/* Título principal */}
       <header className="text-start">
-        <h1 className="text-6xl md:text-7xl font-extrabold text-chocolate tracking-tight px-12">EDITAR PERFIL</h1>
+        <h1 className="text-6xl md:text-7xl font-extrabold text-black tracking-tight px-12">EDITAR PERFIL</h1>
       </header>
       
       <div className="container mx-auto py-8 px-4">
@@ -256,13 +256,13 @@ export default function EditProfile() {
           <div className="space-y-6">
             {/* Sección de fotos */}
             <div className="border rounded-xl p-6 bg-white/50 shadow-md">
-              <h2 className="text-2xl font-bold mb-4 text-chocolate">Mis Fotos</h2>
+              <h2 className="text-2xl font-bold mb-4 text-black">Mis Fotos</h2>
               
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
                 <div className="space-y-4">
                   <div 
                     ref={dropZoneRef}
-                    className="border-2 border-dashed border-caramelo rounded-lg p-6 text-center cursor-pointer transition-colors"
+                    className="border-2 border-dashed border-black/30 rounded-lg p-6 text-center cursor-pointer transition-colors"
                     onClick={() => fileInputRef.current?.click()}
                   >
                     <input 
@@ -273,11 +273,11 @@ export default function EditProfile() {
                       onChange={handleFileInputChange}
                     />
                     {uploadingPhoto ? (
-                      <p className="text-chocolate">Subiendo foto...</p>
+                      <p className="text-black">Subiendo foto...</p>
                     ) : (
                       <>
-                        <p className="text-chocolate mb-1">Arrastra una imagen aquí o haz clic para seleccionar</p>
-                        <p className="text-xs text-caramelo">
+                        <p className="text-black mb-1">Arrastra una imagen aquí o haz clic para seleccionar</p>
+                        <p className="text-xs text-[#4a4a4a]">
                           La imagen se subirá con su nombre original
                         </p>
                       </>
@@ -288,10 +288,10 @@ export default function EditProfile() {
                 </div>
                 
                 <div>
-                  <p className="block text-sm font-medium text-chocolate mb-1">
+                  <p className="block text-sm font-medium text-black mb-1">
                     Fotos actuales ({photos.length})
                   </p>
-                  <p className="text-xs text-caramelo mb-2">
+                  <p className="text-xs text-[#4a4a4a] mb-2">
                     Las fotos aparecerán en un carrusel en tu perfil público
                   </p>
                 </div>
@@ -325,8 +325,8 @@ export default function EditProfile() {
                   ))}
                 </div>
               ) : (
-                <div className="text-center py-8 border rounded-lg bg-caramelo/10">
-                  <p className="text-chocolate/70">No has añadido ninguna foto todavía</p>
+                <div className="text-center py-8 border rounded-lg bg-black/5">
+                  <p className="text-black/70">No has añadido ninguna foto todavía</p>
                 </div>
               )}
             </div>
@@ -383,14 +383,14 @@ export default function EditProfile() {
               <button
                 type="button"
                 onClick={() => router.push('/profile')}
-                className="px-5 py-2 border border-chocolate rounded-full shadow-sm text-sm font-medium text-chocolate bg-white hover:bg-chocolate/10 transition-colors"
+                className="px-5 py-2 border border-black rounded-full shadow-sm text-sm font-medium text-black bg-white hover:bg-black/10 transition-colors"
               >
                 Cancelar
               </button>
               <button
                 type="submit"
                 disabled={saving}
-                className="px-5 py-2 border-0 rounded-full shadow-sm text-sm font-medium text-crema bg-chocolate hover:bg-chocolate/90 transition-colors"
+                className="px-5 py-2 border-0 rounded-full shadow-sm text-sm font-medium text-white bg-black hover:bg-black/90 transition-colors"
               >
                 {saving ? 'Guardando...' : 'Guardar cambios'}
               </button>
@@ -413,7 +413,7 @@ interface FormFieldProps {
 function FormField({ name, label, value, onChange, placeholder }: FormFieldProps) {
   return (
     <div className="bg-white/50 p-6 rounded-xl shadow-md">
-      <label htmlFor={name} className="block text-lg font-medium text-chocolate mb-2">
+      <label htmlFor={name} className="block text-lg font-medium text-black mb-2">
         {label}
       </label>
       <div className="mt-1">
@@ -424,7 +424,7 @@ function FormField({ name, label, value, onChange, placeholder }: FormFieldProps
           value={value}
           onChange={onChange}
           placeholder={placeholder}
-          className="shadow-sm focus:ring-caramelo focus:border-caramelo block w-full sm:text-sm border border-caramelo/30 rounded-lg p-3 whitespace-pre-wrap bg-white/80"
+          className="shadow-sm focus:ring-black focus:border-black block w-full sm:text-sm border border-black/20 rounded-lg p-3 whitespace-pre-wrap bg-white/80"
         />
       </div>
     </div>

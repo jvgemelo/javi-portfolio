@@ -67,3 +67,9 @@
     @apply bg-background text-foreground;
   }
 }
+
+@layer utilities {
+  .pause-animation:hover {
+    animation-play-state: paused;
+  }
+}
