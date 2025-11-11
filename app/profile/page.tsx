@@ -1,54 +1,61 @@
 // Datos estáticos del perfil - Edita estos datos directamente en el código
 const profileData = {
-  aboutMe: `Soy un desarrollador full stack apasionado por crear soluciones tecnológicas innovadoras. 
-    Con experiencia en desarrollo web moderno, me especializo en construir aplicaciones escalables 
-    y eficientes que mejoran la experiencia del usuario.`,
+  aboutMe: `Me encanta aprender y experimentar con nuevas tecnologías. Comencé mi camino en la programación formándome en backend con Java, Spring Boot y Hibernate, pero las oportunidades laborales me llevaron a especializarme en el frontend, donde descubrí mi verdadera pasión. Hoy tengo un año de experiencia desarrollando interfaces dinámicas con React, Next.js, Tailwind CSS, Vite, Docker y GitHub. Además, disfruto participando en el diseño con Figma y creando soluciones propias en npm.`,
   experience: [
     {
-      position: "Desarrollador Full Stack",
-      company: "Empresa XYZ",
-      period: "2022 - Presente",
-      description: "Desarrollo y mantenimiento de aplicaciones web usando React, Next.js, Node.js y PostgreSQL. Liderazgo de proyectos de migración y optimización de rendimiento."
+      position: "Desarrollador de Frontend",
+      company: "Siali",
+      period: "Junio 2024 - Julio 2025",
+      description: "Este último año me he dedicado al desarrollo de diferentes productos para Siali variados, usando tecnologías punteras como Nextjs y Supabase o el ya muy conocido Docker para el despliegue, sobretodo en desarrollo local, pero también en nube."
     },
     {
-      position: "Desarrollador Frontend",
-      company: "Empresa ABC",
-      period: "2020 - 2022",
-      description: "Desarrollo de interfaces de usuario responsivas y accesibles. Colaboración con equipos de diseño para implementar diseños pixel-perfect."
+      position: "Prácticas",
+      company: "Siali",
+      period: "Abril 2024 - Junio 2024",
+      description: "En esta etapa fui formado en desarrollo de frontend, haciendo cursos variados empezando por html y css sencillo hasta acabar con react con vite y posteriormente, NextJs junto con tailwindcss. También hice mis primeros desarrollos para Safe en producción como graficado de datos."
     },
     {
-      position: "Desarrollador Junior",
-      company: "Startup Tech",
-      period: "2019 - 2020",
-      description: "Primeros pasos en el desarrollo profesional. Aprendizaje de tecnologías modernas y buenas prácticas de desarrollo."
+      position: "Visual",
+      company: "Maisons du Monde",
+      period: "Septiembre 2021 – Abril 2024",
+      description: "Me desempeñé en el manejo de mercancía, ubiqué productos en la tienda y supervisé el inventario. Además, me encargué de diseñar y mantener ambientes adecuados, decorando espacios como dormitorios, salas de estar, y brindé servicio al cliente."
     }
   ],
   education: [
     {
-      degree: "Grado en Ingeniería Informática",
-      institution: "Universidad de Madrid",
-      period: "2015 - 2019",
-      description: "Especialización en desarrollo de software y sistemas de información."
+      degree: "FPGS en Desarrollo de Aplicaciones Web (DAW)",
+      institution: "A distancia",
+      period: "Actualmente cursando",
+      description: "Formación en desarrollo de aplicaciones web."
     },
     {
-      degree: "Bootcamp Full Stack Development",
-      institution: "Ironhack",
-      period: "2019",
-      description: "Programa intensivo de desarrollo web full stack con tecnologías modernas."
+      degree: "FPGS en Desarrollo de Aplicaciones Multiplataforma",
+      institution: "IES Augusto González de Linares",
+      period: "2022 – 2024",
+      description: "Java – Spring Boot – MongoDB – PostgreSQL"
+    },
+    {
+      degree: "Bachillerato en Ciencias",
+      institution: "IES José María de Pereda",
+      period: "2020 – 2022",
+      description: ""
+    },
+    {
+      degree: "ESO",
+      institution: "IES Blas Cabrera Felipe",
+      period: "2016",
+      description: ""
     }
   ],
   languages: [
     { name: "Español", level: "Nativo" },
-    { name: "Inglés", level: "Avanzado (C1)" },
-    { name: "Francés", level: "Intermedio (B2)" }
+    { name: "Inglés", level: "Cambridge B2 Certificate" }
   ],
   skills: [
-    "React", "Next.js", "TypeScript", "Node.js", "PostgreSQL", 
-    "MongoDB", "Git", "Docker", "AWS", "Tailwind CSS", "Supabase"
+    "JavaScript", "Java", "React", "Next.js", "TailwindCSS", 
+    "Supabase", "MongoDB", "Docker", "GitHub", "Vite", "Figma"
   ],
-  additionalInfo: `Disponible para trabajar en remoto o híbrido. Interesado en proyectos de código abierto 
-    y en contribuir a la comunidad de desarrolladores. Apasionado por el aprendizaje continuo y las 
-    nuevas tecnologías.`
+  additionalInfo: `Carnet de conducir. Coche propio. Disponibilidad inmediata.`
 };
 
 export default function Profile() {
@@ -68,7 +75,7 @@ export default function Profile() {
               src="/6005869666301494380.jpg" 
               alt="Profile" 
               className="rounded-xl shadow-md object-cover w-full max-w-md"
-            />po
+            />
           </div>
           
           {/* About Me */}
