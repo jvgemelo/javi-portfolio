@@ -68,7 +68,7 @@ export default function Profile() {
               src="/6005869666301494380.jpg" 
               alt="Profile" 
               className="rounded-xl shadow-md object-cover w-full max-w-md"
-            />po
+            />
           </div>
           
           {/* About Me */}

@@ -1,6 +1,23 @@
 'use client'
 import Image from "next/image";
 import Carousel from "@/components/carousel";
+import ProjectCard from "@/components/project-card";
+
+// Mapeo de tecnologías a sus iconos
+const techIcons: Record<string, string> = {
+  NextJS: "/react.png", // Usar React como fallback para NextJS
+  TailwindCSS: "/tailwind.png",
+  TypeScript: "/typescript.png",
+  Supabase: "/supabase.jpg",
+  React: "/react.png",
+  PostgreSQL: "/Postgresql_elephant.svg.png",
+  MongoDB: "/MongoDB.png",
+  JavaScript: "/js.png",
+  HTML: "/html-5.png",
+  CSS: "/CSS3.webp",
+  Java: "/java.png",
+  Docker: "/docker.png",
+};
 
 // Datos de ejemplo para los proyectos
 const projects = [
@@ -97,7 +114,7 @@ export default function Projects() {
     <div className="min-h-screen bg-white">
       {/* Título principal */}
       <header className="text-start">
-        <h1 className="text-6xl md:text-7xl font-extrabold text-black tracking-tight px-12">PROYECTOS</h1>
+        <h1 className="text-6xl md:text-7xl font-extrabold text-black tracking-tight px-12 py-4">PROYECTOS</h1>
       </header>
 
       {/* Grid de proyectos */}
@@ -195,8 +212,210 @@ export default function Projects() {
           </div>
         </div>
       </section>
+      {/* Sección Página Web de Delivery para Restaurante */}
+      <section className="w-full border-t border-black/10">
+        {/* Hero Section - Dark Background */}
+        <div className="w-full bg-white py-16 md:py-24">
+          <div className="container mx-auto px-6 md:px-12 text-center">
+            <h2 className="text-5xl md:text-7xl font-extrabold text-black mb-4 uppercase tracking-tight">
+              PÁGINA WEB DE DELIVERY
+            </h2>
+            <p className="text-xl md:text-2xl text-black/80 mb-12">
+              Revolucionando la experiencia de pedidos online
+            </p>
+            <div className="flex justify-center items-center gap-8 mb-12 w-full">
+              <div className="relative w-full max-w-full">
+                <Image
+                  src="/captura-adminer.png"
+                  alt="Dashboard de la aplicación"
+                  width={1920}
+                  height={1080}
+                  className="w-full h-auto object-contain rounded-lg shadow-2xl"
+                />
+              </div>
+            </div>
+            <a 
+              href="https://traviatta-app-shopping.vercel.app/" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="inline-block bg-black text-white px-8 py-3 font-bold text-lg hover:bg-gray-300 transition-colors"
+            >
+              VISTA GENERAL
+            </a>
+          </div>
+        </div>
 
+        {/* Challenge & Solution Section - Split Panels */}
+        <div className="w-full flex flex-col md:flex-row">
+          {/* Left Panel - THE CHALLENGE */}
+          <div className="flex-1 bg-white p-12 md:p-16 flex flex-col items-start">
+            <div className="text-6xl md:text-8xl text-black mb-6">?</div>
+            <h3 className="text-3xl md:text-4xl font-bold text-black mb-6 uppercase">EL RETO</h3>
+            <p className="text-gray-600 text-lg leading-relaxed max-w-md">
+            Uno de los proyectos en los que he estado trabajando estos últimos meses, ha sido un conjunto de aplicaciones que permitan hacer pedidos a domicilio a los clientes, y que después sean recibidos por los camareros y diferentes cocinas en el restaurante, aportando agilidad y registro de usuarios, registro de todo tipo de datos, historial de pedidos, pagos seguros.
+            Este sistema es una solución real a el problema de la gestión de pedidos para restaurantes con un alto volumen de trabajo. 
+            </p>
+          </div>
 
+          {/* Right Panel - THE SOLUTION */}
+          <div className="flex-1 bg-black p-12 md:p-16 flex flex-col items-start">
+            <div className="text-6xl md:text-8xl text-white mb-6 self-end">💡</div>
+            <h3 className="text-3xl md:text-4xl font-bold text-white mb-6 uppercase">LA SOLUCIÓN</h3>
+            <ul className="text-white/90 text-lg leading-relaxed space-y-3 max-w-md">
+              <li>• Aplicación desarrollada enteramente fullstack con Nextjs y React</li>
+              <li>• Arquitectura segura con SSR y SSC</li>
+              <li>• Validación y gestión de sesiones de usuario</li>
+              <li>• Base de datos relacional optimizada</li>
+              <li>• Código estructurado para máxima seguridad</li>
+            </ul>
+          </div>
+        </div>
+
+        {/* Feature Showcase Section - Three Columns */}
+        <div className="w-full bg-white py-16 md:py-20">
+          <div className="max-w-[70vw] mx-auto px-6 md:px-12">
+            <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
+
+              <div className="bg-white border border-gray-200 p-8 rounded-lg">
+                <h4 className="text-xl md:text-2xl font-bold text-black mb-4 uppercase">CATÁLOGO DE PRODUCTOS</h4>
+                <p className="text-gray-600 mb-6">
+                  Catálogo completo de productos con imágenes de alta calidad gracias al almacenamiento en storage que proporciona Supabase, junto a datos propios de cada producto como alérgenos, nombre, precio, descripción e ingredientes.
+                </p>
+                <div className="mt-6">
+                  <Image
+                    src="/entrante-captura.png"
+                    alt="Catálogo de productos"
+                    width={400}
+                    height={300}
+                    className="w-full h-auto object-contain rounded"
+                  />
+                </div>
+              </div>
+            
+              <div className="bg-white border border-gray-200 p-8 rounded-lg">
+                <h4 className="text-xl md:text-2xl font-bold text-black mb-4 uppercase">INGREDIENTES PERSONALIZADOS</h4>
+                <p className="text-gray-600 mb-6">
+                 Una de las dificultades encontradas a la hora de diseñar la DB, fue que cada plato agregado al pedido almacenara de alguna manera los ingredientes modificados a elección del cliente.
+                </p>
+                <div className="mt-6">
+                  <Image
+                    src="/captura-ingredientes.png"
+                    alt="Gestión de pedidos"
+                    width={400}
+                    height={300}
+                    className="w-full h-auto object-contain rounded"
+                  />
+                </div>
+              </div>
+
+        
+              <div className="bg-white border border-gray-200 p-8 rounded-lg">
+                <h4 className="text-xl md:text-2xl font-bold text-black mb-4 uppercase">VALIDACIÓN DE DIRECCIONES</h4>
+                <p className="text-gray-600 mb-6">
+                  Verificación de direcciones mediante OpenStreetMap, que proporciona las coordenadas del usuario y del restaurante. Si la dirección no está dentro de un radio de 10km, se bloquea la entrega.
+                </p>
+                <div className="mt-6">
+                  <Image
+                    src="/captura-openstreetmap.png"
+                    alt="Sistema de pago"
+                    width={400}
+                    height={300}
+                    className="w-full h-auto object-contain rounded"
+                  />
+                </div>
+              </div>
+              <div className="bg-white border border-gray-200 p-8 rounded-lg">
+                <h4 className="text-xl md:text-2xl font-bold text-black mb-4 uppercase">PASARELA DE PAGO CON STRIPE</h4>
+                <p className="text-gray-600 mb-6">
+                  Gracias al servicio de Stripe, el cliente puede ingresar sus datos bancarios con total seguridad y efectuar el pago, ya que al actuar de intermediario usando sus componentes, no se almacenan en ningún sitio dentro de la aplicación.
+                </p>
+                <div className="mt-6">
+                  <Image
+                    src="/stripe.png"
+                    alt="Sistema de pago"
+                    width={400}
+                    height={300}
+                    className="w-full h-auto object-contain rounded"
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {/* My Role & Technologies / Results Section - Split Panels */}
+        <div className="w-full flex flex-col md:flex-row">
+          {/* Left Panel - MY ROLE & TECHNOLOGIES */}
+          <div className="flex-1 bg-black p-12 md:p-16">
+            <h3 className="text-3xl md:text-4xl font-bold text-white mb-8 uppercase">MI ROL & TECNOLOGÍAS</h3>
+            <ul className="space-y-4 text-white text-lg">
+              <li className="flex items-center gap-3">
+                <span className="w-2 h-2 bg-white rounded-full"></span>
+                Full-stack Developer
+              </li>
+              <li className="flex items-center gap-3">
+                <span className="w-2 h-2 bg-white rounded-full"></span>
+                Next.js
+              </li>
+              <li className="flex items-center gap-3">
+                <span className="w-2 h-2 bg-white rounded-full"></span>
+                React
+              </li>
+              <li className="flex items-center gap-3">
+                <span className="w-2 h-2 bg-white rounded-full"></span>
+                TypeScript
+              </li>
+              <li className="flex items-center gap-3">
+                <span className="w-2 h-2 bg-white rounded-full"></span>
+                Supabase
+              </li>
+              <li className="flex items-center gap-3">
+                <span className="w-2 h-2 bg-white rounded-full"></span>
+                PostgreSQL
+              </li>
+              <li className="flex items-center gap-3">
+                <span className="w-2 h-2 bg-white rounded-full"></span>
+                TailwindCSS
+              </li>
+            </ul>
+          </div>
+
+          {/* Right Panel - RESULTS */}
+          <div className="flex-1 bg-white p-12 md:p-16">
+            <h3 className="text-3xl md:text-4xl font-bold text-black mb-8 uppercase">RESULTADOS</h3>
+            <div className="space-y-6">
+              <div className="flex items-center gap-6">
+                <div className="w-24 h-24 rounded-full bg-black flex items-center justify-center text-white font-bold text-xl">
+                  100%
+                </div>
+                <div>
+                  <p className="text-2xl font-bold text-black">Aplicación Funcional</p>
+                  <p className="text-gray-600">Desplegada y accesible públicamente</p>
+                </div>
+              </div>
+              <div className="mt-8">
+                <p className="text-gray-600 mb-4">Aprendizajes clave:</p>
+                <ul className="space-y-2 text-gray-700">
+                  <li>• SSR y SSC implementados correctamente</li>
+                  <li>• Arquitectura escalable y segura</li>
+                  <li>• Base de datos relacional optimizada</li>
+                  <li>• Experiencia de usuario fluida y responsive</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {/* Final CTA */}
+        <div className="w-full bg-black py-12 text-center">
+          <a 
+            href="#" 
+            className="inline-block bg-white text-black px-10 py-4 font-bold text-lg hover:bg-gray-100 transition-colors"
+          >
+            VER PROYECTO EN VIVO
+          </a>
+        </div>
+      </section>
 
       {/* Sección Testimonios */}
       <section className="w-full bg-white pb-12 px-4 md:px-0 border-t border-black/10">
@@ -216,50 +435,6 @@ export default function Projects() {
           </div>
         </div>
       </section>
-    </div>
-  );
-}
-
-function ProjectCard({ project }: { project: typeof projects[0] }) {
-  return (
-    <div className="rounded-xl overflow-hidden bg-white/50 shadow-md transition-all ">
-      <div className="aspect-video relative w-full">
-        {project.imageUrl ? (
-          <Image src={project.imageUrl} alt={project.title} fill className="object-contain object-top" />
-        ) : (
-          <div className="absolute inset-0 bg-black/10 flex items-center justify-center">
-            <p className="text-black font-bold text-lg">Vista previa</p>
-          </div>
-        )}
-      </div>
-      <div className="p-6">
-        <h3 className="text-xl font-bold mb-2 text-black">{project.title}</h3>
-        <p className="text-black mb-4">{project.description}</p>
-        <div className="flex flex-wrap gap-2 mb-4">
-          {project.technologies.map((tech) => (
-            <span
-              key={tech}
-              className="text-xs px-2 py-1 bg-black/10 text-black rounded-full border border-black/20"
-            >
-              {tech}
-            </span>
-          ))}
-        </div>
-        {/*<div className="flex gap-4 mt-4">
-          <Link
-            href={project.demoUrl}
-            className="text-sm font-medium px-4 py-2 rounded-full bg-caramelo text-white hover:bg-caramelo/90 transition shadow"
-          >
-            Ver Demo
-          </Link>
-          <Link
-            href={project.repoUrl}
-            className="text-sm font-medium px-4 py-2 rounded-full border border-caramelo text-caramelo hover:bg-caramelo/10 transition"
-          >
-            Ver Repositorio
-          </Link>
-        </div>*/}
-      </div>
     </div>
   );
 } 
