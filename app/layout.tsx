@@ -2,6 +2,7 @@ import { ThemeSwitcher } from "@/components/theme-switcher";
 import PortfolioNav from "@/components/portfolio-nav";
 import ResponsiveNav from "@/components/responsive-nav";
 import MobileNav from "@/components/mobile-nav";
+import Footer from "@/components/footer";
 import { Geist, Geist_Mono } from "next/font/google";
 import { Space_Grotesk } from "next/font/google";
 import { Dancing_Script } from "next/font/google";
@@ -88,9 +89,11 @@ export default function RootLayout({
               {/* Navegación móvil que solo se muestra en pantallas pequeñas basado en píxeles */}
               <MobileNav />
               
-              <div className="animate-fadeIn flex flex-col max-w-screen w-full backdrop-blur-md bg-white">
+              <div className="animate-fadeIn flex flex-col max-w-screen w-full backdrop-blur-md bg-white min-h-[calc(100vh-4rem)]">
                 {children}
               </div>
+
+              <Footer />
 
              {/*} <footer className="w-full border-t border-foreground/10 backdrop-blur-sm bg-black fixed bottom-0 left-0">
                 <div className="max-w-5xl mx-auto py-4 sm:py-8 px-5 flex flex-col md:flex-row justify-between items-center gap-4">

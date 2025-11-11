@@ -36,7 +36,13 @@ export default async function Home() {
           <h1 className="text-3xl sm:text-5xl md:text-8xl text-black font-bold text-center">
             <span>DEVELOPER {"</>"}</span>
           </h1>
-          
+          <div className="">
+            <p className="text-sm font-bold text-center bg-white/80 p-3 rounded-lg">
+              Convierto ideas en proyectos de software tangibles.<br/>
+              Automatización, acceso a datos, estadísticas, digitalización.
+            </p>
+          </div>
+
           <div className="block sm:hidden mt-6 px-4">
             <p className="text-sm font-bold text-center bg-white/80 p-3 rounded-lg">
               Bienvenido a mi portfolio personal. Soy un apasionado de la tecnología y el desarrollo de software, 
@@ -61,7 +67,9 @@ export default async function Home() {
           <Link href="/contacto">Contactar</Link>
         </Button>
       </div>
-
+      <div>
+        <img src="/computer-black.png" alt="computer" className="rounded-md"/>
+      </div>
       <div className="mt-4 grid grid-cols-1 gap-6 sm:gap-20 md:grid-cols-3 relative z-10">
         <FeatureCard 
           title="Desarrollo Web" 
