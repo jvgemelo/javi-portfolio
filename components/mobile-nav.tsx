@@ -3,7 +3,6 @@
 import { useEffect, useState } from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-import MobileAuth from './mobile-auth';
 
 // Tamaño en píxeles para una tablet pequeña
 const TABLET_BREAKPOINT = 768;
@@ -129,9 +128,6 @@ export default function MobileNav() {
               );
             })}
           </nav>
-          
-          {/* Opciones de autenticación */}
-          <MobileAuth />
           
           {/* Redes sociales en el menú móvil */}
           <div className="mt-12 flex gap-6">

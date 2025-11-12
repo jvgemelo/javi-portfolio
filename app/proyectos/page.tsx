@@ -166,7 +166,7 @@ export default function Projects() {
       </section>
       {/* Sección Diseños con Figma */}
       <section className="w-full bg-[#4a4a4a] py-12">
-        <div className="container mx-auto flex flex-col md:flex-row items-center gap-8">
+        <div className="container mx-auto flex flex-col md:flex-row items-center gap-8 px-6">
           <div className="flex-1 flex flex-col items-center md:items-start">
             <div className="flex flex-row">
               <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">DISEÑOS CON FIGMA!</h2>
@@ -179,15 +179,15 @@ export default function Projects() {
               Link al portfolio <span className="text-xl">↗</span>
             </a>
           </div>
-          <div className="flex-1 flex justify-center  rounded-lg">
-            <div className="relative w-[340px] h-[260px] md:w-[420px] md:h-[320px] group">
+          <div className="flex-1 flex justify-center rounded-lg overflow-hidden">
+            <div className="relative w-[280px] h-[200px] md:w-[420px] md:h-[320px] group mx-auto">
               {/* Imagen de fondo (designs) */}
               <Image
                 src="/designs.png"
                 alt="Diseño Figma"
                 width={350}
                 height={270}
-                className="object-contain rounded-lg shadow-lg border-4 border-black/20 absolute left-60 top-16 rotate-[8deg] z-20 transition-transform duration-300 ease-in-out group-hover:scale-105 group-hover:rotate-[12deg] group-hover:shadow-2xl"
+                className="object-contain rounded-lg shadow-lg border-4 border-black/20 absolute left-[120px] top-4 md:left-60 md:top-16 rotate-[8deg] z-20 transition-transform duration-300 ease-in-out group-hover:scale-105 group-hover:rotate-[12deg] group-hover:shadow-2xl w-[140px] h-[110px] md:w-[350px] md:h-[270px]"
                 style={{ zIndex: 20 }}
               />
               {/* Imagen del medio (inicio) */}
@@ -196,7 +196,7 @@ export default function Projects() {
                 alt="Inicio"
                 width={350}
                 height={270}
-                className="object-contain rounded-lg shadow-lg border-4 border-black/20 absolute left-10 top-0 rotate-[-6deg] z-10 transition-transform duration-300 ease-in-out group-hover:scale-105 group-hover:rotate-[-12deg] group-hover:shadow-2xl"
+                className="object-contain rounded-lg shadow-lg border-4 border-black/20 absolute left-[-10px] top-[-5px] md:left-10 md:top-0 rotate-[-6deg] z-10 transition-transform duration-300 ease-in-out group-hover:scale-105 group-hover:rotate-[-12deg] group-hover:shadow-2xl w-[140px] h-[110px] md:w-[350px] md:h-[270px]"
                 style={{ zIndex: 10 }}
               />
               {/* Imagen superior (works) */}
@@ -205,7 +205,7 @@ export default function Projects() {
                 alt="Works"
                 width={350}
                 height={270}
-                className="object-contain rounded-lg shadow-lg border-4 border-black/20 absolute left-20 top-32 rotate-[-2deg] z-30 transition-transform duration-300 ease-in-out group-hover:scale-105 group-hover:rotate-[2deg] group-hover:shadow-2xl"
+                className="object-contain rounded-lg shadow-lg border-4 border-black/20 absolute left-[50px] top-10 md:left-20 md:top-32 rotate-[-2deg] z-30 transition-transform duration-300 ease-in-out group-hover:scale-105 group-hover:rotate-[2deg] group-hover:shadow-2xl w-[140px] h-[110px] md:w-[350px] md:h-[270px]"
                 style={{ zIndex: 30 }}
               />
             </div>
@@ -234,11 +234,11 @@ export default function Projects() {
                 />
               </div>
             </div>
-            <a 
-              href="https://traviatta-app-shopping.vercel.app/" 
-              target="_blank" 
+            <a
+              // href="https://traviatta-app-shopping.vercel.app/"
+              // target="_blank"
               rel="noopener noreferrer"
-              className="inline-block bg-black text-white px-8 py-3 font-bold text-lg hover:bg-gray-300 transition-colors"
+              className="inline-block w-full bg-black text-white px-8 py-3 font-bold text-lg transition-colors"
             >
               VISTA GENERAL
             </a>
@@ -252,8 +252,9 @@ export default function Projects() {
             <div className="text-6xl md:text-8xl text-black mb-6">?</div>
             <h3 className="text-3xl md:text-4xl font-bold text-black mb-6 uppercase">EL RETO</h3>
             <p className="text-gray-600 text-lg leading-relaxed max-w-md">
-            Uno de los proyectos en los que he estado trabajando estos últimos meses, ha sido un conjunto de aplicaciones que permitan hacer pedidos a domicilio a los clientes, y que después sean recibidos por los camareros y diferentes cocinas en el restaurante, aportando agilidad y registro de usuarios, registro de todo tipo de datos, historial de pedidos, pagos seguros.
-            Este sistema es una solución real a el problema de la gestión de pedidos para restaurantes con un alto volumen de trabajo. 
+              Durante los últimos meses, he estado inmerso en el desarrollo de un conjunto de aplicaciones diseñado para llevar la experiencia de pedidos a domicilio a un nuevo nivel. Imagina a tus clientes haciendo sus pedidos con total comodidad desde su móvil, y al mismo tiempo, tu equipo de camareros y las distintas áreas de cocina recibiéndolos de forma instantánea y perfectamente organizada. ¡Todo en armonía!
+              Esta plataforma no es solo una herramienta, es la solución definitiva para restaurantes con un alto volumen de trabajo. Su objetivo es claro: optimizar cada paso del proceso, desde que el cliente pulsa "enviar" hasta que el plato llega a su mesa o a su puerta. Conseguimos una mayor agilidad operativa, una mejor comunicación entre todo el personal, y por supuesto, una experiencia fluida y satisfactoria para tus clientes.
+              Con este sistema, la gestión de pedidos se transforma, permitiendo a los negocios funcionar con una eficiencia sin precedentes y centrarse en lo que realmente importa: ofrecer un servicio excepcional.
             </p>
           </div>
 
@@ -262,18 +263,19 @@ export default function Projects() {
             <div className="text-6xl md:text-8xl text-white mb-6 self-end">✓</div>
             <h3 className="text-3xl md:text-4xl font-bold text-white mb-6 uppercase">LA SOLUCIÓN</h3>
             <ul className="text-white/90 text-lg leading-relaxed space-y-3 max-w-md">
-              <li>• Dos aplicaciones independientes desarrolladas enteramente fullstack con Nextjs y React</li>
-              <li>• Arquitectura segura con SSR y SSC</li>
-              <li>• Validación y gestión de sesiones de usuario</li>
-              <li>• Base de datos relacional optimizada</li>
-              <li>• Código estructurado para máxima seguridad</li>
+              <li>• Aplicación cliente para pedidos online con carrito personalizable y modificación de ingredientes</li>
+              <li>• Panel de administración para gestión de pedidos en tiempo real por camareros y cocina</li>
+              <li>• Integración con OpenStreetMap para validación de direcciones y cálculo de zonas de entrega</li>
+              <li>• Pasarela de pago segura con Stripe sin almacenar datos bancarios sensibles</li>
+              <li>• Almacenamiento de imágenes en Supabase Storage para catálogo de productos</li>
+              <li>• Base de datos PostgreSQL con esquema relacional para pedidos, productos e ingredientes</li>
             </ul>
           </div>
         </div>
 
         {/* Feature Showcase Section - Three Columns */}
         <div className="w-full bg-white py-16 md:py-20">
-          <div className="max-w-[70vw] mx-auto px-6 md:px-12">
+          <div className="container mx-auto px-6 md:px-12">
             <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
 
               <div className="bg-white border border-gray-200 p-8 rounded-lg">
@@ -291,11 +293,11 @@ export default function Projects() {
                   />
                 </div>
               </div>
-            
+
               <div className="bg-white border border-gray-200 p-8 rounded-lg">
                 <h4 className="text-xl md:text-2xl font-bold text-black mb-4 uppercase">INGREDIENTES PERSONALIZADOS</h4>
                 <p className="text-gray-600 mb-6">
-                 Una de las dificultades encontradas a la hora de diseñar la DB, fue que cada plato agregado al pedido almacenara de alguna manera los ingredientes modificados a elección del cliente.
+                  Una de las dificultades encontradas a la hora de diseñar la DB, fue que cada plato agregado al pedido almacenara de alguna manera los ingredientes modificados a elección del cliente.
                 </p>
                 <div className="mt-6">
                   <Image
@@ -308,7 +310,7 @@ export default function Projects() {
                 </div>
               </div>
 
-        
+
               <div className="bg-white border border-gray-200 p-8 rounded-lg">
                 <h4 className="text-xl md:text-2xl font-bold text-black mb-4 uppercase">VALIDACIÓN DE DIRECCIONES</h4>
                 <p className="text-gray-600 mb-6">
@@ -377,6 +379,22 @@ export default function Projects() {
                 <span className="w-2 h-2 bg-white rounded-full"></span>
                 TailwindCSS
               </li>
+              <li className="flex items-center gap-3">
+                <span className="w-2 h-2 bg-white rounded-full"></span>
+                Stripe
+              </li>
+              <li className="flex items-center gap-3">
+                <span className="w-2 h-2 bg-white rounded-full"></span>
+                OpenStreetMap
+              </li>
+              <li className="flex items-center gap-3">
+                <span className="w-2 h-2 bg-white rounded-full"></span>
+                Framer Motion
+              </li>
+              <li className="flex items-center gap-3">
+                <span className="w-2 h-2 bg-white rounded-full"></span>
+                OAuth 2.0
+              </li>
             </ul>
           </div>
 
@@ -396,10 +414,15 @@ export default function Projects() {
               <div className="mt-8">
                 <p className="text-gray-600 mb-4">Aprendizajes clave:</p>
                 <ul className="space-y-2 text-gray-700">
-                  <li>• SSR y SSC implementados correctamente</li>
-                  <li>• Arquitectura escalable y segura</li>
-                  <li>• Base de datos relacional optimizada</li>
-                  <li>• Experiencia de usuario fluida y responsive</li>
+                  <li>• Implementación de Server-Side Rendering (SSR) y Static Site Generation (SSG)</li>
+                  <li>• Arquitectura escalable con principios de seguridad y mejores prácticas</li>
+                  <li>• Optimización de base de datos relacional con esquemas normalizados</li>
+                  <li>• Diseño responsive con experiencia de usuario optimizada para mobile</li>
+                  <li>• Integración de pasarela de pago mediante Stripe API</li>
+                  <li>• Validación geográfica de direcciones utilizando OpenStreetMap API</li>
+                  <li>• Sistema de autenticación OAuth 2.0 con proveedor Google</li>
+                  <li>• Implementación de transiciones de página nativas de Next.js 17</li>
+                  <li>• Animaciones fluidas y performantes con Framer Motion</li>
                 </ul>
               </div>
             </div>
@@ -408,8 +431,9 @@ export default function Projects() {
 
         {/* Final CTA */}
         <div className="w-full bg-black py-12 text-center">
-          <a 
-            href="#" 
+          <a
+            href="https://traviatta-app-shopping.vercel.app/"
+            target="_blank"
             className="inline-block bg-white text-black px-10 py-4 font-bold text-lg hover:bg-gray-100 transition-colors"
           >
             VER PROYECTO EN VIVO
