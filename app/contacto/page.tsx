@@ -39,7 +39,7 @@ export default function ContactPage() {
   };
   
   return (
-    <div className="h-[85vh] bg-white">
+    <div className="min-h-[85vh] bg-white pb-10">
       {/* Título principal */}
       <header className="text-start">
         <h1 className="text-6xl md:text-7xl font-extrabold text-black tracking-tight px-12">CONTACTO</h1>
