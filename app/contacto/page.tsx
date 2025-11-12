@@ -39,16 +39,16 @@ export default function ContactPage() {
   };
   
   return (
-    <div className="min-h-[85vh] bg-white pb-10">
+    <div className="min-h-[85vh] bg-white pb-20 md:pb-10">
       {/* Título principal */}
       <header className="text-start">
-        <h1 className="text-6xl md:text-7xl font-extrabold text-black tracking-tight px-12">CONTACTO</h1>
+        <h1 className="text-4xl sm:text-6xl md:text-7xl font-extrabold text-black tracking-tight px-4 sm:px-8 md:px-12 pt-4">CONTACTO</h1>
       </header>
       
-      <div className="max-w-4xl mx-auto py-10 px-4">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
-          <div className="bg-white/50 p-6 rounded-xl shadow-md">
-            <h2 className="text-2xl font-semibold mb-6 text-black">Información de contacto</h2>
+      <div className="max-w-4xl mx-auto py-6 md:py-10 px-4">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-10">
+          <div className="bg-white/50 p-4 md:p-6 rounded-xl shadow-md">
+            <h2 className="text-xl md:text-2xl font-semibold mb-4 md:mb-6 text-black">Información de contacto</h2>
             <ul className="space-y-6">
               <li className="flex items-start gap-3">
                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-[#4a4a4a] mt-1">
@@ -106,8 +106,8 @@ export default function ContactPage() {
             </div>
           </div>
           
-          <div className="bg-white/50 p-6 rounded-xl shadow-md">
-            <h2 className="text-2xl font-semibold mb-6 text-black">Envíame un mensaje</h2>
+          <div className="bg-white/50 p-4 md:p-6 rounded-xl shadow-md">
+            <h2 className="text-xl md:text-2xl font-semibold mb-4 md:mb-6 text-black">Envíame un mensaje</h2>
             {formSubmitted ? (
               <div className="bg-black/10 text-black p-6 rounded-lg">
                 <h3 className="font-semibold text-xl">¡Mensaje enviado!</h3>
