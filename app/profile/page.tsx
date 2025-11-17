@@ -6,7 +6,7 @@ const profileData = {
       position: "Desarrollador de Frontend",
       company: "Siali",
       period: "Junio 2024 - Julio 2025",
-      description: "Este último año me he dedicado al desarrollo de diferentes productos para Siali variados, usando tecnologías punteras como Nextjs y Supabase o el ya muy conocido Docker para el despliegue, sobretodo en desarrollo local, pero también en nube."
+      description: "Este último año me he dedicado al desarrollo de diferentes productos para Siali variados, usando tecnologías punteras como Nextjs y Supabase o el ya muy conocido Docker para el despliegue, sobretodo en desarrollo local."
     },
     {
       position: "Prácticas",
