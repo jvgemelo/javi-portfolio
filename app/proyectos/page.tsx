@@ -3,22 +3,6 @@ import Image from "next/image";
 import Carousel from "@/components/carousel";
 import ProjectCard from "@/components/project-card";
 
-// Mapeo de tecnologías a sus iconos
-const techIcons: Record<string, string> = {
-  NextJS: "/react.png", // Usar React como fallback para NextJS
-  TailwindCSS: "/tailwind.png",
-  TypeScript: "/typescript.png",
-  Supabase: "/supabase.jpg",
-  React: "/react.png",
-  PostgreSQL: "/Postgresql_elephant.svg.png",
-  MongoDB: "/MongoDB.png",
-  JavaScript: "/js.png",
-  HTML: "/html-5.png",
-  CSS: "/CSS3.webp",
-  Java: "/java.png",
-  Docker: "/docker.png",
-};
-
 // Datos de ejemplo para los proyectos
 const projects = [
   {
@@ -175,38 +159,39 @@ export default function Projects() {
             <p className="text-white text-lg mb-4 max-w-md">
               Aunque aún aprendiendo, y sin tener conocimientos certificados en diseño, he realizado diversos diseños en Figma a base de aprendizaje autodidacta y algún curso!
             </p>
-            <a href="https://www.figma.com/design/C7y0nuC4q5khzwpgL00snR/Untitled?node-id=0-1&t=kP4HIBTzqH3TtqxI-1" className="inline-flex items-center gap-2 px-5 py-2 rounded-full bg-black text-white font-semibold shadow hover:bg-black/90 transition">
-              Link al portfolio <span className="text-xl">↗</span>
+            <a href="https://www.figma.com/design/siXfGECS9BxuuTQpdhxf7E/Traviatta?node-id=0-1&p=f&t=el3FZ2rAcWOLNFAk-0" className="inline-flex items-center gap-2 px-5 py-2 rounded-full bg-black text-white font-semibold shadow hover:bg-black/90 transition">
+              Link al ejemplo <span className="text-xl">↗</span>
             </a>
           </div>
           <div className="flex-1 flex justify-center rounded-lg overflow-hidden">
-            <div className="relative w-[280px] h-[200px] md:w-[420px] md:h-[320px] group mx-auto">
-              {/* Imagen de fondo (designs) */}
+            <div className="relative w-[340px] h-[240px] md:w-[560px] md:h-[380px] group mx-auto">
+               {/* Imagen superior (diseño) */}
+               <Image
+                src="/diseño.png"
+                alt="Works"
+                width={350}
+                height={270}
+                className="object-contain rounded-lg absolute left-[120px] top-12 md:left-[200px] md:top-40 rotate-[-2deg] z-30 transition-transform duration-300 ease-in-out group-hover:scale-105 group-hover:rotate-[2deg] group-hover:shadow-2xl w-[120px] h-[90px] md:w-[280px] md:h-[210px]"
+                style={{ zIndex: 30 }}
+              />
+              {/* Imagen de fondo (works) */}
               <Image
-                src="/designs.png"
+                src="/works.png"
                 alt="Diseño Figma"
                 width={350}
                 height={270}
-                className="object-contain rounded-lg shadow-lg border-4 border-black/20 absolute left-[120px] top-4 md:left-60 md:top-16 rotate-[8deg] z-20 transition-transform duration-300 ease-in-out group-hover:scale-105 group-hover:rotate-[12deg] group-hover:shadow-2xl w-[140px] h-[110px] md:w-[350px] md:h-[270px]"
+                className="object-contain rounded-lg absolute left-[180px] top-6 md:left-[280px] md:top-24 rotate-[8deg] z-20 transition-transform duration-300 ease-in-out group-hover:scale-105 group-hover:rotate-[12deg] group-hover:shadow-2xl w-[120px] h-[90px] md:w-[280px] md:h-[210px]"
                 style={{ zIndex: 20 }}
               />
-              {/* Imagen del medio (inicio) */}
-              <Image
+             
+                {/* Imagen del medio (inicio) */}
+                <Image
                 src="/inicio.png"
                 alt="Inicio"
                 width={350}
                 height={270}
-                className="object-contain rounded-lg shadow-lg border-4 border-black/20 absolute left-[-10px] top-[-5px] md:left-10 md:top-0 rotate-[-6deg] z-10 transition-transform duration-300 ease-in-out group-hover:scale-105 group-hover:rotate-[-12deg] group-hover:shadow-2xl w-[140px] h-[110px] md:w-[350px] md:h-[270px]"
+                className="object-contain rounded-lg absolute left-[20px] top-2 md:left-[40px] md:top-8 rotate-[-6deg] z-10 transition-transform duration-300 ease-in-out group-hover:scale-105 group-hover:rotate-[-12deg] group-hover:shadow-2xl w-[120px] h-[90px] md:w-[280px] md:h-[210px]"
                 style={{ zIndex: 10 }}
-              />
-              {/* Imagen superior (works) */}
-              <Image
-                src="/works.png"
-                alt="Works"
-                width={350}
-                height={270}
-                className="object-contain rounded-lg shadow-lg border-4 border-black/20 absolute left-[50px] top-10 md:left-20 md:top-32 rotate-[-2deg] z-30 transition-transform duration-300 ease-in-out group-hover:scale-105 group-hover:rotate-[2deg] group-hover:shadow-2xl w-[140px] h-[110px] md:w-[350px] md:h-[270px]"
-                style={{ zIndex: 30 }}
               />
             </div>
           </div>
