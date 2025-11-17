@@ -2,7 +2,7 @@ import Image from "next/image";
 
 // Mapeo de tecnologías a sus iconos
 const techIcons: Record<string, string> = {
-  NextJS: "/react.png", // Usar React como fallback para NextJS
+  NextJS: "/vercel.png",
   TailwindCSS: "/tailwind.png",
   TypeScript: "/typescript.png",
   Supabase: "/supabase.jpg",
@@ -14,6 +14,11 @@ const techIcons: Record<string, string> = {
   CSS: "/CSS3.webp",
   Java: "/java.png",
   Docker: "/docker.png",
+  WebRTC: "/web-rtc.png",
+  RabbitMQ: "/rabbitMQ.svg",
+  Vite: "/vite.svg",
+  Redux: "/redux.svg",
+  Axios: "/axios.png"
 };
 
 export type Project = {
@@ -87,4 +92,5 @@ export default function ProjectCard({ project }: ProjectCardProps) {
     </div>
   );
 }
+
 
