@@ -29,6 +29,19 @@ const profileData = {
       description: "Formación en desarrollo de aplicaciones web."
     },
     {
+      degree: "Intensive English Course to get B2 First",
+      institution: "",
+      period: "Julio 2025 – Octubre 2025",
+      description: "300 hours"
+    },
+    {
+      degree: "Legacy JavaScript Algorithms and Data Structures V8",
+      institution: "freeCodeCamp",
+      period: "Mayo 2025 –  Agosto 2025",
+      description: "300 hours",
+      certificationLink: "https://www.freecodecamp.org/certification/javiergarcias/javascript-algorithms-and-data-structures-v8"
+    },
+    {
       degree: "FPGS en Desarrollo de Aplicaciones Multiplataforma",
       institution: "IES Augusto González de Linares",
       period: "2022 – 2024",
@@ -114,6 +127,16 @@ export default function Profile() {
                     <h3 className="text-lg font-bold text-black">{edu.degree}</h3>
                     <p className="text-[#4a4a4a] font-medium">{edu.institution} • {edu.period}</p>
                     <p className="text-black/80 mt-2">{edu.description}</p>
+                    {edu.certificationLink && (
+                      <a 
+                        href={edu.certificationLink} 
+                        target="_blank" 
+                        rel="noopener noreferrer"
+                        className="text-blue-600 hover:text-blue-800 underline mt-2 inline-block"
+                      >
+                        View Certification
+                      </a>
+                    )}
                   </div>
                 ))}
               </div>
