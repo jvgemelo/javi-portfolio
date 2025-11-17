@@ -10,7 +10,7 @@ const projects = [
     title: "Dashboard",
     description:
       "Dashboard creado con la libreria recharts para React y componentes de Shadcn.",
-    technologies: ["NextJS", "TailwindCSS", "TypeScript", "Supabase", "React", "WebRTC"],
+    technologies: ["NextJS", "TailwindCSS", "TypeScript", "Supabase", "React", "WebRTC","i18n","Shadcn","Recharts"],
     imageUrl: "/dashboard.png",
     demoUrl: "#",
     repoUrl: "#",
