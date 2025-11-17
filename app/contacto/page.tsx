@@ -46,7 +46,7 @@ export default function ContactPage() {
       </header>
       
       <div className="max-w-4xl mx-auto py-6 md:py-10 px-4">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-10">
+        <div className="grid grid-cols-1 md:grid-cols-1 gap-6 md:gap-10">
           <div className="bg-white/50 p-4 md:p-6 rounded-xl shadow-md">
             <h2 className="text-xl md:text-2xl font-semibold mb-4 md:mb-6 text-black">Información de contacto</h2>
             <ul className="space-y-6">
@@ -56,7 +56,7 @@ export default function ContactPage() {
                 </svg>
                 <div>
                   <p className="font-medium text-black">Teléfono</p>
-                  <p className="text-black/70">+34 683 61 74 81</p>
+                  <a href="tel:+34683617481" className="text-black/70 hover:text-black transition-colors">+34 683 61 74 81</a>
                 </div>
               </li>
               <li className="flex items-start gap-3">
@@ -66,7 +66,7 @@ export default function ContactPage() {
                 </svg>
                 <div>
                   <p className="font-medium text-black">Email</p>
-                  <p className="text-black/70">javiergarciasegovia1997@gmail.com</p>
+                  <a href="mailto:javiergarciasegovia1997@gmail.com" className="text-black/70 hover:text-black transition-colors">javiergarciasegovia1997@gmail.com</a>
                 </div>
               </li>
               <li className="flex items-start gap-3">
@@ -76,7 +76,7 @@ export default function ContactPage() {
                 </svg>
                 <div>
                   <p className="font-medium text-black">Ubicación</p>
-                  <p className="text-black/70">Santander, España</p>
+                  <a href="https://www.google.com/maps?q=Santander,+España" target="_blank" rel="noopener noreferrer" className="text-black/70 hover:text-black transition-colors">Santander, España</a>
                 </div>
               </li>
             </ul>
@@ -106,7 +106,7 @@ export default function ContactPage() {
             </div>
           </div>
           
-          <div className="bg-white/50 p-4 md:p-6 rounded-xl shadow-md">
+          {/* <div className="bg-white/50 p-4 md:p-6 rounded-xl shadow-md">
             <h2 className="text-xl md:text-2xl font-semibold mb-4 md:mb-6 text-black">Envíame un mensaje</h2>
             {formSubmitted ? (
               <div className="bg-black/10 text-black p-6 rounded-lg">
@@ -166,7 +166,9 @@ export default function ContactPage() {
               </form>
             )}
           </div>
+        </div> */}
         </div>
+        
       </div>
     </div>
   );
