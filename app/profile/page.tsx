@@ -1,6 +1,6 @@
 // Datos estáticos del perfil - Edita estos datos directamente en el código
 const profileData = {
-  aboutMe: `Me encanta aprender y experimentar con nuevas tecnologías. Comencé mi camino en la programación formándome en backend con Java, Spring Boot y Hibernate, pero las oportunidades laborales me llevaron a especializarme en el frontend, donde descubrí mi verdadera pasión. Hoy tengo un año de experiencia desarrollando interfaces dinámicas con React, Next.js, Tailwind CSS, Vite, Docker y GitHub. Además, disfruto participando en el diseño con Figma y creando soluciones propias en npm.`,
+  aboutMe: `Buenas! Bienvenido a mi portfolio, esto no lo ha escrito chatGPT :D. Sobre mi, más allá de mi experiencia ya mencionada mas abajo y a lo largo y ancho de este portfolio, decir que soy una persona inquieta, autodidacta, y autónoma. Soy la típica persona que siempre está haciendo algo, a la que le gusta resolver problemas reales, y lo opuesto de una persona vaga. Me gusta mucho trabajar en equipo, disfruto de la compañía de mis compañeros, pero también sé trabajar totalmente solo y concentrado. También me encanta crear cosas que le aporten valor al cliente, que le sean útiles, sugerir nuevas features, pensar nuevas funcionalidades, proponer mejoras, construir, y toda esa labor creativa, más allá de programar!`,
   experience: [
     {
       position: "Desarrollador de Frontend",
