@@ -4,6 +4,12 @@ const profileData = {
   experience: [
     {
       position: "Desarrollador de Frontend",
+      company: "LIS Data Solutions",
+      period: "Diciembre 2025 - Mayo 2026",
+      description: "En este puesto, me he dedicado integramente al desarrollo de aplicaciones web frontend con React, Typescript y Tailwind css, así como CSS nativo y Javascript Vanilla."
+    },
+    {
+      position: "Desarrollador de Frontend",
       company: "Siali",
       period: "Junio 2024 - Julio 2025",
       description: "Este último año me he dedicado al desarrollo de diferentes productos para Siali variados, usando tecnologías punteras como Nextjs y Supabase o el ya muy conocido Docker para el despliegue, sobretodo en desarrollo local."
@@ -85,9 +91,9 @@ export default function Profile() {
           {/* Foto */}
           <div className="flex justify-center md:justify-start">
             <img 
-              src="/6005869666301494380.jpg" 
+              src="/foto_javier.jpg" 
               alt="Profile" 
-              className="rounded-xl shadow-md object-cover w-full max-w-md"
+              className="rounded-full shadow-md object-cover w-full max-w-md"
             />
           </div>
           
