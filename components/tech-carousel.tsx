@@ -6,6 +6,7 @@ const technologies = [
   { name: 'JavaScript', icon: '/js.png', isImage: true },
   { name: 'TypeScript', icon: '/typescript.png', isImage: true },
   { name: 'React', icon: '/react.png', isImage: true },
+  { name: 'Cypress', icon: '/Cypress-Icon--Streamline-Svg-Logos.svg', isImage: true },
   { name: 'Next.js', icon: '▲' },
   { name: 'Supabase', icon: '/supabase.jpg', isImage: true },
   { name: 'PostgreSQL', icon: '/Postgresql_elephant.svg.png', isImage: true },

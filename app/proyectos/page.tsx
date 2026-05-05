@@ -204,6 +204,13 @@ export default function Projects() {
           <div className="flex-1 flex flex-col items-start">
             <div className="flex flex-row items-center gap-3 mb-4">
               <h2 className="text-3xl md:text-4xl font-bold text-black">TESTING E2E CON CYPRESS</h2>
+              <Image
+                src="/Cypress-Icon--Streamline-Svg-Logos.svg"
+                alt="Cypress"
+                width={48}
+                height={48}
+                className="w-10 h-10 md:w-12 md:h-12"
+              />
               <span className="bg-[#69D3A7]/20 text-[#1B6E4F] px-3 py-1 rounded-full text-sm font-semibold border border-[#69D3A7]/40">
                 React
               </span>
@@ -268,8 +275,14 @@ export default function Projects() {
                 </pre>
               </div>
               {/* Insignia Cypress */}
-              <div className="absolute -bottom-4 -right-4 bg-[#69D3A7] text-[#17202C] px-4 py-2 rounded-full shadow-lg font-bold text-sm transform rotate-[-4deg] group-hover:rotate-0 transition-transform duration-300">
-                Cypress ✓
+              <div className="absolute -bottom-5 -right-5 bg-white p-3 rounded-full shadow-lg border border-black/10 transform rotate-[-6deg] group-hover:rotate-0 transition-transform duration-300">
+                <Image
+                  src="/Cypress-Icon--Streamline-Svg-Logos.svg"
+                  alt="Cypress"
+                  width={40}
+                  height={40}
+                  className="w-10 h-10"
+                />
               </div>
             </div>
           </div>
