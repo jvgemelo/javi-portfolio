@@ -171,7 +171,7 @@ export default function Projects() {
                 alt="Works"
                 width={350}
                 height={270}
-                className="object-contain rounded-lg absolute left-[120px] top-12 md:left-[200px] md:top-40 rotate-[-2deg] z-30 transition-transform duration-300 ease-in-out group-hover:scale-105 group-hover:rotate-[2deg] group-hover:shadow-2xl w-[120px] h-[90px] md:w-[280px] md:h-[210px]"
+                className="object-contain rounded-lg absolute left-[120px] top-12 md:left-[200px] md:top-40 rotate-[-2deg] z-30 transition-transform duration-300 ease-in-out group-hover:scale-105 group-hover:rotate-[2deg] w-[120px] h-[90px] md:w-[280px] md:h-[210px]"
                 style={{ zIndex: 30 }}
               />
               {/* Imagen de fondo (works) */}
@@ -180,7 +180,7 @@ export default function Projects() {
                 alt="Diseño Figma"
                 width={350}
                 height={270}
-                className="object-contain rounded-lg absolute left-[180px] top-6 md:left-[280px] md:top-24 rotate-[8deg] z-20 transition-transform duration-300 ease-in-out group-hover:scale-105 group-hover:rotate-[12deg] group-hover:shadow-2xl w-[120px] h-[90px] md:w-[280px] md:h-[210px]"
+                className="object-contain rounded-lg absolute left-[180px] top-6 md:left-[280px] md:top-24 rotate-[8deg] z-20 transition-transform duration-300 ease-in-out group-hover:scale-105 group-hover:rotate-[12deg]  w-[120px] h-[90px] md:w-[280px] md:h-[210px]"
                 style={{ zIndex: 20 }}
               />
              
@@ -190,7 +190,7 @@ export default function Projects() {
                 alt="Inicio"
                 width={350}
                 height={270}
-                className="object-contain rounded-lg absolute left-[20px] top-2 md:left-[40px] md:top-8 rotate-[-6deg] z-10 transition-transform duration-300 ease-in-out group-hover:scale-105 group-hover:rotate-[-12deg] group-hover:shadow-2xl w-[120px] h-[90px] md:w-[280px] md:h-[210px]"
+                className="object-contain rounded-lg absolute left-[20px] top-2 md:left-[40px] md:top-8 rotate-[-6deg] z-10 transition-transform duration-300 ease-in-out group-hover:scale-105 group-hover:rotate-[-12deg]  w-[120px] h-[90px] md:w-[280px] md:h-[210px]"
                 style={{ zIndex: 10 }}
               />
             </div>
