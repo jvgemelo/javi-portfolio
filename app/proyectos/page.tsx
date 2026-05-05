@@ -197,6 +197,85 @@ export default function Projects() {
           </div>
         </div>
       </section>
+      {/* Sección Testing E2E con Cypress */}
+      <section className="w-full bg-white py-16 border-t border-black/10">
+        <div className="container mx-auto flex flex-col md:flex-row items-center gap-10 px-6">
+          {/* Texto */}
+          <div className="flex-1 flex flex-col items-start">
+            <div className="flex flex-row items-center gap-3 mb-4">
+              <h2 className="text-3xl md:text-4xl font-bold text-black">TESTING E2E CON CYPRESS</h2>
+              <span className="bg-[#69D3A7]/20 text-[#1B6E4F] px-3 py-1 rounded-full text-sm font-semibold border border-[#69D3A7]/40">
+                React
+              </span>
+            </div>
+            <p className="text-black text-lg mb-4 max-w-xl">
+              He trabajado con <span className="font-semibold">Cypress</span> para implementar tests end-to-end en aplicaciones React, asegurando el correcto funcionamiento de los flujos de usuario más críticos: autenticación, navegación, formularios y consumo de APIs.
+            </p>
+            <p className="text-black/80 text-lg mb-6 max-w-xl">
+              Configurando suites de tests automatizadas que se ejecutan en CI/CD, simulando interacciones reales del usuario en el navegador y validando tanto la UI como las respuestas del backend mediante <span className="font-mono text-sm bg-black/5 px-1.5 py-0.5 rounded">cy.intercept()</span> para mockear peticiones de red.
+            </p>
+            <ul className="space-y-2 text-black/80 text-base mb-6">
+              <li className="flex items-center gap-2">
+                <span className="w-1.5 h-1.5 bg-[#1B6E4F] rounded-full"></span>
+                Selectores robustos con <span className="font-mono text-sm">data-cy</span> para evitar tests frágiles
+              </li>
+              <li className="flex items-center gap-2">
+                <span className="w-1.5 h-1.5 bg-[#1B6E4F] rounded-full"></span>
+                Comandos personalizados reutilizables entre suites
+              </li>
+              <li className="flex items-center gap-2">
+                <span className="w-1.5 h-1.5 bg-[#1B6E4F] rounded-full"></span>
+                Integración en pipelines de CI/CD para validar cada despliegue
+              </li>
+            </ul>
+          </div>
+
+          {/* Mockup de código */}
+          <div className="flex-1 flex justify-center w-full">
+            <div className="relative w-full max-w-[520px] group">
+              {/* Logo React flotante */}
+              <div className="absolute -top-6 -left-6 z-20 bg-white rounded-full shadow-lg p-3 border border-black/10 transition-transform duration-300 group-hover:rotate-12">
+                <Image src="/react.png" alt="React" width={48} height={48} />
+              </div>
+              {/* Tarjeta del editor de código */}
+              <div className="bg-[#17202C] rounded-lg shadow-2xl overflow-hidden border border-black/20 transition-transform duration-300 ease-in-out group-hover:scale-[1.02]">
+                {/* Barra de ventana */}
+                <div className="flex items-center gap-2 px-4 py-3 bg-[#0F1822] border-b border-white/5">
+                  <span className="w-3 h-3 rounded-full bg-[#FF5F56]"></span>
+                  <span className="w-3 h-3 rounded-full bg-[#FFBD2E]"></span>
+                  <span className="w-3 h-3 rounded-full bg-[#27C93F]"></span>
+                  <span className="ml-3 text-white/60 text-xs font-mono">login.cy.ts</span>
+                </div>
+                {/* Contenido del código */}
+                <pre className="p-5 text-sm md:text-[13px] font-mono leading-relaxed text-white/90 overflow-x-auto">
+{`describe('Login de usuario', () => {
+  beforeEach(() => {
+    cy.visit('/login')
+  })
+
+  it('inicia sesión correctamente', () => {
+    cy.intercept('POST', '/api/auth').as('auth')
+
+    cy.get('[data-cy=email]').type('javi@dev.com')
+    cy.get('[data-cy=password]').type('secret123')
+    cy.get('[data-cy=submit]').click()
+
+    cy.wait('@auth').its('response.statusCode')
+      .should('eq', 200)
+    cy.url().should('include', '/dashboard')
+  })
+})`}
+                </pre>
+              </div>
+              {/* Insignia Cypress */}
+              <div className="absolute -bottom-4 -right-4 bg-[#69D3A7] text-[#17202C] px-4 py-2 rounded-full shadow-lg font-bold text-sm transform rotate-[-4deg] group-hover:rotate-0 transition-transform duration-300">
+                Cypress ✓
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Sección Página Web de Delivery para Restaurante */}
       <section className="w-full border-t border-black/10">
         {/* Hero Section - Dark Background */}
