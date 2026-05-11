@@ -1,6 +1,15 @@
 // Datos estáticos del perfil - Edita estos datos directamente en el código
 const profileData = {
-  aboutMe: `Buenas! Bienvenido a mi portfolio, esto no lo ha escrito chatGPT :D. Sobre mi, más allá de mi experiencia ya mencionada mas abajo y a lo largo y ancho de este portfolio, decir que soy una persona inquieta, autodidacta, y autónoma. Soy la típica persona que siempre está haciendo algo, a la que le gusta resolver problemas reales, y lo opuesto de una persona vaga. Me gusta mucho trabajar en equipo, disfruto de la compañía de mis compañeros, pero también sé trabajar totalmente solo y concentrado. También me encanta crear cosas que le aporten valor al cliente, que le sean útiles, sugerir nuevas features, pensar nuevas funcionalidades, proponer mejoras, construir, y toda esa labor creativa, más allá de programar!`,
+  aboutMe: `Desarrollador inquieto y
+autodidacta enfocado en
+resolver problemas reales y
+generar valor. Aporto visión
+creativa y estratégica para
+proponer mejoras constantes,
+con capacidad para liderar
+soluciones de forma autónoma
+o colaborar eficazmente en
+equipo.`,
   experience: [
     {
       position: "Desarrollador de Frontend",
@@ -71,7 +80,7 @@ const profileData = {
     { name: "Inglés", level: "Cambridge B2 Certificate" }
   ],
   skills: [
-    "JavaScript", "Java", "React", "Next.js", "TailwindCSS", 
+    "JavaScript", "Java", "React", "Next.js", "TailwindCSS",
     "Supabase", "MongoDB", "Docker", "GitHub", "Vite", "Figma"
   ],
   additionalInfo: `Carnet de conducir. Coche propio. Disponibilidad inmediata.`
@@ -90,25 +99,25 @@ export default function Profile() {
         <div className="grid grid-cols-1 md:grid-cols-[auto_1fr] gap-6 mb-10">
           {/* Foto */}
           <div className="flex justify-center md:justify-start">
-            <img 
-              src="/foto_javier.jpg" 
-              alt="Profile" 
+            <img
+              src="/foto_javier.jpg"
+              alt="Profile"
               className="rounded-full shadow-md object-cover w-full max-w-md"
             />
           </div>
-          
+
           {/* About Me */}
-          <ProfileSection 
-            title="About Me" 
+          <ProfileSection
+            title="About Me"
             content={profileData.aboutMe}
           />
         </div>
-        
+
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
 
           {/* Experience */}
-          <ProfileSection 
-            title="Experience" 
+          <ProfileSection
+            title="Experience"
             content={
               <div className="space-y-6">
                 {profileData.experience.map((exp, index) => (
@@ -124,8 +133,8 @@ export default function Profile() {
           />
 
           {/* Education */}
-          <ProfileSection 
-            title="Education" 
+          <ProfileSection
+            title="Education"
             content={
               <div className="space-y-6">
                 {profileData.education.map((edu, index) => (
@@ -134,9 +143,9 @@ export default function Profile() {
                     <p className="text-[#4a4a4a] font-medium">{edu.institution} • {edu.period}</p>
                     <p className="text-black/80 mt-2">{edu.description}</p>
                     {edu.certificationLink && (
-                      <a 
-                        href={edu.certificationLink} 
-                        target="_blank" 
+                      <a
+                        href={edu.certificationLink}
+                        target="_blank"
                         rel="noopener noreferrer"
                         className="text-blue-600 hover:text-blue-800 underline mt-2 inline-block"
                       >
@@ -151,8 +160,8 @@ export default function Profile() {
           />
 
           {/* Languages */}
-          <ProfileSection 
-            title="Languages" 
+          <ProfileSection
+            title="Languages"
             content={
               <div className="space-y-3">
                 {profileData.languages.map((lang, index) => (
@@ -166,12 +175,12 @@ export default function Profile() {
           />
 
           {/* Skills */}
-          <ProfileSection 
-            title="Skills & Tools" 
+          <ProfileSection
+            title="Skills & Tools"
             content={
               <div className="flex flex-wrap gap-2">
                 {profileData.skills.map((skill, index) => (
-                  <span 
+                  <span
                     key={index}
                     className="px-3 py-1 bg-black/10 text-black rounded-full text-sm font-medium"
                   >
@@ -183,8 +192,8 @@ export default function Profile() {
           />
 
           {/* Additional Information */}
-          <ProfileSection 
-            title="Additional Information" 
+          <ProfileSection
+            title="Additional Information"
             content={profileData.additionalInfo}
             fullWidth
           />
@@ -195,13 +204,13 @@ export default function Profile() {
 }
 
 // Helper component for displaying profile sections
-function ProfileSection({ 
-  title, 
-  content, 
-  fullWidth = false 
-}: { 
-  title: string; 
-  content: string | React.ReactNode; 
+function ProfileSection({
+  title,
+  content,
+  fullWidth = false
+}: {
+  title: string;
+  content: string | React.ReactNode;
   fullWidth?: boolean;
 }) {
   return (
