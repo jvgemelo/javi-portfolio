@@ -40,7 +40,7 @@ equipo.`,
     {
       degree: "FPGS en Desarrollo de Aplicaciones Web (DAW)",
       institution: "A distancia",
-      period: "Actualmente cursando",
+      period: "Septiembre 2025 - Junio 2026",
       description: "Formación en desarrollo de aplicaciones web."
     },
     {
